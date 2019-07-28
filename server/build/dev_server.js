@@ -1,7 +1,5 @@
-// node 环境webpack打包配置
-
+// node 环境webpack打包配置 开发配置
 const webpack = require("webpack");
-// const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const nodeExternals = require("webpack-node-externals");
 const devMode = process.env.NODE_ENV !== "production";
@@ -19,7 +17,7 @@ module.exports = function() {
     // 出口
     output: {
       // 所要打包到的目标目录
-      path: path.resolve(__dirname, "dist"),
+      path: path.resolve(__dirname, "../dist"),
       // 打包后的文件名
       filename: "[name].js",
       // 打包后，其他人引用这个包时的名称
@@ -38,17 +36,17 @@ module.exports = function() {
     module: {
       rules: [
         {
-          test: /\.(tsx|js)?$/,
+          test: /\.tsx?$/,
           use: ["babel-loader", "awesome-typescript-loader"],
           exclude: /node_modules/
         },
         {
-          enforce: "pre",
-          test: /\.js$/,
-          loader: "source-map-loader"
+          test: /\.js?$/,
+          use: ["babel-loader"],
+          exclude: /node_modules/
         },
         {
-          test: /\.(c|le)ss$/,
+          test: /\.less$/,
           use: [
             {
               loader: devMode ? "style-loader" : MiniCssExtractPlugin.loader
@@ -56,15 +54,19 @@ module.exports = function() {
             "css-loader",
             "less-loader"
           ]
+        },
+        {
+          test: /\.css$/,
+          use: [
+            {
+              loader: devMode ? "style-loader" : MiniCssExtractPlugin.loader
+            },
+            "css-loader"
+          ]
         }
       ]
     },
     plugins: [
-      // new HtmlWebpackPlugin({
-      //   title: "test",
-      //   filename: "index.html",
-      //   template: "demo/index.html"
-      // }),
       new MiniCssExtractPlugin({
         filename: devMode ? "[name].css" : "[name].[hash].css",
         chunkFilename: devMode ? "[id].css" : "[id].[hash].css"
