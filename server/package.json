@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm-run-all --parallel dev_**",
-    "dev_build": "webpack --config ./build/dev_server.js --progress=true --color=true --compress=true --watch",
+    "dev_build_server": "webpack --config ./build/dev_server.js --progress=true --color=true --compress=true --watch",
+    "dev_build_client": "webpack --config ./build/dev_client.js --progress=true --color=true --compress=true --watch",
     "dev_start": "nodemon --watch dist --exec node \"./dist/index.js\""
   },
   "author": "",

@@ -11,11 +11,13 @@ app.use(async ctx => {
   <html lang="zh-CN">
     <head>
       <title>ssrTable</title>
+      <link rel="stylesheet" href="">
     </head>
     <body>
-      <div id="app" class="app">
+      <div id="app">
         ${content}
       </div>
+      <script src="/index.js"></script>
     </body>
   </html>`;
 });

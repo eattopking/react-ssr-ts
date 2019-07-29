@@ -8,11 +8,11 @@ const baseConfig = require("./base");
 module.exports = function() {
   const clientConfig = {
     // 入口 这里路径就是固定以项目根路径开始
-    entry: { index: "./src/index.js" },
+    entry: { index: "./src/client/index.tsx" },
     // 出口
     output: {
       // 所要打包到的目标目录
-      path: path.resolve(__dirname, "../dist"),
+      path: path.resolve(__dirname, "../public"),
       // 打包后的文件名
       filename: "[name].js",
       // 打包后，其他人引用这个包时的名称
