@@ -1,0 +1,25 @@
+// node 环境 客户端代码 webpack打包配置 开发配置
+
+const webpack = require("webpack");
+const merge = require("webpack-merge");
+const path = require("path");
+const baseConfig = require("./base");
+
+module.exports = function() {
+  const clientConfig = {
+    // 入口 这里路径就是固定以项目根路径开始
+    entry: { index: "./src/index.js" },
+    // 出口
+    output: {
+      // 所要打包到的目标目录
+      path: path.resolve(__dirname, "../dist"),
+      // 打包后的文件名
+      filename: "[name].js",
+      // 打包后，其他人引用这个包时的名称
+      library: "ts",
+      // 对包对外输出方式
+      libraryTarget: "umd"
+    }
+  };
+  return merge(baseConfig(), clientConfig);
+};

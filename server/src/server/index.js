@@ -1,10 +1,10 @@
 import Koa from "koa";
 import React from "react";
 import { renderToString } from "react-dom/server";
-// import Table from "./containers/Home";
+import Table from "../containers/Home";
 const app = new Koa();
 
-// const content = renderToString(<Table />);
+const content = renderToString(<Table />);
 
 app.use(async ctx => {
   ctx.body = `<!DOCTYPE html>
@@ -14,7 +14,7 @@ app.use(async ctx => {
     </head>
     <body>
       <div id="app" class="app">
-        ${333333}
+        ${content}
       </div>
     </body>
   </html>`;
