@@ -82,7 +82,7 @@ export default function DiffTable() {
       }}
     >
       {/* <Table columns={columns} dataSource={data} /> */}
-      {22222234444444433366666}
+      {111222333444555}
     </div>
   );
 }
