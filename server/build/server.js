@@ -12,7 +12,6 @@ module.exports = function() {
     target: "node",
     // 入口 这里路径就是固定以项目根路径开始
     entry: { index: "./src/server/index.js" },
-    devtool: "cheap-module-eval-source-map",
     // 出口
     output: {
       // 所要打包到的目标目录
