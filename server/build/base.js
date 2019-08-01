@@ -19,12 +19,14 @@ module.exports = function() {
       rules: [
         {
           test: /\.tsx?$/,
-          use: ["babel-loader", "awesome-typescript-loader"],
+          // 使用cache提升编译速度
+          use: ["babel-loader?cacheDirectory=true", "awesome-typescript-loader"],
           exclude: /node_modules/
         },
         {
           test: /\.js?$/,
-          use: ["babel-loader"],
+          // 使用cache提升编译速度
+          use: ["babel-loader?cacheDirectory=true"],
           exclude: /node_modules/
         },
         {
