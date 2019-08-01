@@ -4,6 +4,7 @@ const webpack = require("webpack");
 const nodeExternals = require("webpack-node-externals");
 const merge = require("webpack-merge");
 const path = require("path");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const baseConfig = require("./base");
 
 module.exports = function() {
@@ -24,7 +25,10 @@ module.exports = function() {
       libraryTarget: "umd"
     },
     // 进一步设置编译后的代码在node环境中运行,从而不把node脚本引用的库编译压缩进文件
-    externals: [nodeExternals()]
+    externals: [nodeExternals()],
+    plugins: [
+      new CleanWebpackPlugin()
+    ]
   };
   return merge(baseConfig(), serverConfig);
 };

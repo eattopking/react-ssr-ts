@@ -4,6 +4,7 @@ const webpack = require("webpack");
 const merge = require("webpack-merge");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const baseConfig = require("./base");
 
 module.exports = function() {
@@ -48,7 +49,8 @@ module.exports = function() {
       new MiniCssExtractPlugin({
         filename: "[name].css",
         chunkFilename: "[id].css"
-      })
+      }),
+      new CleanWebpackPlugin()
     ]
   };
   return merge(baseConfig(), clientConfig);
