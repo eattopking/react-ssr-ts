@@ -3,7 +3,6 @@
 const webpack = require("webpack");
 const merge = require("webpack-merge");
 const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const baseConfig = require("./base");
 
@@ -22,34 +21,7 @@ module.exports = function() {
       // 对包对外输出方式
       libraryTarget: "umd"
     },
-    module: {
-      rules: [
-        {
-          test: /\.less$/,
-          use: [
-            {
-              loader: MiniCssExtractPlugin.loader
-            },
-            "css-loader",
-            "less-loader"
-          ]
-        },
-        {
-          test: /\.css$/,
-          use: [
-            {
-              loader: MiniCssExtractPlugin.loader
-            },
-            "css-loader"
-          ]
-        }
-      ]
-    },
     plugins: [
-      new MiniCssExtractPlugin({
-        filename: "[name].css",
-        chunkFilename: "[id].css"
-      }),
       new CleanWebpackPlugin()
     ]
   };

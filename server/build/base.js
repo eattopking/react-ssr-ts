@@ -2,6 +2,7 @@
 
 const webpack = require("webpack");
 const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = function() {
   const devConfig = {
@@ -25,9 +26,41 @@ module.exports = function() {
           test: /\.js?$/,
           use: ["babel-loader"],
           exclude: /node_modules/
+        },
+        {
+          test: /\.less$/,
+          use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "less-loader"]
+        },
+        {
+          test: /\.css$/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader
+            },
+            "css-loader"
+          ]
+        },
+        {
+          test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
+          exclude: /favicon\.png$/,
+          use: [
+            {
+              loader: "url-loader",
+              options: {
+                limit: 8192,
+                publicPath: "./"
+              }
+            }
+          ]
         }
       ]
-    }
+    },
+    plugins: [
+      new MiniCssExtractPlugin({
+        filename: "[name].css",
+        chunkFilename: "[id].css"
+      })
+    ]
   };
   return devConfig;
 };

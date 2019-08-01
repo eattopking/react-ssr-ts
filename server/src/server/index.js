@@ -15,7 +15,7 @@ app.use(async ctx => {
   <html lang="zh-CN">
     <head>
       <title>ssrTable</title>
-      
+      <link rel="stylesheet" href="/index.css">
     </head>
     <body>
       <div id="app">${content}</div>
