@@ -31,7 +31,8 @@ module.exports = function() {
         },
         {
           test: /\.less$/,
-          use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "less-loader"]
+          use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "less-loader"],
+          exclude: /node_modules/
         },
         {
           test: /\.css$/,
@@ -40,7 +41,8 @@ module.exports = function() {
               loader: MiniCssExtractPlugin.loader
             },
             "css-loader"
-          ]
+          ],
+          exclude: /node_modules/
         },
         {
           test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
