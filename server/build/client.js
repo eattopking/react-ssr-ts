@@ -1,10 +1,12 @@
 // node 环境 客户端代码 webpack打包配置 开发配置
 
 const webpack = require("webpack");
-const merge = require("webpack-merge");
 const path = require("path");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const baseConfig = require("./base");
+const merge = require("webpack-merge");
+const babelrc = require("../babelrc");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = function() {
   const clientConfig = {
@@ -21,8 +23,52 @@ module.exports = function() {
       // 对包对外输出方式
       libraryTarget: "umd"
     },
+    module: {
+      rules: [
+        {
+          test: /\.tsx?$/,
+          // 使用cache提升编译速度
+          use: [
+            {
+              loader: "babel-loader?cacheDirectory=true",
+              options: babelrc(false)
+            },
+            "awesome-typescript-loader"
+          ],
+          exclude: /node_modules/
+        },
+        {
+          test: /\.js?$/,
+          // 使用cache提升编译速度
+          use: {
+            loader: "babel-loader?cacheDirectory=true",
+            options: babelrc(false)
+          },
+          exclude: /node_modules/
+        },
+        {
+          test: /\.less$/,
+          use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "less-loader"],
+          exclude: /node_modules/
+        },
+        {
+          test: /\.css$/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader
+            },
+            "css-loader"
+          ],
+          exclude: /node_modules/
+        }
+      ]
+    },
     plugins: [
-      new CleanWebpackPlugin()
+      new CleanWebpackPlugin(),
+      new MiniCssExtractPlugin({
+        filename: "[name].css",
+        chunkFilename: "[id].css"
+      })
     ]
   };
   return merge(baseConfig(), clientConfig);

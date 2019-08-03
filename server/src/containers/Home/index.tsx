@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Table, Divider, Tag } from "antd";
-import "./main.less";
 
 export default function DiffTable() {
   // const [columns, setColumns] = useState([
@@ -79,7 +78,7 @@ export default function DiffTable() {
     <div
       className="table"
       onClick={() => {
-        console.log(33445555555)
+        console.log(33445555555);
       }}
     >
       {/* <Table columns={columns} dataSource={data} /> */}

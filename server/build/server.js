@@ -1,11 +1,13 @@
 // node 环境 服务端代码webpack打包配置 开发配置
 
 const webpack = require("webpack");
-const nodeExternals = require("webpack-node-externals");
-const merge = require("webpack-merge");
 const path = require("path");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const baseConfig = require("./base");
+const merge = require("webpack-merge");
+
+const babelrc = require("../babelrc");
+const nodeExternals = require("webpack-node-externals");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = function() {
   const serverConfig = {
@@ -24,11 +26,34 @@ module.exports = function() {
       // 对包对外输出方式
       libraryTarget: "umd"
     },
+    module: {
+      rules: [
+        {
+          test: /\.tsx?$/,
+          // 使用cache提升编译速度
+          use: [
+            {
+              loader: "babel-loader?cacheDirectory=true",
+              options: babelrc(true)
+            },
+            "awesome-typescript-loader"
+          ],
+          exclude: /node_modules/
+        },
+        {
+          test: /\.js?$/,
+          // 使用cache提升编译速度
+          use: {
+            loader: "babel-loader?cacheDirectory=true",
+            options: babelrc(true)
+          },
+          exclude: /node_modules/
+        }
+      ]
+    },
     // 进一步设置编译后的代码在node环境中运行,从而不把node脚本引用的库编译压缩进文件
     externals: [nodeExternals()],
-    plugins: [
-      new CleanWebpackPlugin()
-    ]
+    plugins: [new CleanWebpackPlugin()]
   };
   return merge(baseConfig(), serverConfig);
 };
