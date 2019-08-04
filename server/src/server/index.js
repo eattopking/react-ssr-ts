@@ -1,3 +1,5 @@
+// 服务端代码
+
 import Koa from "koa";
 import React from "react";
 import { renderToString } from "react-dom/server";

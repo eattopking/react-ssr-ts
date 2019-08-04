@@ -1,10 +1,9 @@
-// node 环境 服务端代码webpack打包配置 开发配置
+// node 环境 服务端代码webpack打包配置 生产配置
 
 const webpack = require("webpack");
 const path = require("path");
 const baseConfig = require("./base");
 const merge = require("webpack-merge");
-
 const babelrc = require("../babelrc");
 const nodeExternals = require("webpack-node-externals");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -33,8 +32,8 @@ module.exports = function() {
           // 使用cache提升编译速度
           use: [
             {
-              loader: "babel-loader?cacheDirectory=true",
-              options: babelrc(true)
+              loader: "babel-loader",
+              options: babelrc({ server: true })
             },
             "awesome-typescript-loader"
           ],
@@ -44,8 +43,8 @@ module.exports = function() {
           test: /\.js?$/,
           // 使用cache提升编译速度
           use: {
-            loader: "babel-loader?cacheDirectory=true",
-            options: babelrc(true)
+            loader: "babel-loader",
+            options: babelrc({ server: true })
           },
           exclude: /node_modules/
         }

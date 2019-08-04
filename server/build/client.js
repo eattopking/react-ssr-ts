@@ -1,4 +1,4 @@
-// node 环境 客户端代码 webpack打包配置 开发配置
+// node 环境 客户端代码 webpack打包配置 生产配置
 
 const webpack = require("webpack");
 const path = require("path");
@@ -31,7 +31,7 @@ module.exports = function() {
           use: [
             {
               loader: "babel-loader?cacheDirectory=true",
-              options: babelrc(false)
+              options: babelrc({ server: false })
             },
             "awesome-typescript-loader"
           ],
@@ -42,14 +42,24 @@ module.exports = function() {
           // 使用cache提升编译速度
           use: {
             loader: "babel-loader?cacheDirectory=true",
-            options: babelrc(false)
+            options: babelrc({ server: false })
           },
           exclude: /node_modules/
         },
         {
           test: /\.less$/,
-          use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "less-loader"],
-          exclude: /node_modules/
+          use: [
+            MiniCssExtractPlugin.loader,
+            "css-loader",
+            "postcss-loader",
+            {
+              loader: "less-loader",
+              options: {
+                // 解决这个报错 Inline JavaScript is not enabled
+                javascriptEnabled: true
+              }
+            }
+          ]
         },
         {
           test: /\.css$/,
@@ -58,8 +68,7 @@ module.exports = function() {
               loader: MiniCssExtractPlugin.loader
             },
             "css-loader"
-          ],
-          exclude: /node_modules/
+          ]
         }
       ]
     },

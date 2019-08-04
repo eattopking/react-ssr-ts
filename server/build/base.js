@@ -1,11 +1,10 @@
 // 公用配置
-
 const webpack = require("webpack");
 const path = require("path");
 
 module.exports = function() {
   const devConfig = {
-    // 设置成开发模式，代码不压缩
+    // 设置成生产模式，代码压缩
     mode: "production",
     devtool: "source-map",
     resolve: {
