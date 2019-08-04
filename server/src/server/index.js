@@ -2,10 +2,13 @@
 
 import Koa from "koa";
 import React from "react";
+// 路径管理
+import path from "path"; 
 import { renderToString } from "react-dom/server";
 import Table from "../containers/Home";
-import koaStatic from "koa-static"; // 静态资源服务管理中间件
-import path from "path"; // 路径管理
+// 静态资源服务管理中间件
+import koaStatic from "koa-static"; 
+
 const app = new Koa();
 const content = renderToString(<Table />);
 
