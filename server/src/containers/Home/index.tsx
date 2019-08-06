@@ -1,82 +1,26 @@
-import React, { useState } from "react";
-import { Table, Divider, Tag } from "antd";
+import React from "react";
+import { Layout, Menu } from "antd";
+const { Content, Footer, Sider } = Layout;
+import { Link } from "react-router-dom";
+import Routes from "./routes";
 
-export default function DiffTable() {
-  const [columns, setColumns] = useState([
-    {
-      title: "Name",
-      dataIndex: "name",
-      key: "name",
-      render: (text: any) => <a href="javascript:;">{text}</a>
-    },
-    {
-      title: "Age",
-      dataIndex: "age",
-      key: "age"
-    },
-    {
-      title: "Address",
-      dataIndex: "address",
-      key: "address"
-    },
-    {
-      title: "Tags",
-      key: "tags",
-      dataIndex: "tags",
-      render: (tags: any) => (
-        <span>
-          {tags.map((tag: any) => {
-            let color = tag.length > 5 ? "geekblue" : "green";
-            if (tag === "loser") {
-              color = "volcano";
-            }
-            return (
-              <Tag color={color} key={tag}>
-                {tag.toUpperCase()}
-              </Tag>
-            );
-          })}
-        </span>
-      )
-    },
-    {
-      title: "Action",
-      key: "action",
-      render: (text: any, record: any) => (
-        <span>
-          <a href="javascript:;">Invite {record.name}</a>
-          <Divider type="vertical" />
-          <a href="javascript:;">Delete</a>
-        </span>
-      )
-    }
-  ]);
-  const [data, setData] = useState([
-    {
-      key: "1",
-      name: "John Brown",
-      age: 32,
-      address: "New York No. 1 Lake Park",
-      tags: ["nice", "developer"]
-    },
-    {
-      key: "2",
-      name: "Jim Green",
-      age: 42,
-      address: "London No. 1 Lake Park",
-      tags: ["loser"]
-    },
-    {
-      key: "3",
-      name: "Joe Black",
-      age: 32,
-      address: "Sidney No. 1 Lake Park",
-      tags: ["cool", "teacher"]
-    }
-  ]);
+export default function PageLayout() {
   return (
-    <div className="diff_table">
-      <Table columns={columns} dataSource={data} />
-    </div>
+    <Layout>
+      <Content style={{ padding: "0 50px" }}>
+        <Layout style={{ padding: "24px 0", background: "#fff" }}>
+          <Sider width={200} style={{ background: "#fff" }}>
+            <Menu mode="inline" defaultSelectedKeys={["1"]} defaultOpenKeys={["sub1"]} style={{ height: "100%" }}>
+              <Menu.Item key="1"><Link to="/">simpletable</Link></Menu.Item>
+              <Menu.Item key="2"><Link to="/difficult">difftable</Link></Menu.Item>
+            </Menu>
+          </Sider>
+          <Content style={{ padding: "0 24px", minHeight: 280 }}>
+            <Routes />
+          </Content>
+        </Layout>
+      </Content>
+      <Footer style={{ textAlign: "center" }}>张横服务端渲染表格</Footer>
+    </Layout>
   );
 }
