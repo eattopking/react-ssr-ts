@@ -76,7 +76,7 @@ export default function DiffTable() {
   ]);
   return (
     <div>
-      <Table columns={columns} dataSource={data} />
+      <Table columns={columns} dataSource={data} pagination={false} />
     </div>
   );
 }

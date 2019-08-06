@@ -74,5 +74,5 @@ export default function simpleTable() {
       tags: ["cool", "teacher"]
     }
   ]);
-  return <Table columns={columns} dataSource={data} />;
+  return <Table columns={columns} dataSource={data} pagination={false} />;
 }

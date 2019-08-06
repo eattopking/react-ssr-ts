@@ -10,7 +10,7 @@ export default function PageLayout() {
       <Content style={{ padding: "0 50px" }}>
         <Layout style={{ padding: "24px 0", background: "#fff" }}>
           <Sider width={200} style={{ background: "#fff" }}>
-            <Menu mode="inline" defaultSelectedKeys={["1"]} defaultOpenKeys={["sub1"]} style={{ height: "100%" }}>
+            <Menu mode="inline" defaultSelectedKeys={["1"]} style={{ height: "100%" }}>
               <Menu.Item key="1"><Link to="/">simpletable</Link></Menu.Item>
               <Menu.Item key="2"><Link to="/difficult">difftable</Link></Menu.Item>
             </Menu>

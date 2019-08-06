@@ -17,7 +17,7 @@ const router = new Router();
 // 这里直接设置项目目录下的目录名就行,直接koa就能找到,不用整那些乱七八糟的
 app.use(koaStatic("public"));
 router.get("*", (ctx) => {
-  ctx.body = render({ctx});
+  ctx.body = render({url: ctx.request.url});
 });
 app.use(router.routes()).use(router.allowedMethods());
 app.listen(8000);
