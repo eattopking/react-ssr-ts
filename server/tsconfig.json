@@ -22,7 +22,12 @@
     /* Allow javascript files to be compiled. */
     "allowJs": true,
     /* Enables experimental support for ES7 decorators. */
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    // 下面两个配置项是适配自定义.d.ts文件路径的
+    "baseUrl": "./",
+    "paths": {
+      "*": ["types/*"]
+    }
   },
   "exclude": ["node_modules", "build", "demo", "server"]
 }

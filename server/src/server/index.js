@@ -3,7 +3,7 @@
 import Koa from "koa";
 import Router from "koa-router";
 // 给koa-router设置响应头,默认就可以设置很多,有而外需求在看文档
-// import KoaBody from "koa-body";
+import KoaBody from "koa-body";
 // 静态资源服务管理中间件
 import koaStatic from "koa-static";
 import render from "../utils";
@@ -16,8 +16,8 @@ const router = new Router();
 // 设置静态资源路径, 当客户端请求静态资源是,就到对应目录下寻找返回,
 // 这里直接设置项目目录下的目录名就行,直接koa就能找到,不用整那些乱七八糟的
 app.use(koaStatic("public"));
-// 给koa-router设置响应头
-// app.use(KoaBody());
+// 给koa-router设置响应头的很多信息
+app.use(KoaBody());
 // 返回页面
 router.get("/", ctx => {
   ctx.body = render({ url: ctx.request.url });
