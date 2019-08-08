@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Table, Divider, Tag } from "antd";
+import { Table, Divider, Tag, Button } from "antd";
+const axios = require("axios");
 
 export default function DiffTable() {
   const [columns] = useState([
@@ -51,7 +52,7 @@ export default function DiffTable() {
       )
     }
   ]);
-  const [data] = useState([
+  const [data, setData] = useState([
     {
       key: "1",
       name: "复杂表格",
@@ -74,8 +75,20 @@ export default function DiffTable() {
       tags: ["cool", "teacher"]
     }
   ]);
+  const addRow = () => {
+    axios.get("./addrow").then((response: { data: { row: [] } }) => {
+      setData(response.data.row);
+    });
+  };
+  const delRow = () => {
+    axios.get("./delete").then((response: { data: { row: [] } }) => {
+      setData(response.data.row);
+    });
+  };
   return (
     <div>
+      <Button onClick={addRow}>增行</Button>
+      <Button onClick={delRow}>删行</Button>
       <Table columns={columns} dataSource={data} pagination={false} />
     </div>
   );
