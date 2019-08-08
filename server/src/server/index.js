@@ -20,6 +20,7 @@ app.use(koaStatic("public"));
 app.use(KoaBody());
 // 返回页面
 router.get("/", ctx => {
+  
   ctx.body = render({ url: ctx.request.url });
 });
 
