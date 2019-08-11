@@ -7,7 +7,9 @@
     "dev": "npm-run-all --parallel build_**",
     "build_server": "webpack --config ./build/server.js --progress=true --color=true --compress=true --watch",
     "build_client": "webpack --config ./build/client.js --progress=true --color=true --compress=true --watch",
-    "build_start": "nodemon --watch dist --exec node \"./dist/index.js\""
+    "build_sync": "nodemon --watch dist --exec npx \"./src/mysql/syncTable.js\"",
+    "build_init": "nodemon --watch dist --exec npx \"./src/mysql/initData.js\"",
+    "build_start": "nodemon --watch dist --exec npx \"./dist/index.js\""
   },
   "author": "",
   "license": "ISC",
@@ -43,14 +45,17 @@
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
     "@types/react-router-dom": "^4.3.4",
+    "@types/sequelize": "^4.28.4",
     "axios": "^0.19.0",
     "koa": "^2.7.0",
     "koa-body": "^4.1.0",
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
     "mysql": "^2.17.1",
+    "mysql2": "^1.6.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.1"
+    "react-router-dom": "^5.0.1",
+    "sequelize": "^5.13.0"
   }
 }

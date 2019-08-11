@@ -8,6 +8,7 @@ import KoaBody from "koa-body";
 import koaStatic from "koa-static";
 import render from "../utils";
 
+
 // 创建koa实例
 const app = new Koa();
 // 创建koa路由实例
@@ -20,7 +21,6 @@ app.use(koaStatic("public"));
 app.use(KoaBody());
 // 返回页面
 router.get("/", ctx => {
-  
   ctx.body = render({ url: ctx.request.url });
 });
 
