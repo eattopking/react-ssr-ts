@@ -1,27 +1,34 @@
-// 这就是一套基本完善可以正常工作的tsconfig.json了 lib jsx moduleResolution allowSyntheticDefaultImports 这几个是很重要的
+/*
+  这就是一套基本完善可以正常工作的tsconfig.json了 
+  lib jsx moduleResolution allowSyntheticDefaultImports 这几个是很重要的
+*/
 {
   "compilerOptions": {
     // 出口文件夹
     "outDir": "./dist/",
-    "noImplicitAny": true, // 指出any错误
-    "noImplicitThis": true, // 指出this错误
+    // 指出any错误
+    "noImplicitAny": true,
+    // 指出this错误
+    "noImplicitThis": true,
     "module": "es6",
-    /* Generates corresponding '.map' file. */
-
+    // Generates corresponding '.map' file.
     "sourceMap": true,
     // 将js转成什么版本
     "target": "es5",
-    /* Specify library files to be included in the compilation: */
+    // Specify library files to be included in the compilation:
     "lib": ["es6", "dom"],
     // 可以使用es6模块化
     "allowSyntheticDefaultImports": true,
     // `preserve`的配置让处理`ts的loader`不会去处理它，而是使用后续的`babel-loader`进行处理， 也可以配置成react，
     "jsx": "preserve",
-    // 这个是可以使用node，模块化，不设置会导致webpack编译，报错  /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */                    /* Base directory to resolve non-absolute module names. */
+    /* 这个是可以使用node，模块化，不设置会导致webpack编译，报错 
+     Specify module resolution strategy: 'node' (Node.js) or 'classic' 
+     (TypeScript pre-1.6). Base directory to resolve non-absolute module names. 
+     */
     "moduleResolution": "node",
-    /* Allow javascript files to be compiled. */
+    // Allow javascript files to be compiled.
     "allowJs": true,
-    /* Enables experimental support for ES7 decorators. */
+    // Enables experimental support for ES7 decorators.
     "experimentalDecorators": true,
     // 下面两个配置项是适配自定义.d.ts文件路径的
     "baseUrl": "./",

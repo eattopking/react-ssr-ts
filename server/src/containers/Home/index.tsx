@@ -1,8 +1,8 @@
 import React from "react";
 import { Layout, Menu } from "antd";
-const { Content, Footer, Sider } = Layout;
 import { Link } from "react-router-dom";
 import Routes from "./routes";
+const { Content, Footer, Sider } = Layout;
 
 export default function PageLayout() {
   return (

@@ -21,26 +21,6 @@ export default function DiffTable() {
       key: "address"
     },
     {
-      title: "Tags",
-      key: "tags",
-      dataIndex: "tags",
-      render: (tags: any) => (
-        <span>
-          {tags.map((tag: any) => {
-            let color = tag.length > 5 ? "geekblue" : "green";
-            if (tag === "loser") {
-              color = "volcano";
-            }
-            return (
-              <Tag color={color} key={tag}>
-                {tag.toUpperCase()}
-              </Tag>
-            );
-          })}
-        </span>
-      )
-    },
-    {
       title: "Action",
       key: "action",
       render: (text: any, record: any) => (
@@ -77,6 +57,7 @@ export default function DiffTable() {
   ]);
   const addRow = () => {
     axios.get("./addrow").then((response: { data: { row: [] } }) => {
+      console.log('data', response)
       setData(response.data.row);
     });
   };

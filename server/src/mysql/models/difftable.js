@@ -12,8 +12,10 @@ const diffTable = sequelize.define(
     address: DataTypes.STRING
   },
   {
-    timestamps: false, // 不要默认时间戳
-    tableName: "difftable" // 设置表名,否则将是difftables
+    // 不要默认时间戳
+    timestamps: false,
+    // 设置表名,否则将是difftables
+    tableName: "difftable"
   }
 );
 
