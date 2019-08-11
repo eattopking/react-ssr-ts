@@ -7,6 +7,7 @@ import KoaBody from "koa-body";
 // 静态资源服务管理中间件
 import koaStatic from "koa-static";
 import render from "../utils";
+const Apis = require("../mysql/apis");
 
 
 // 创建koa实例
@@ -26,6 +27,9 @@ router.get("/", ctx => {
 
 // 增行接口
 router.get("/addrow", ctx => {
+  Apis.findAll.then((result) => {
+    console.log('result', result)
+  })
   ctx.body = {
     status: true,
     row: [

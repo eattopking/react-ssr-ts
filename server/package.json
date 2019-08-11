@@ -7,9 +7,8 @@
     "dev": "npm-run-all --parallel build_**",
     "build_server": "webpack --config ./build/server.js --progress=true --color=true --compress=true --watch",
     "build_client": "webpack --config ./build/client.js --progress=true --color=true --compress=true --watch",
-    "build_sync": "nodemon --watch dist --exec npx \"./src/mysql/syncTable.js\"",
-    "build_init": "nodemon --watch dist --exec npx \"./src/mysql/initData.js\"",
-    "build_start": "nodemon --watch dist --exec npx \"./dist/index.js\""
+    "build_start": "nodemon --watch dist --exec npx \"./dist/index.js\"",
+    "sync": "npx ./src/mysql/syncTable.js"
   },
   "author": "",
   "license": "ISC",
