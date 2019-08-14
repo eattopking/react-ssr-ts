@@ -1,5 +1,5 @@
-import simpleTable from "./components/simple_table";
-import diffTable from "./components/diff_table";
+import simpleTable from "./components/simple/simple_table";
+import diffTable from "./components/diff/diff_table";
 
 export default [
   {
