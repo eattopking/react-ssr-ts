@@ -1,7 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 import { Table, Divider, Tag } from "antd";
+import * as simpleReducer from "./store/reducer";
 
-export default function simpleTable() {
+const simpleTable = ({ dispatch }: { dispatch: any }) => {
+  // action集合
+  let actions: object = null;
+
+  // compontentdidmount
+  useEffect(() => {
+    // 给所有action绑定dispatch并且返回
+    actions = bindActionCreators(simpleReducer, dispatch);
+  }, []);
+
   const [columns] = useState([
     {
       title: "Name",
@@ -75,4 +87,13 @@ export default function simpleTable() {
     }
   ]);
   return <Table columns={columns} dataSource={data} pagination={false} />;
-}
+};
+
+// 将store上的state同步到props上
+const mapStateToProps = (state: { simpleReducer: { rows: [] } }) => {
+  return {
+    rows: state.simpleReducer.rows
+  };
+};
+
+export default connect(mapStateToProps)(simpleTable);

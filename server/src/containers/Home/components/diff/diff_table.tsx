@@ -1,8 +1,14 @@
-import React, { useState } from "react";
-import { Table, Divider, Tag, Button } from "antd";
-const axios = require("axios");
+import React, { useState, useEffect } from "react";
+import { Table, Divider, Button } from "antd";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import * as diffActions from "./store/actions";
 
-export default function DiffTable() {
+const DiffTable = ({ dispatch, rows }: { dispatch: any; rows: [] }) => {
+  // action集合
+  let actions = bindActionCreators(diffActions, dispatch);
+
+  // 表格模版
   const [columns] = useState([
     {
       title: "Name",
@@ -32,45 +38,51 @@ export default function DiffTable() {
       )
     }
   ]);
-  const [data, setData] = useState([
-    {
-      key: "1",
-      name: "复杂表格",
-      age: 32,
-      address: "New York No. 1 Lake Park",
-      tags: ["nice", "developer"]
-    },
-    {
-      key: "2",
-      name: "Jim Green",
-      age: 42,
-      address: "London No. 1 Lake Park",
-      tags: ["loser"]
-    },
-    {
-      key: "3",
-      name: "Joe Black",
-      age: 32,
-      address: "Sidney No. 1 Lake Park",
-      tags: ["cool", "teacher"]
-    }
-  ]);
+  // const [data, setData] = useState([
+  //   {
+  //     key: "1",
+  //     name: "复杂表格",
+  //     age: 32,
+  //     address: "New York No. 1 Lake Park",
+  //     tags: ["nice", "developer"]
+  //   },
+  //   {
+  //     key: "2",
+  //     name: "Jim Green",
+  //     age: 42,
+  //     address: "London No. 1 Lake Park",
+  //     tags: ["loser"]
+  //   },
+  //   {
+  //     key: "3",
+  //     name: "Joe Black",
+  //     age: 32,
+  //     address: "Sidney No. 1 Lake Park",
+  //     tags: ["cool", "teacher"]
+  //   }
+  // ]);
   const addRow = () => {
-    axios.get("./addrow").then((response: { data: { row: [] } }) => {
-      console.log('data', response)
-      setData(response.data.row);
-    });
+    actions.addrow();
   };
-  const delRow = () => {
-    axios.get("./delete").then((response: { data: { row: [] } }) => {
-      setData(response.data.row);
-    });
-  };
+  // const delRow = () => {
+  //   axios.get("./delete").then((response: { data: { row: [] } }) => {
+  //     setData(response.data.row);
+  //   });
+  // };
   return (
     <div>
       <Button onClick={addRow}>增行</Button>
-      <Button onClick={delRow}>删行</Button>
-      <Table columns={columns} dataSource={data} pagination={false} />
+      {/* <Button onClick={delRow}>删行</Button> */}
+      <Table columns={columns} dataSource={rows} pagination={false} />
     </div>
   );
-}
+};
+
+// 将store上的state同步到props上
+const mapStateToProps = (state: { diffReducer: { rows: [] } }) => {
+  return {
+    rows: state.diffReducer.rows
+  };
+};
+
+export default connect(mapStateToProps)(DiffTable);
