@@ -29,9 +29,12 @@ router.get("/", ctx => {
 // 增行接口
 router.get("/addrow", async ctx => {
   await Apis.findAll.then(result => {
-    /*使用sequelize findall 从mysql查回来的数据是不能直接使用的,
-    需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
-    在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定*/
+    /*
+      使用sequelize findall 从mysql查回来的数据是不能直接使用的,
+      需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
+      在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
+    */
+   console.log('JSON.parse(JSON.stringify(result))', JSON.parse(JSON.stringify(result)))
     ctx.body = {
       status: true,
       rows: JSON.parse(JSON.stringify(result))
