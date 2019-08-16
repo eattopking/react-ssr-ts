@@ -6,12 +6,14 @@ import KoaBody from "koa-body";
 // 静态资源服务管理中间件
 import koaStatic from "koa-static";
 import render from "../utils";
-const Apis = require("../mysql/apis");
 
+const Apis = require("../mysql/apis");
 // 创建koa实例
 const app = new Koa();
 // 创建koa路由实例
 const router = new Router();
+
+
 /*
   设置静态资源路径, 当客户端请求静态资源是,就到对应目录下寻找返回,
   这里直接设置项目目录下的目录名就行,直接koa就能找到,不用整那些乱七八糟的
@@ -32,7 +34,7 @@ router.get("/addrow", async ctx => {
     在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定*/
     ctx.body = {
       status: true,
-      row: JSON.parse(JSON.stringify(result))
+      rows: JSON.parse(JSON.stringify(result))
     };
   });
 });
@@ -45,9 +47,9 @@ router.get("/delete", ctx => {
   };
 });
 
-/*
-allowedMethods给相应报文自动增加上状态码和allow 字段
-app.use(router.routes()) 这是一次性注册使用react-router接口中间件
-*/
+/**
+ * allowedMethods给相应报文自动增加上状态码和allow 字段
+ * app.use(router.routes()) 这是一次性注册使用react-router接口中间件
+ */
 app.use(router.routes()).use(router.allowedMethods());
 app.listen(8000);

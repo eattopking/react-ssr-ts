@@ -3,10 +3,10 @@ const axios = require("axios");
 
 export const addrow = () => {
   return (dispatch: any) => {
-    axios.get("./addrow").then((response: { data: { row: [] } }) => {
+    axios.get("./addrow").then((response: { data: { rows: [] } }) => {
       dispatch({
         type: DIFF_ADD_ROW,
-        data: response.data.row
+        data: response.data.rows
       });
     });
   };

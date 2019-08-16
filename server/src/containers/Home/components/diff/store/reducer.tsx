@@ -4,13 +4,13 @@ const defaultState: { rows: [] } = {
   rows: []
 };
 
-const diffReducer = (state = defaultState, action: { type: string; data: { rows: [] } }) => {
+const diff = (state = defaultState, action: { type: string; data: [] }) => {
   switch (action.type) {
     case DIFF_ADD_ROW:
-      return { ...state, rows: action.data.rows };
+      return { ...state, rows: action.data };
     default:
       return state;
   }
 };
 
-export default diffReducer;
+export default diff;

@@ -1,19 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { Table, Divider, Tag } from "antd";
-import * as simpleReducer from "./store/reducer";
+import { Table, Divider, Button } from "antd";
+import * as simpleActions from "./store/actions";
 
-const simpleTable = ({ dispatch }: { dispatch: any }) => {
+const simpleTable = ({ dispatch, rows }: { dispatch: any; rows: [] }) => {
   // action集合
-  let actions: object = null;
+  const actions = bindActionCreators(simpleActions, dispatch);
 
-  // compontentdidmount
-  useEffect(() => {
-    // 给所有action绑定dispatch并且返回
-    actions = bindActionCreators(simpleReducer, dispatch);
-  }, []);
-
+  // 表格列选项
   const [columns] = useState([
     {
       title: "Name",
@@ -32,26 +27,6 @@ const simpleTable = ({ dispatch }: { dispatch: any }) => {
       key: "address"
     },
     {
-      title: "Tags",
-      key: "tags",
-      dataIndex: "tags",
-      render: (tags: any) => (
-        <span>
-          {tags.map((tag: any) => {
-            let color = tag.length > 5 ? "geekblue" : "green";
-            if (tag === "loser") {
-              color = "volcano";
-            }
-            return (
-              <Tag color={color} key={tag}>
-                {tag.toUpperCase()}
-              </Tag>
-            );
-          })}
-        </span>
-      )
-    },
-    {
       title: "Action",
       key: "action",
       render: (text: any, record: any) => (
@@ -63,36 +38,24 @@ const simpleTable = ({ dispatch }: { dispatch: any }) => {
       )
     }
   ]);
-  const [data] = useState([
-    {
-      key: "1",
-      name: "简单表格",
-      age: 32,
-      address: "New York No. 1 Lake Park",
-      tags: ["nice", "developer"]
-    },
-    {
-      key: "2",
-      name: "Jim Green",
-      age: 42,
-      address: "London No. 1 Lake Park",
-      tags: ["loser"]
-    },
-    {
-      key: "3",
-      name: "Joe Black",
-      age: 32,
-      address: "Sidney No. 1 Lake Park",
-      tags: ["cool", "teacher"]
-    }
-  ]);
-  return <Table columns={columns} dataSource={data} pagination={false} />;
+
+  // 增行
+  const addRow = () => {
+    actions.addrow();
+  };
+
+  return (
+    <>
+      <Button onClick={addRow}>增行</Button>
+      <Table columns={columns} dataSource={rows} pagination={false} />
+    </>
+  );
 };
 
 // 将store上的state同步到props上
-const mapStateToProps = (state: { simpleReducer: { rows: [] } }) => {
+const mapStateToProps = (state: { simple: { rows: [] } }) => {
   return {
-    rows: state.simpleReducer.rows
+    rows: state.simple.rows
   };
 };
 
