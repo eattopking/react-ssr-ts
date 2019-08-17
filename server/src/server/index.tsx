@@ -13,7 +13,6 @@ const app = new Koa();
 // 创建koa路由实例
 const router = new Router();
 
-
 /*
   设置静态资源路径, 当客户端请求静态资源是,就到对应目录下寻找返回,
   这里直接设置项目目录下的目录名就行,直接koa就能找到,不用整那些乱七八糟的
@@ -22,19 +21,19 @@ app.use(koaStatic("public"));
 // 给koa-router设置响应头的很多信息
 app.use(KoaBody());
 // 返回页面
-router.get("/", ctx => {
-  ctx.body = render({ url: ctx.request.url });
+router.get("/", (ctx: { body: string; request: { url: string } }) => {
+  ctx.body = render({ url: ctx.request.url, context: {} });
 });
 
 // 增行接口
-router.get("/addrow", async ctx => {
-  await Apis.findAll.then(result => {
+router.get("/addrow", async (ctx: { body: object }) => {
+  await Apis.findAll.then((result: object) => {
     /*
       使用sequelize findall 从mysql查回来的数据是不能直接使用的,
       需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
       在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
     */
-   console.log('JSON.parse(JSON.stringify(result))', JSON.parse(JSON.stringify(result)))
+    console.log("JSON.parse(JSON.stringify(result))", JSON.parse(JSON.stringify(result)));
     ctx.body = {
       status: true,
       rows: JSON.parse(JSON.stringify(result))
@@ -43,7 +42,7 @@ router.get("/addrow", async ctx => {
 });
 
 // 删行接口
-router.get("/delete", ctx => {
+router.get("/delete", (ctx: { body: object }) => {
   ctx.body = {
     status: true,
     row: []

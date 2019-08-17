@@ -13,7 +13,7 @@ module.exports = function() {
     // 设置编译后的代码在node环境中运行,从而不把node脚本引用的库编译压缩进文件
     target: "node",
     // 入口 这里路径就是固定以项目根路径开始
-    entry: { index: "./src/server/index.js" },
+    entry: { index: "./src/server/index.tsx" },
     // 出口
     output: {
       // 所要打包到的目标目录
