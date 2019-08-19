@@ -59,4 +59,8 @@ const mapStateToProps = (state: { diff: { rows: [] } }) => {
   };
 };
 
+export const diffLoadData = (store: { dispatch: Function }) => {
+  store.dispatch(diffActions.addrow());
+};
+
 export default connect(mapStateToProps)(DiffTable);

@@ -59,4 +59,8 @@ const mapStateToProps = (state: { simple: { rows: [] } }) => {
   };
 };
 
+export const simpleLoadData = (store: { dispatch: Function }) => {
+  store.dispatch(simpleActions.addrow());
+};
+
 export default connect(mapStateToProps)(simpleTable);
