@@ -27,17 +27,17 @@ const router = new Router();
 app.use(koaStatic("public"));
 // 给koa-router设置响应头的很多信息
 app.use(KoaBody());
-// 返回页面
+// 返回首页
 router.get("/", async (ctx: { body: string; request: { url: string } }) => {
   const store = getStore();
   const matchedRoutes = matchRoutes(routes, ctx.request.url);
   const promises = matchedRoutes.map(route => {
     return route.route.loadData(store);
   });
-   const allpromise = Promise.all(promises).then(() => {
+  await Promise.all(promises).then(() => {
+    // 当ctx.body在promise中使用时,外部回调函数一定要使用async, 一定要让对应的Promise等待
     ctx.body = render({ url: ctx.request.url, context: {}, store });
   });
-  await allpromise;
 });
 
 // 增行接口
@@ -48,7 +48,6 @@ router.get("/addrow", async (ctx: { body: object }) => {
       需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
       在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
     */
-    console.log("JSON.parse(JSON.stringify(result))", JSON.parse(JSON.stringify(result)));
     ctx.body = {
       status: true,
       rows: JSON.parse(JSON.stringify(result))

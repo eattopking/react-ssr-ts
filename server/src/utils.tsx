@@ -5,7 +5,7 @@ import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom";
 
 export default function render({ url, context = {}, store }: { url: string; context: object; store: any }) {
-  // ocation={url}作用应该是每次后台初次返回页面时决定,初次显示那个路径下的页面
+  // location={url}作用应该是每次后台初次返回页面时决定,初次显示那个路径下的页面
   const content = renderToString(
     <Provider store={store}>
       <StaticRouter location={url} context={context}>
