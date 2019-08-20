@@ -12,6 +12,7 @@ import render from "../utils";
  *  */
 import { matchRoutes } from "react-router-config";
 import routes from "../containers/Home/routes";
+import { getStore } from "../rootStore";
 
 const Apis = require("../mysql/apis");
 // 创建koa实例
@@ -27,13 +28,16 @@ app.use(koaStatic("public"));
 // 给koa-router设置响应头的很多信息
 app.use(KoaBody());
 // 返回页面
-router.get("/", (ctx: { body: string; request: { url: string } }) => {
+router.get("/", async (ctx: { body: string; request: { url: string } }) => {
+  const store = getStore();
   const matchedRoutes = matchRoutes(routes, ctx.request.url);
-  matchedRoutes.map((route) => {
-    
-  })
-
-  ctx.body = render({ url: ctx.request.url, context: {} });
+  const promises = matchedRoutes.map(route => {
+    return route.route.loadData(store);
+  });
+   const allpromise = Promise.all(promises).then(() => {
+    ctx.body = render({ url: ctx.request.url, context: {}, store });
+  });
+  await allpromise;
 });
 
 // 增行接口

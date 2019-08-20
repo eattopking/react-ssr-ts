@@ -3,7 +3,7 @@ const axios = require("axios");
 
 export const addrow = () => {
   return (dispatch: any) => {
-    axios.get("./addrow").then((response: { data: { rows: [] } }) => {
+    return axios.get("http://localhost:8000/addrow").then((response: { data: { rows: [] } }) => {
       dispatch({
         type: SIMPLE_ADD_ROW,
         data: response.data.rows
