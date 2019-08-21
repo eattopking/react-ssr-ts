@@ -1,0 +1,1780 @@
+2019-08-21 22:49 +08:00: { SequelizeConnectionError: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:49 +08:00:     at Promise.tap.then.catch.err (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:133:19)
+2019-08-21 22:49 +08:00: From previous event:
+2019-08-21 22:49 +08:00:     at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+2019-08-21 22:49 +08:00:     at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:49 +08:00:     at runCallback (timers.js:705:18)
+2019-08-21 22:49 +08:00:     at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:49 +08:00:     at processImmediate (timers.js:658:5)
+2019-08-21 22:49 +08:00: From previous event:
+2019-08-21 22:49 +08:00:     at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:49 +08:00:     at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:49 +08:00:     at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:49 +08:00: From previous event:
+2019-08-21 22:49 +08:00:     at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:49 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:49 +08:00:     at new Promise (<anonymous>)
+2019-08-21 22:49 +08:00:     at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:49 +08:00:     at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:49 +08:00: From previous event:
+2019-08-21 22:49 +08:00:     at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:49 +08:00:     at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:49 +08:00:     at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:49 +08:00:     at runCallback (timers.js:705:18)
+2019-08-21 22:49 +08:00:     at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:49 +08:00:     at processImmediate (timers.js:658:5)
+2019-08-21 22:49 +08:00: From previous event:
+2019-08-21 22:49 +08:00:     at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:49 +08:00:     at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:49 +08:00:     at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:49 +08:00:     at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:49 +08:00:     at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:49 +08:00:     at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:49 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:49 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:49 +08:00:     at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:49 +08:00:     at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:49 +08:00:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:49 +08:00:     at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:49 +08:00:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:49 +08:00:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:49 +08:00:     at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:49 +08:00:     at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:49 +08:00:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:49 +08:00:     at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:49 +08:00:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:49 +08:00:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:49 +08:00:     at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:49 +08:00:     at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:49 +08:00:     at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:49 +08:00:   name: 'SequelizeConnectionError',
+2019-08-21 22:49 +08:00:   parent:
+2019-08-21 22:49 +08:00:    { Error: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:49 +08:00:        at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+2019-08-21 22:49 +08:00:    From previous event:
+2019-08-21 22:49 +08:00:        at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:70:12)
+2019-08-21 22:49 +08:00:        at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:49 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:49 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:49 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:49 +08:00:    From previous event:
+2019-08-21 22:49 +08:00:        at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:49 +08:00:        at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:49 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:49 +08:00:    From previous event:
+2019-08-21 22:49 +08:00:        at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:49 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:49 +08:00:        at new Promise (<anonymous>)
+2019-08-21 22:49 +08:00:        at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:49 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:49 +08:00:    From previous event:
+2019-08-21 22:49 +08:00:        at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:49 +08:00:        at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:49 +08:00:        at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:49 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:49 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:49 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:49 +08:00:    From previous event:
+2019-08-21 22:49 +08:00:        at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:49 +08:00:        at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:49 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:49 +08:00:        at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:49 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:49 +08:00:        at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:49 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:49 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:49 +08:00:        at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:49 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:49 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:49 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:49 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:49 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:49 +08:00:        at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:49 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:49 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:49 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:49 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:49 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:49 +08:00:        at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:49 +08:00:        at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:49 +08:00:        at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:49 +08:00:      errno: 'ENOENT',
+2019-08-21 22:49 +08:00:      code: 'ENOENT',
+2019-08-21 22:49 +08:00: nect',
+2019-08-21 22:49 +08:00:      address: '/tmp/mysql.sock',
+2019-08-21 22:49 +08:00:      fatal: true },
+2019-08-21 22:49 +08:00:   original:
+2019-08-21 22:49 +08:00:    { Error: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:49 +08:00:        at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+2019-08-21 22:49 +08:00:    From previous event:
+2019-08-21 22:49 +08:00:        at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:70:12)
+2019-08-21 22:49 +08:00:        at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:49 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:49 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:49 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:49 +08:00:    From previous event:
+2019-08-21 22:49 +08:00:        at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:49 +08:00:        at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:49 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:49 +08:00:    From previous event:
+2019-08-21 22:49 +08:00:        at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:49 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:49 +08:00:        at new Promise (<anonymous>)
+2019-08-21 22:49 +08:00:        at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:49 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:49 +08:00:    From previous event:
+2019-08-21 22:49 +08:00:        at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:49 +08:00:        at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:49 +08:00:        at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:49 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:49 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:49 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:49 +08:00:    From previous event:
+2019-08-21 22:49 +08:00:        at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:49 +08:00:        at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:49 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:49 +08:00:        at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:49 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:49 +08:00:        at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:49 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:49 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:49 +08:00:        at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:49 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:49 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:49 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:49 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:49 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:49 +08:00:        at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:49 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:49 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:49 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:49 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:49 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:49 +08:00:        at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:49 +08:00:        at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:49 +08:00:        at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:49 +08:00:      errno: 'ENOENT',
+2019-08-21 22:49 +08:00:      code: 'ENOENT',
+2019-08-21 22:49 +08:00:      syscall: 'connect',
+2019-08-21 22:49 +08:00:      address: '/tmp/mysql.sock',
+2019-08-21 22:49 +08:00:      fatal: true } }
+2019-08-21 22:50 +08:00: { SequelizeConnectionError: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:50 +08:00:     at Promise.tap.then.catch.err (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:133:19)
+2019-08-21 22:50 +08:00: From previous event:
+2019-08-21 22:50 +08:00:     at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+2019-08-21 22:50 +08:00:     at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:50 +08:00:     at runCallback (timers.js:705:18)
+2019-08-21 22:50 +08:00:     at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:50 +08:00:     at processImmediate (timers.js:658:5)
+2019-08-21 22:50 +08:00: From previous event:
+2019-08-21 22:50 +08:00:     at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:50 +08:00:     at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:50 +08:00:     at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:50 +08:00: From previous event:
+2019-08-21 22:50 +08:00:     at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:50 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:50 +08:00:     at new Promise (<anonymous>)
+2019-08-21 22:50 +08:00:     at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:50 +08:00:     at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:50 +08:00: From previous event:
+2019-08-21 22:50 +08:00:     at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:50 +08:00:     at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:50 +08:00:     at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:50 +08:00:     at runCallback (timers.js:705:18)
+2019-08-21 22:50 +08:00:     at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:50 +08:00:     at processImmediate (timers.js:658:5)
+2019-08-21 22:50 +08:00: From previous event:
+2019-08-21 22:50 +08:00:     at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:50 +08:00:     at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:50 +08:00:     at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:50 +08:00:     at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:50 +08:00:     at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:50 +08:00:     at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:50 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:50 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:50 +08:00:     at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:50 +08:00:     at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:50 +08:00:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:50 +08:00:     at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:50 +08:00:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:50 +08:00:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:50 +08:00:     at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:50 +08:00:     at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:50 +08:00:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:50 +08:00:     at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:50 +08:00:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:50 +08:00:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:50 +08:00:     at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:50 +08:00:     at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:50 +08:00:     at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:50 +08:00:   name: 'SequelizeConnectionError',
+2019-08-21 22:50 +08:00:   parent:
+2019-08-21 22:50 +08:00:    { Error: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:50 +08:00:        at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+2019-08-21 22:50 +08:00:    From previous event:
+2019-08-21 22:50 +08:00:        at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:70:12)
+2019-08-21 22:50 +08:00:        at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:50 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:50 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:50 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:50 +08:00:    From previous event:
+2019-08-21 22:50 +08:00:        at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:50 +08:00:        at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:50 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:50 +08:00:    From previous event:
+2019-08-21 22:50 +08:00:        at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:50 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:50 +08:00:        at new Promise (<anonymous>)
+2019-08-21 22:50 +08:00:        at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:50 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:50 +08:00:    From previous event:
+2019-08-21 22:50 +08:00:        at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:50 +08:00:        at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:50 +08:00:        at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:50 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:50 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:50 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:50 +08:00:    From previous event:
+2019-08-21 22:50 +08:00:        at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:50 +08:00:        at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:50 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:50 +08:00:        at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:50 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:50 +08:00:        at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:50 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:50 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:50 +08:00:        at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:50 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:50 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:50 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:50 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:50 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:50 +08:00:        at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:50 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:50 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:50 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:50 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:50 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:50 +08:00:        at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:50 +08:00:        at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:50 +08:00:        at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:50 +08:00:      errno: 'ENOENT',
+2019-08-21 22:50 +08:00:      code: 'ENOENT',
+2019-08-21 22:50 +08:00: nect',
+2019-08-21 22:50 +08:00:      address: '/tmp/mysql.sock',
+2019-08-21 22:50 +08:00:      fatal: true },
+2019-08-21 22:50 +08:00:   original:
+2019-08-21 22:50 +08:00:    { Error: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:50 +08:00:        at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+2019-08-21 22:50 +08:00:    From previous event:
+2019-08-21 22:50 +08:00:        at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:70:12)
+2019-08-21 22:50 +08:00:        at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:50 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:50 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:50 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:50 +08:00:    From previous event:
+2019-08-21 22:50 +08:00:        at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:50 +08:00:        at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:50 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:50 +08:00:    From previous event:
+2019-08-21 22:50 +08:00:        at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:50 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:50 +08:00:        at new Promise (<anonymous>)
+2019-08-21 22:50 +08:00:        at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:50 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:50 +08:00:    From previous event:
+2019-08-21 22:50 +08:00:        at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:50 +08:00:        at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:50 +08:00:        at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:50 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:50 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:50 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:50 +08:00:    From previous event:
+2019-08-21 22:50 +08:00:        at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:50 +08:00:        at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:50 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:50 +08:00:        at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:50 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:50 +08:00:        at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:50 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:50 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:50 +08:00:        at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:50 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:50 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:50 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:50 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:50 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:50 +08:00:        at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:50 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:50 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:50 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:50 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:50 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:50 +08:00:        at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:50 +08:00:        at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:50 +08:00:        at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:50 +08:00:      errno: 'ENOENT',
+2019-08-21 22:50 +08:00:      code: 'ENOENT',
+2019-08-21 22:50 +08:00:      syscall: 'connect',
+2019-08-21 22:50 +08:00:      address: '/tmp/mysql.sock',
+2019-08-21 22:50 +08:00:      fatal: true } }
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   SequelizeConnectionError: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:51 +08:00:       at Promise.tap.then.catch.err (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:133:19)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+2019-08-21 22:51 +08:00:       at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:51 +08:00:       at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:51 +08:00:       at new Promise (<anonymous>)
+2019-08-21 22:51 +08:00:       at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:51 +08:00:       at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:51 +08:00:       at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:51 +08:00:       at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:51 +08:00:       at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:51 +08:00:       at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   Error: Request failed with status code 500
+2019-08-21 22:51 +08:00:       at createError (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/createError.js:16:15)
+2019-08-21 22:51 +08:00:       at settle (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/settle.js:17:12)
+2019-08-21 22:51 +08:00:       at IncomingMessage.handleStreamEnd (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/adapters/http.js:237:11)
+2019-08-21 22:51 +08:00:       at IncomingMessage.emit (events.js:203:15)
+2019-08-21 22:51 +08:00:       at endReadableNT (_stream_readable.js:1145:12)
+2019-08-21 22:51 +08:00:       at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   SequelizeConnectionError: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:51 +08:00:       at Promise.tap.then.catch.err (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:133:19)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+2019-08-21 22:51 +08:00:       at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:51 +08:00:       at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:51 +08:00:       at new Promise (<anonymous>)
+2019-08-21 22:51 +08:00:       at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:51 +08:00:       at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:51 +08:00:       at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:51 +08:00:       at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:51 +08:00:       at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:51 +08:00:       at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   Error: Request failed with status code 500
+2019-08-21 22:51 +08:00:       at createError (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/createError.js:16:15)
+2019-08-21 22:51 +08:00:       at settle (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/settle.js:17:12)
+2019-08-21 22:51 +08:00:       at IncomingMessage.handleStreamEnd (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/adapters/http.js:237:11)
+2019-08-21 22:51 +08:00:       at IncomingMessage.emit (events.js:203:15)
+2019-08-21 22:51 +08:00:       at endReadableNT (_stream_readable.js:1145:12)
+2019-08-21 22:51 +08:00:       at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   SequelizeConnectionError: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:51 +08:00:       at Promise.tap.then.catch.err (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:133:19)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+2019-08-21 22:51 +08:00:       at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:51 +08:00:       at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:51 +08:00:       at new Promise (<anonymous>)
+2019-08-21 22:51 +08:00:       at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:51 +08:00:       at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:51 +08:00:       at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:51 +08:00:       at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:51 +08:00:       at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:51 +08:00:       at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   Error: Request failed with status code 500
+2019-08-21 22:51 +08:00:       at createError (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/createError.js:16:15)
+2019-08-21 22:51 +08:00:       at settle (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/settle.js:17:12)
+2019-08-21 22:51 +08:00:       at IncomingMessage.handleStreamEnd (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/adapters/http.js:237:11)
+2019-08-21 22:51 +08:00:       at IncomingMessage.emit (events.js:203:15)
+2019-08-21 22:51 +08:00:       at endReadableNT (_stream_readable.js:1145:12)
+2019-08-21 22:51 +08:00:       at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   SequelizeConnectionError: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:51 +08:00:       at Promise.tap.then.catch.err (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:133:19)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+2019-08-21 22:51 +08:00:       at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:51 +08:00:       at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:51 +08:00:       at new Promise (<anonymous>)
+2019-08-21 22:51 +08:00:       at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:51 +08:00:       at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:51 +08:00:       at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:51 +08:00:       at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:51 +08:00:       at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:51 +08:00:       at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   Error: Request failed with status code 500
+2019-08-21 22:51 +08:00:       at createError (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/createError.js:16:15)
+2019-08-21 22:51 +08:00:       at settle (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/settle.js:17:12)
+2019-08-21 22:51 +08:00:       at IncomingMessage.handleStreamEnd (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/adapters/http.js:237:11)
+2019-08-21 22:51 +08:00:       at IncomingMessage.emit (events.js:203:15)
+2019-08-21 22:51 +08:00:       at endReadableNT (_stream_readable.js:1145:12)
+2019-08-21 22:51 +08:00:       at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   SequelizeConnectionError: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:51 +08:00:       at Promise.tap.then.catch.err (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:133:19)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+2019-08-21 22:51 +08:00:       at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:51 +08:00:       at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:51 +08:00:       at new Promise (<anonymous>)
+2019-08-21 22:51 +08:00:       at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:51 +08:00:       at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:51 +08:00:       at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:51 +08:00:       at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:51 +08:00:       at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:51 +08:00:       at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   Error: Request failed with status code 500
+2019-08-21 22:51 +08:00:       at createError (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/createError.js:16:15)
+2019-08-21 22:51 +08:00:       at settle (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/settle.js:17:12)
+2019-08-21 22:51 +08:00:       at IncomingMessage.handleStreamEnd (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/adapters/http.js:237:11)
+2019-08-21 22:51 +08:00:       at IncomingMessage.emit (events.js:203:15)
+2019-08-21 22:51 +08:00:       at endReadableNT (_stream_readable.js:1145:12)
+2019-08-21 22:51 +08:00:       at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   SequelizeConnectionError: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:51 +08:00:       at Promise.tap.then.catch.err (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:133:19)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+2019-08-21 22:51 +08:00:       at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:51 +08:00:       at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:51 +08:00:       at new Promise (<anonymous>)
+2019-08-21 22:51 +08:00:       at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:51 +08:00:       at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:51 +08:00:       at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:51 +08:00:       at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:51 +08:00:       at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:51 +08:00:       at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   Error: Request failed with status code 500
+2019-08-21 22:51 +08:00:       at createError (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/createError.js:16:15)
+2019-08-21 22:51 +08:00:       at settle (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/settle.js:17:12)
+2019-08-21 22:51 +08:00:       at IncomingMessage.handleStreamEnd (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/adapters/http.js:237:11)
+2019-08-21 22:51 +08:00:       at IncomingMessage.emit (events.js:203:15)
+2019-08-21 22:51 +08:00:       at endReadableNT (_stream_readable.js:1145:12)
+2019-08-21 22:51 +08:00:       at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   SequelizeConnectionError: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:51 +08:00:       at Promise.tap.then.catch.err (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:133:19)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+2019-08-21 22:51 +08:00:       at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:51 +08:00:       at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:51 +08:00:       at new Promise (<anonymous>)
+2019-08-21 22:51 +08:00:       at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:51 +08:00:       at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:51 +08:00:       at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:51 +08:00:       at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:51 +08:00:       at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:51 +08:00:       at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   Error: Request failed with status code 500
+2019-08-21 22:51 +08:00:       at createError (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/createError.js:16:15)
+2019-08-21 22:51 +08:00:       at settle (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/settle.js:17:12)
+2019-08-21 22:51 +08:00:       at IncomingMessage.handleStreamEnd (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/adapters/http.js:237:11)
+2019-08-21 22:51 +08:00:       at IncomingMessage.emit (events.js:203:15)
+2019-08-21 22:51 +08:00:       at endReadableNT (_stream_readable.js:1145:12)
+2019-08-21 22:51 +08:00:       at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   SequelizeConnectionError: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:51 +08:00:       at Promise.tap.then.catch.err (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:133:19)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+2019-08-21 22:51 +08:00:       at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:51 +08:00:       at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:51 +08:00:       at new Promise (<anonymous>)
+2019-08-21 22:51 +08:00:       at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:51 +08:00:       at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:51 +08:00:       at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:51 +08:00:       at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:51 +08:00:       at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:51 +08:00:       at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   Error: Request failed with status code 500
+2019-08-21 22:51 +08:00:       at createError (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/createError.js:16:15)
+2019-08-21 22:51 +08:00:       at settle (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/settle.js:17:12)
+2019-08-21 22:51 +08:00:       at IncomingMessage.handleStreamEnd (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/adapters/http.js:237:11)
+2019-08-21 22:51 +08:00:       at IncomingMessage.emit (events.js:203:15)
+2019-08-21 22:51 +08:00:       at endReadableNT (_stream_readable.js:1145:12)
+2019-08-21 22:51 +08:00:       at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   SequelizeConnectionError: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:51 +08:00:       at Promise.tap.then.catch.err (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:133:19)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+2019-08-21 22:51 +08:00:       at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:51 +08:00:       at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:51 +08:00:       at new Promise (<anonymous>)
+2019-08-21 22:51 +08:00:       at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:51 +08:00:       at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:51 +08:00:       at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:51 +08:00:       at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:51 +08:00:       at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:51 +08:00:       at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   Error: Request failed with status code 500
+2019-08-21 22:51 +08:00:       at createError (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/createError.js:16:15)
+2019-08-21 22:51 +08:00:       at settle (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/settle.js:17:12)
+2019-08-21 22:51 +08:00:       at IncomingMessage.handleStreamEnd (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/adapters/http.js:237:11)
+2019-08-21 22:51 +08:00:       at IncomingMessage.emit (events.js:203:15)
+2019-08-21 22:51 +08:00:       at endReadableNT (_stream_readable.js:1145:12)
+2019-08-21 22:51 +08:00:       at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   SequelizeConnectionError: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:51 +08:00:       at Promise.tap.then.catch.err (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:133:19)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+2019-08-21 22:51 +08:00:       at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:51 +08:00:       at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:51 +08:00:       at new Promise (<anonymous>)
+2019-08-21 22:51 +08:00:       at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:51 +08:00:       at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:51 +08:00:       at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:51 +08:00:       at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:51 +08:00:       at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:51 +08:00:       at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   Error: Request failed with status code 500
+2019-08-21 22:51 +08:00:       at createError (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/createError.js:16:15)
+2019-08-21 22:51 +08:00:       at settle (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/settle.js:17:12)
+2019-08-21 22:51 +08:00:       at IncomingMessage.handleStreamEnd (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/adapters/http.js:237:11)
+2019-08-21 22:51 +08:00:       at IncomingMessage.emit (events.js:203:15)
+2019-08-21 22:51 +08:00:       at endReadableNT (_stream_readable.js:1145:12)
+2019-08-21 22:51 +08:00:       at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   SequelizeConnectionError: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:51 +08:00:       at Promise.tap.then.catch.err (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:133:19)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+2019-08-21 22:51 +08:00:       at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:51 +08:00:       at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:51 +08:00:       at new Promise (<anonymous>)
+2019-08-21 22:51 +08:00:       at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:51 +08:00:       at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:51 +08:00:       at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:51 +08:00:       at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:51 +08:00:       at runCallback (timers.js:705:18)
+2019-08-21 22:51 +08:00:       at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:51 +08:00:       at processImmediate (timers.js:658:5)
+2019-08-21 22:51 +08:00:   From previous event:
+2019-08-21 22:51 +08:00:       at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:51 +08:00:       at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:51 +08:00:       at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:51 +08:00:       at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:51 +08:00:       at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:51 +08:00:       at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:51 +08:00:       at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:51 +08:00:       at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:51 +08:00:       at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:51 +08:00:       at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:51 +08:00:       at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:51 +08:00:       at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:51 +08:00:       at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:51 +08:00:   Error: Request failed with status code 500
+2019-08-21 22:51 +08:00:       at createError (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/createError.js:16:15)
+2019-08-21 22:51 +08:00:       at settle (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/core/settle.js:17:12)
+2019-08-21 22:51 +08:00:       at IncomingMessage.handleStreamEnd (/Users/zhangheng/myPractice/reactssr/server/node_modules/axios/lib/adapters/http.js:237:11)
+2019-08-21 22:51 +08:00:       at IncomingMessage.emit (events.js:203:15)
+2019-08-21 22:51 +08:00:       at endReadableNT (_stream_readable.js:1145:12)
+2019-08-21 22:51 +08:00:       at process._tickCallback (internal/process/next_tick.js:63:19)
+2019-08-21 22:51 +08:00: 
+2019-08-21 22:53 +08:00: { SequelizeConnectionError: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:53 +08:00:     at Promise.tap.then.catch.err (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:133:19)
+2019-08-21 22:53 +08:00: From previous event:
+2019-08-21 22:53 +08:00:     at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+2019-08-21 22:53 +08:00:     at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:53 +08:00:     at runCallback (timers.js:705:18)
+2019-08-21 22:53 +08:00:     at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:53 +08:00:     at processImmediate (timers.js:658:5)
+2019-08-21 22:53 +08:00: From previous event:
+2019-08-21 22:53 +08:00:     at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:53 +08:00:     at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:53 +08:00:     at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:53 +08:00: From previous event:
+2019-08-21 22:53 +08:00:     at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:53 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:53 +08:00:     at new Promise (<anonymous>)
+2019-08-21 22:53 +08:00:     at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:53 +08:00:     at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:53 +08:00: From previous event:
+2019-08-21 22:53 +08:00:     at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:53 +08:00:     at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:53 +08:00:     at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:53 +08:00:     at runCallback (timers.js:705:18)
+2019-08-21 22:53 +08:00:     at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:53 +08:00:     at processImmediate (timers.js:658:5)
+2019-08-21 22:53 +08:00: From previous event:
+2019-08-21 22:53 +08:00:     at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:53 +08:00:     at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:53 +08:00:     at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:53 +08:00:     at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:53 +08:00:     at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:53 +08:00:     at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:53 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:53 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:53 +08:00:     at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:53 +08:00:     at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:53 +08:00:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:53 +08:00:     at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:53 +08:00:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:53 +08:00:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:53 +08:00:     at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:53 +08:00:     at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:53 +08:00:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:53 +08:00:     at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:53 +08:00:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:53 +08:00:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:53 +08:00:     at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:53 +08:00:     at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:53 +08:00:     at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:53 +08:00:   name: 'SequelizeConnectionError',
+2019-08-21 22:53 +08:00:   parent:
+2019-08-21 22:53 +08:00:    { Error: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:53 +08:00:        at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+2019-08-21 22:53 +08:00:    From previous event:
+2019-08-21 22:53 +08:00:        at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:70:12)
+2019-08-21 22:53 +08:00:        at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:53 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:53 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:53 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:53 +08:00:    From previous event:
+2019-08-21 22:53 +08:00:        at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:53 +08:00:        at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:53 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:53 +08:00:    From previous event:
+2019-08-21 22:53 +08:00:        at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:53 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:53 +08:00:        at new Promise (<anonymous>)
+2019-08-21 22:53 +08:00:        at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:53 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:53 +08:00:    From previous event:
+2019-08-21 22:53 +08:00:        at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:53 +08:00:        at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:53 +08:00:        at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:53 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:53 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:53 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:53 +08:00:    From previous event:
+2019-08-21 22:53 +08:00:        at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:53 +08:00:        at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:53 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:53 +08:00:        at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:53 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:53 +08:00:        at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:53 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:53 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:53 +08:00:        at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:53 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:53 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:53 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:53 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:53 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:53 +08:00:        at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:53 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:53 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:53 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:53 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:53 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:53 +08:00:        at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:53 +08:00:        at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:53 +08:00:        at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:53 +08:00:      errno: 'ENOENT',
+2019-08-21 22:53 +08:00:      code: 'ENOENT',
+2019-08-21 22:53 +08:00: nect',
+2019-08-21 22:53 +08:00:      address: '/tmp/mysql.sock',
+2019-08-21 22:53 +08:00:      fatal: true },
+2019-08-21 22:53 +08:00:   original:
+2019-08-21 22:53 +08:00:    { Error: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:53 +08:00:        at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+2019-08-21 22:53 +08:00:    From previous event:
+2019-08-21 22:53 +08:00:        at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:70:12)
+2019-08-21 22:53 +08:00:        at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:53 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:53 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:53 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:53 +08:00:    From previous event:
+2019-08-21 22:53 +08:00:        at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:53 +08:00:        at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:53 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:53 +08:00:    From previous event:
+2019-08-21 22:53 +08:00:        at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:53 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:53 +08:00:        at new Promise (<anonymous>)
+2019-08-21 22:53 +08:00:        at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:53 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:53 +08:00:    From previous event:
+2019-08-21 22:53 +08:00:        at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:53 +08:00:        at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:53 +08:00:        at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:53 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:53 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:53 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:53 +08:00:    From previous event:
+2019-08-21 22:53 +08:00:        at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:53 +08:00:        at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:53 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:53 +08:00:        at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:53 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:53 +08:00:        at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:53 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:53 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:53 +08:00:        at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:53 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:53 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:53 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:53 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:53 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:53 +08:00:        at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:53 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:53 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:53 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:53 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:53 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:53 +08:00:        at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:53 +08:00:        at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:53 +08:00:        at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:53 +08:00:      errno: 'ENOENT',
+2019-08-21 22:53 +08:00:      code: 'ENOENT',
+2019-08-21 22:53 +08:00:      syscall: 'connect',
+2019-08-21 22:53 +08:00:      address: '/tmp/mysql.sock',
+2019-08-21 22:53 +08:00:      fatal: true } }
+2019-08-21 22:55 +08:00: { SequelizeConnectionError: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:55 +08:00:     at Promise.tap.then.catch.err (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:133:19)
+2019-08-21 22:55 +08:00: From previous event:
+2019-08-21 22:55 +08:00:     at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+2019-08-21 22:55 +08:00:     at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:55 +08:00:     at runCallback (timers.js:705:18)
+2019-08-21 22:55 +08:00:     at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:55 +08:00:     at processImmediate (timers.js:658:5)
+2019-08-21 22:55 +08:00: From previous event:
+2019-08-21 22:55 +08:00:     at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:55 +08:00:     at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:55 +08:00:     at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:55 +08:00: From previous event:
+2019-08-21 22:55 +08:00:     at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:55 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:55 +08:00:     at new Promise (<anonymous>)
+2019-08-21 22:55 +08:00:     at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:55 +08:00:     at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:55 +08:00: From previous event:
+2019-08-21 22:55 +08:00:     at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:55 +08:00:     at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:55 +08:00:     at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:55 +08:00:     at runCallback (timers.js:705:18)
+2019-08-21 22:55 +08:00:     at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:55 +08:00:     at processImmediate (timers.js:658:5)
+2019-08-21 22:55 +08:00: From previous event:
+2019-08-21 22:55 +08:00:     at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:55 +08:00:     at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:55 +08:00:     at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:55 +08:00:     at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:55 +08:00:     at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:55 +08:00:     at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:55 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:55 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:55 +08:00:     at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:55 +08:00:     at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:55 +08:00:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:55 +08:00:     at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:55 +08:00:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:55 +08:00:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:55 +08:00:     at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:55 +08:00:     at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:55 +08:00:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:55 +08:00:     at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:55 +08:00:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:55 +08:00:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:55 +08:00:     at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:55 +08:00:     at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:55 +08:00:     at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:55 +08:00:   name: 'SequelizeConnectionError',
+2019-08-21 22:55 +08:00:   parent:
+2019-08-21 22:55 +08:00:    { Error: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:55 +08:00:        at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+2019-08-21 22:55 +08:00:    From previous event:
+2019-08-21 22:55 +08:00:        at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:70:12)
+2019-08-21 22:55 +08:00:        at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:55 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:55 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:55 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:55 +08:00:    From previous event:
+2019-08-21 22:55 +08:00:        at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:55 +08:00:        at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:55 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:55 +08:00:    From previous event:
+2019-08-21 22:55 +08:00:        at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:55 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:55 +08:00:        at new Promise (<anonymous>)
+2019-08-21 22:55 +08:00:        at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:55 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:55 +08:00:    From previous event:
+2019-08-21 22:55 +08:00:        at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:55 +08:00:        at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:55 +08:00:        at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:55 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:55 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:55 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:55 +08:00:    From previous event:
+2019-08-21 22:55 +08:00:        at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:55 +08:00:        at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:55 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:55 +08:00:        at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:55 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:55 +08:00:        at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:55 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:55 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:55 +08:00:        at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:55 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:55 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:55 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:55 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:55 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:55 +08:00:        at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:55 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:55 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:55 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:55 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:55 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:55 +08:00:        at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:55 +08:00:        at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:55 +08:00:        at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:55 +08:00:      errno: 'ENOENT',
+2019-08-21 22:55 +08:00:      code: 'ENOENT',
+2019-08-21 22:55 +08:00: nect',
+2019-08-21 22:55 +08:00:      address: '/tmp/mysql.sock',
+2019-08-21 22:55 +08:00:      fatal: true },
+2019-08-21 22:55 +08:00:   original:
+2019-08-21 22:55 +08:00:    { Error: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:55 +08:00:        at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+2019-08-21 22:55 +08:00:    From previous event:
+2019-08-21 22:55 +08:00:        at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:70:12)
+2019-08-21 22:55 +08:00:        at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:55 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:55 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:55 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:55 +08:00:    From previous event:
+2019-08-21 22:55 +08:00:        at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:55 +08:00:        at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:55 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:55 +08:00:    From previous event:
+2019-08-21 22:55 +08:00:        at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:55 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:55 +08:00:        at new Promise (<anonymous>)
+2019-08-21 22:55 +08:00:        at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:55 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:55 +08:00:    From previous event:
+2019-08-21 22:55 +08:00:        at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:55 +08:00:        at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:55 +08:00:        at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:55 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:55 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:55 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:55 +08:00:    From previous event:
+2019-08-21 22:55 +08:00:        at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:55 +08:00:        at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:55 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:55 +08:00:        at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:55 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:55 +08:00:        at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:55 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:55 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:55 +08:00:        at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:55 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:55 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:55 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:55 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:55 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:55 +08:00:        at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:55 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:55 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:55 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:55 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:55 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:55 +08:00:        at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:55 +08:00:        at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:55 +08:00:        at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:55 +08:00:      errno: 'ENOENT',
+2019-08-21 22:55 +08:00:      code: 'ENOENT',
+2019-08-21 22:55 +08:00:      syscall: 'connect',
+2019-08-21 22:55 +08:00:      address: '/tmp/mysql.sock',
+2019-08-21 22:55 +08:00:      fatal: true } }
+2019-08-21 22:55 +08:00: { SequelizeConnectionError: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:55 +08:00:     at Promise.tap.then.catch.err (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:133:19)
+2019-08-21 22:55 +08:00: From previous event:
+2019-08-21 22:55 +08:00:     at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+2019-08-21 22:55 +08:00:     at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:55 +08:00:     at runCallback (timers.js:705:18)
+2019-08-21 22:55 +08:00:     at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:55 +08:00:     at processImmediate (timers.js:658:5)
+2019-08-21 22:55 +08:00: From previous event:
+2019-08-21 22:55 +08:00:     at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:55 +08:00:     at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:55 +08:00:     at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:55 +08:00: From previous event:
+2019-08-21 22:55 +08:00:     at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:55 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:55 +08:00:     at new Promise (<anonymous>)
+2019-08-21 22:55 +08:00:     at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:55 +08:00:     at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:55 +08:00: From previous event:
+2019-08-21 22:55 +08:00:     at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:55 +08:00:     at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:55 +08:00:     at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:55 +08:00:     at runCallback (timers.js:705:18)
+2019-08-21 22:55 +08:00:     at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:55 +08:00:     at processImmediate (timers.js:658:5)
+2019-08-21 22:55 +08:00: From previous event:
+2019-08-21 22:55 +08:00:     at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:55 +08:00:     at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:55 +08:00:     at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:55 +08:00:     at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:55 +08:00:     at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:55 +08:00:     at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:55 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:55 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:55 +08:00:     at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:55 +08:00:     at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:55 +08:00:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:55 +08:00:     at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:55 +08:00:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:55 +08:00:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:55 +08:00:     at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:55 +08:00:     at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:55 +08:00:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:55 +08:00:     at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:55 +08:00:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:55 +08:00:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:55 +08:00:     at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:55 +08:00:     at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:55 +08:00:     at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:55 +08:00:   name: 'SequelizeConnectionError',
+2019-08-21 22:55 +08:00:   parent:
+2019-08-21 22:55 +08:00:    { Error: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:55 +08:00:        at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+2019-08-21 22:55 +08:00:    From previous event:
+2019-08-21 22:55 +08:00:        at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:70:12)
+2019-08-21 22:55 +08:00:        at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:55 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:55 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:55 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:55 +08:00:    From previous event:
+2019-08-21 22:55 +08:00:        at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:55 +08:00:        at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:55 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:55 +08:00:    From previous event:
+2019-08-21 22:55 +08:00:        at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:55 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:55 +08:00:        at new Promise (<anonymous>)
+2019-08-21 22:55 +08:00:        at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:55 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:55 +08:00:    From previous event:
+2019-08-21 22:55 +08:00:        at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:55 +08:00:        at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:55 +08:00:        at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:55 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:55 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:55 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:55 +08:00:    From previous event:
+2019-08-21 22:55 +08:00:        at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:55 +08:00:        at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:55 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:55 +08:00:        at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:55 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:55 +08:00:        at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:55 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:55 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:55 +08:00:        at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:55 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:55 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:55 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:55 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:55 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:55 +08:00:        at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:55 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:55 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:55 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:55 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:55 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:55 +08:00:        at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:55 +08:00:        at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:55 +08:00:        at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:55 +08:00:      errno: 'ENOENT',
+2019-08-21 22:55 +08:00:      code: 'ENOENT',
+2019-08-21 22:55 +08:00: nect',
+2019-08-21 22:55 +08:00:      address: '/tmp/mysql.sock',
+2019-08-21 22:55 +08:00:      fatal: true },
+2019-08-21 22:55 +08:00:   original:
+2019-08-21 22:55 +08:00:    { Error: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:55 +08:00:        at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+2019-08-21 22:55 +08:00:    From previous event:
+2019-08-21 22:55 +08:00:        at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:70:12)
+2019-08-21 22:55 +08:00:        at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:55 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:55 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:55 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:55 +08:00:    From previous event:
+2019-08-21 22:55 +08:00:        at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:55 +08:00:        at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:55 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:55 +08:00:    From previous event:
+2019-08-21 22:55 +08:00:        at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:55 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:55 +08:00:        at new Promise (<anonymous>)
+2019-08-21 22:55 +08:00:        at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:55 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:55 +08:00:    From previous event:
+2019-08-21 22:55 +08:00:        at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:55 +08:00:        at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:55 +08:00:        at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:55 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:55 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:55 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:55 +08:00:    From previous event:
+2019-08-21 22:55 +08:00:        at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:55 +08:00:        at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:55 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:55 +08:00:        at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:55 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:55 +08:00:        at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:55 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:55 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:55 +08:00:        at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:55 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:55 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:55 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:55 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:55 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:55 +08:00:        at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:55 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:55 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:55 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:55 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:55 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:55 +08:00:        at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:55 +08:00:        at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:55 +08:00:        at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:55 +08:00:      errno: 'ENOENT',
+2019-08-21 22:55 +08:00:      code: 'ENOENT',
+2019-08-21 22:55 +08:00:      syscall: 'connect',
+2019-08-21 22:55 +08:00:      address: '/tmp/mysql.sock',
+2019-08-21 22:55 +08:00:      fatal: true } }
+2019-08-21 22:56 +08:00: { SequelizeConnectionError: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:56 +08:00:     at Promise.tap.then.catch.err (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:133:19)
+2019-08-21 22:56 +08:00: From previous event:
+2019-08-21 22:56 +08:00:     at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+2019-08-21 22:56 +08:00:     at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:56 +08:00:     at runCallback (timers.js:705:18)
+2019-08-21 22:56 +08:00:     at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:56 +08:00:     at processImmediate (timers.js:658:5)
+2019-08-21 22:56 +08:00: From previous event:
+2019-08-21 22:56 +08:00:     at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:56 +08:00:     at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:56 +08:00:     at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:56 +08:00: From previous event:
+2019-08-21 22:56 +08:00:     at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:56 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:56 +08:00:     at new Promise (<anonymous>)
+2019-08-21 22:56 +08:00:     at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:56 +08:00:     at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:56 +08:00: From previous event:
+2019-08-21 22:56 +08:00:     at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:56 +08:00:     at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:56 +08:00:     at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:56 +08:00:     at runCallback (timers.js:705:18)
+2019-08-21 22:56 +08:00:     at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:56 +08:00:     at processImmediate (timers.js:658:5)
+2019-08-21 22:56 +08:00: From previous event:
+2019-08-21 22:56 +08:00:     at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:56 +08:00:     at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:56 +08:00:     at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:56 +08:00:     at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:56 +08:00:     at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:56 +08:00:     at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:56 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:56 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:56 +08:00:     at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:56 +08:00:     at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:56 +08:00:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:56 +08:00:     at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:56 +08:00:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:56 +08:00:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:56 +08:00:     at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:56 +08:00:     at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:56 +08:00:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:56 +08:00:     at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:56 +08:00:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:56 +08:00:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:56 +08:00:     at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:56 +08:00:     at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:56 +08:00:     at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:56 +08:00:   name: 'SequelizeConnectionError',
+2019-08-21 22:56 +08:00:   parent:
+2019-08-21 22:56 +08:00:    { Error: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:56 +08:00:        at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+2019-08-21 22:56 +08:00:    From previous event:
+2019-08-21 22:56 +08:00:        at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:70:12)
+2019-08-21 22:56 +08:00:        at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:56 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:56 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:56 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:56 +08:00:    From previous event:
+2019-08-21 22:56 +08:00:        at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:56 +08:00:        at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:56 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:56 +08:00:    From previous event:
+2019-08-21 22:56 +08:00:        at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:56 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:56 +08:00:        at new Promise (<anonymous>)
+2019-08-21 22:56 +08:00:        at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:56 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:56 +08:00:    From previous event:
+2019-08-21 22:56 +08:00:        at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:56 +08:00:        at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:56 +08:00:        at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:56 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:56 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:56 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:56 +08:00:    From previous event:
+2019-08-21 22:56 +08:00:        at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:56 +08:00:        at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:56 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:56 +08:00:        at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:56 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:56 +08:00:        at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:56 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:56 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:56 +08:00:        at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:56 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:56 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:56 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:56 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:56 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:56 +08:00:        at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:56 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:56 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:56 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:56 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:56 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:56 +08:00:        at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:56 +08:00:        at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:56 +08:00:        at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:56 +08:00:      errno: 'ENOENT',
+2019-08-21 22:56 +08:00:      code: 'ENOENT',
+2019-08-21 22:56 +08:00: nect',
+2019-08-21 22:56 +08:00:      address: '/tmp/mysql.sock',
+2019-08-21 22:56 +08:00:      fatal: true },
+2019-08-21 22:56 +08:00:   original:
+2019-08-21 22:56 +08:00:    { Error: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:56 +08:00:        at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+2019-08-21 22:56 +08:00:    From previous event:
+2019-08-21 22:56 +08:00:        at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:70:12)
+2019-08-21 22:56 +08:00:        at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:56 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:56 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:56 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:56 +08:00:    From previous event:
+2019-08-21 22:56 +08:00:        at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:56 +08:00:        at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:56 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:56 +08:00:    From previous event:
+2019-08-21 22:56 +08:00:        at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:56 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:56 +08:00:        at new Promise (<anonymous>)
+2019-08-21 22:56 +08:00:        at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:56 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:56 +08:00:    From previous event:
+2019-08-21 22:56 +08:00:        at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:56 +08:00:        at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:56 +08:00:        at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:56 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:56 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:56 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:56 +08:00:    From previous event:
+2019-08-21 22:56 +08:00:        at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:56 +08:00:        at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:56 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:56 +08:00:        at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:56 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:56 +08:00:        at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:56 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:56 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:56 +08:00:        at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:56 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:56 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:56 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:56 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:56 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:56 +08:00:        at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:56 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:56 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:56 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:56 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:56 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:56 +08:00:        at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:56 +08:00:        at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:56 +08:00:        at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:56 +08:00:      errno: 'ENOENT',
+2019-08-21 22:56 +08:00:      code: 'ENOENT',
+2019-08-21 22:56 +08:00:      syscall: 'connect',
+2019-08-21 22:56 +08:00:      address: '/tmp/mysql.sock',
+2019-08-21 22:56 +08:00:      fatal: true } }
+2019-08-21 22:56 +08:00: { SequelizeConnectionError: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:56 +08:00:     at Promise.tap.then.catch.err (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:133:19)
+2019-08-21 22:56 +08:00: From previous event:
+2019-08-21 22:56 +08:00:     at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:13)
+2019-08-21 22:56 +08:00:     at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:56 +08:00:     at runCallback (timers.js:705:18)
+2019-08-21 22:56 +08:00:     at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:56 +08:00:     at processImmediate (timers.js:658:5)
+2019-08-21 22:56 +08:00: From previous event:
+2019-08-21 22:56 +08:00:     at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:56 +08:00:     at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:56 +08:00:     at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:56 +08:00: From previous event:
+2019-08-21 22:56 +08:00:     at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:56 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:56 +08:00:     at new Promise (<anonymous>)
+2019-08-21 22:56 +08:00:     at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:56 +08:00:     at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:56 +08:00: From previous event:
+2019-08-21 22:56 +08:00:     at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:56 +08:00:     at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:56 +08:00:     at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:56 +08:00:     at runCallback (timers.js:705:18)
+2019-08-21 22:56 +08:00:     at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:56 +08:00:     at processImmediate (timers.js:658:5)
+2019-08-21 22:56 +08:00: From previous event:
+2019-08-21 22:56 +08:00:     at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:56 +08:00:     at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:56 +08:00:     at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:56 +08:00:     at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:56 +08:00:     at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:56 +08:00:     at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:56 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:56 +08:00:     at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:56 +08:00:     at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:56 +08:00:     at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:56 +08:00:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:56 +08:00:     at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:56 +08:00:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:56 +08:00:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:56 +08:00:     at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:56 +08:00:     at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:56 +08:00:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:56 +08:00:     at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:56 +08:00:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:56 +08:00:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:56 +08:00:     at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:56 +08:00:     at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:56 +08:00:     at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:56 +08:00:   name: 'SequelizeConnectionError',
+2019-08-21 22:56 +08:00:   parent:
+2019-08-21 22:56 +08:00:    { Error: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:56 +08:00:        at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+2019-08-21 22:56 +08:00:    From previous event:
+2019-08-21 22:56 +08:00:        at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:70:12)
+2019-08-21 22:56 +08:00:        at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:56 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:56 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:56 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:56 +08:00:    From previous event:
+2019-08-21 22:56 +08:00:        at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:56 +08:00:        at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:56 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:56 +08:00:    From previous event:
+2019-08-21 22:56 +08:00:        at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:56 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:56 +08:00:        at new Promise (<anonymous>)
+2019-08-21 22:56 +08:00:        at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:56 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:56 +08:00:    From previous event:
+2019-08-21 22:56 +08:00:        at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:56 +08:00:        at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:56 +08:00:        at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:56 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:56 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:56 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:56 +08:00:    From previous event:
+2019-08-21 22:56 +08:00:        at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:56 +08:00:        at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:56 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:56 +08:00:        at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:56 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:56 +08:00:        at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:56 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:56 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:56 +08:00:        at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:56 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:56 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:56 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:56 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:56 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:56 +08:00:        at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:56 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:56 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:56 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:56 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:56 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:56 +08:00:        at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:56 +08:00:        at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:56 +08:00:        at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:56 +08:00:      errno: 'ENOENT',
+2019-08-21 22:56 +08:00:      code: 'ENOENT',
+2019-08-21 22:56 +08:00: nect',
+2019-08-21 22:56 +08:00:      address: '/tmp/mysql.sock',
+2019-08-21 22:56 +08:00:      fatal: true },
+2019-08-21 22:56 +08:00:   original:
+2019-08-21 22:56 +08:00:    { Error: connect ENOENT /tmp/mysql.sock
+2019-08-21 22:56 +08:00:        at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+2019-08-21 22:56 +08:00:    From previous event:
+2019-08-21 22:56 +08:00:        at ConnectionManager.connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:70:12)
+2019-08-21 22:56 +08:00:        at sequelize.runHooks.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:50)
+2019-08-21 22:56 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:56 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:56 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:56 +08:00:    From previous event:
+2019-08-21 22:56 +08:00:        at ConnectionManager._connect (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:311:8)
+2019-08-21 22:56 +08:00:        at ConnectionManager.getConnection (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+2019-08-21 22:56 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:636:36)
+2019-08-21 22:56 +08:00:    From previous event:
+2019-08-21 22:56 +08:00:        at Promise.resolve.retry (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:53)
+2019-08-21 22:56 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:70:21
+2019-08-21 22:56 +08:00:        at new Promise (<anonymous>)
+2019-08-21 22:56 +08:00:        at retryAsPromised (/Users/zhangheng/myPractice/reactssr/server/node_modules/retry-as-promised/index.js:60:10)
+2019-08-21 22:56 +08:00:        at Promise.try (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:627:30)
+2019-08-21 22:56 +08:00:    From previous event:
+2019-08-21 22:56 +08:00:        at Sequelize.query (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/sequelize.js:576:23)
+2019-08-21 22:56 +08:00:        at QueryInterface.select (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/query-interface.js:1118:27)
+2019-08-21 22:56 +08:00:        at Promise.try.then.then.then (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1754:34)
+2019-08-21 22:56 +08:00:        at runCallback (timers.js:705:18)
+2019-08-21 22:56 +08:00:        at tryOnImmediate (timers.js:676:5)
+2019-08-21 22:56 +08:00:        at processImmediate (timers.js:658:5)
+2019-08-21 22:56 +08:00:    From previous event:
+2019-08-21 22:56 +08:00:        at Function.findAll (/Users/zhangheng/myPractice/reactssr/server/node_modules/sequelize/lib/model.js:1752:8)
+2019-08-21 22:56 +08:00:        at Object.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/external "core-js/modules/es6.object.to-string":1:26)
+2019-08-21 22:56 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:56 +08:00:        at Module.<anonymous> (/Users/zhangheng/myPractice/reactssr/server/dist/index.js:1:8214)
+2019-08-21 22:56 +08:00:        at n (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:9:5)
+2019-08-21 22:56 +08:00:        at object (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:36)
+2019-08-21 22:56 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/bootstrap:76:56
+2019-08-21 22:56 +08:00:        at /Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:2:24
+2019-08-21 22:56 +08:00:        at Object.define (/Users/zhangheng/myPractice/reactssr/server/dist/webpack:/ts/webpack/universalModuleDefinition:5:3)
+2019-08-21 22:56 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:56 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:56 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:56 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:56 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:56 +08:00:        at Object.<anonymous> (/usr/local/lib/node_modules/pm2/lib/ProcessContainerFork.js:27:21)
+2019-08-21 22:56 +08:00:        at Module._compile (internal/modules/cjs/loader.js:778:30)
+2019-08-21 22:56 +08:00:        at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+2019-08-21 22:56 +08:00:        at Module.load (internal/modules/cjs/loader.js:653:32)
+2019-08-21 22:56 +08:00:        at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+2019-08-21 22:56 +08:00:        at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+2019-08-21 22:56 +08:00:        at Function.Module.runMain (internal/modules/cjs/loader.js:831:12)
+2019-08-21 22:56 +08:00:        at startup (internal/bootstrap/node.js:283:19)
+2019-08-21 22:56 +08:00:        at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+2019-08-21 22:56 +08:00:      errno: 'ENOENT',
+2019-08-21 22:56 +08:00:      code: 'ENOENT',
+2019-08-21 22:56 +08:00:      syscall: 'connect',
+2019-08-21 22:56 +08:00:      address: '/tmp/mysql.sock',
+2019-08-21 22:56 +08:00:      fatal: true } }

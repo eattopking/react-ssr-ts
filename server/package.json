@@ -7,8 +7,11 @@
     "dev": "npm-run-all --parallel build_**",
     "build_server": "webpack --config ./build/server.js --progress=true --color=true --compress=true --watch",
     "build_client": "webpack --config ./build/client.js --progress=true --color=true --compress=true --watch",
-    "build_start": "nodemon --watch dist --exec npx \"./dist/index.js\"",
-    "sync": "npx ./src/mysql/syncTable.js"
+    "build_start": "pm2 start -f ./pm2.config.js",
+    "sync": "pm2 start -f ./src/mysql/syncTable.js",
+    "start": "nodemon --watch dist --exec npx \"./dist/index.js\"",
+    "npx_sync": "npx ./src/mysql/syncTable.js"
+    
   },
   "author": "",
   "license": "ISC",
