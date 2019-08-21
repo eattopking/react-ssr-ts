@@ -8,7 +8,7 @@ module.exports = {
   apps: [
     {
       // 应用名称
-      name: "index",
+      name: "tablessr",
       script: "./dist/index.js", // 启动文件地址
       cwd: "./", // 当前工作路径
       watch: [
@@ -19,6 +19,8 @@ module.exports = {
         // 忽视这些目录的变化
         "node_modules"
       ],
+      // 做负载均衡 根据机器CPU核数，开启对应数目的进程运行项目
+      instance: "max",
       // node的启动模式
       node_args: "--harmony",
       env: {
