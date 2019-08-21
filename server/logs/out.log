@@ -1,9 +1,0 @@
-2019-08-21 23:03 +08:00: Executing (default): SELECT `id`, `key`, `name`, `age`, `address` FROM `difftable` AS `difftable`;
-2019-08-21 23:03 +08:00: Executing (default): SELECT `id`, `key`, `name`, `age`, `address` FROM `difftable` AS `difftable`;
-2019-08-21 23:05 +08:00: Executing (default): SELECT `id`, `key`, `name`, `age`, `address` FROM `difftable` AS `difftable`;
-2019-08-21 23:06 +08:00: Executing (default): SELECT `id`, `key`, `name`, `age`, `address` FROM `difftable` AS `difftable`;
-2019-08-21 23:19 +08:00: Executing (default): SELECT `id`, `key`, `name`, `age`, `address` FROM `difftable` AS `difftable`;
-2019-08-21 23:20 +08:00: Executing (default): SELECT `id`, `key`, `name`, `age`, `address` FROM `difftable` AS `difftable`;
-2019-08-21 23:22 +08:00: Executing (default): SELECT `id`, `key`, `name`, `age`, `address` FROM `difftable` AS `difftable`;
-2019-08-21 23:22 +08:00: Executing (default): SELECT `id`, `key`, `name`, `age`, `address` FROM `difftable` AS `difftable`;
-2019-08-21 23:23 +08:00: Executing (default): SELECT `id`, `key`, `name`, `age`, `address` FROM `difftable` AS `difftable`;
