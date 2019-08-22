@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "./containers/Home/index";
+import PageLayout from "./containers/Home/index";
 import { Provider } from "react-redux";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom";
@@ -10,7 +10,7 @@ export default function render({ url, context = {}, store }: { url: string; cont
   const content = renderToString(
     <Provider store={store}>
       <StaticRouter location={url} context={context}>
-        <Layout />
+        <PageLayout />
       </StaticRouter>
     </Provider>
   );
