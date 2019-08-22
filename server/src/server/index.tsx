@@ -27,8 +27,20 @@ const router = new Router();
 app.use(koaStatic("public"));
 // 给koa-router设置响应头的很多信息
 app.use(KoaBody());
-// 返回首页
-router.get("/", async (ctx: { body: string; request: { url: string } }) => {
+// 返回简单表格首页
+router.get("/login", async (ctx: { body: string; request: { url: string } }) => {
+  const store = getStore();
+  const matchedRoutes = matchRoutes(routes, ctx.request.url);
+  const promises = matchedRoutes.map(route => {
+    return route.route.loadData(store);
+  });
+  await Promise.all(promises).then(() => {
+    // 当ctx.body在promise中使用时,外部回调函数一定要使用async, 一定要让对应的Promise等待
+    ctx.body = render({ url: ctx.request.url, context: {}, store });
+  });
+});
+// 返回复杂表格首页
+router.get("/login/diff", async (ctx: { body: string; request: { url: string } }) => {
   const store = getStore();
   const matchedRoutes = matchRoutes(routes, ctx.request.url);
   const promises = matchedRoutes.map(route => {

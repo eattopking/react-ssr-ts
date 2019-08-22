@@ -5,14 +5,14 @@ import { diffLoadData } from "./components/diff/diff_table";
 
 export default [
   {
-    path: "/",
+    path: "/login",
     exact: true,
     component: simpleTable,
     key: "simple",
     loadData: simpleLoadData
   },
   {
-    path: "/diff",
+    path: "/login/diff",
     exact: true,
     component: diffTable,
     key: "diff",

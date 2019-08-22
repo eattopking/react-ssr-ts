@@ -12,10 +12,10 @@ export default function PageLayout() {
           <Sider width={200} style={{ background: "#fff" }}>
             <Menu mode="inline" defaultSelectedKeys={["1"]} style={{ height: "100%" }}>
               <Menu.Item key="1">
-                <Link to="/">simpletable</Link>
+                <Link to="/login">simpletable</Link>
               </Menu.Item>
               <Menu.Item key="2">
-                <Link to="/diff">difftable</Link>
+                <Link to="/login/diff">difftable</Link>
               </Menu.Item>
             </Menu>
           </Sider>
