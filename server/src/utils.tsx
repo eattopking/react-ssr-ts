@@ -3,6 +3,7 @@ import PageLayout from "./containers/Home/index";
 import { Provider } from "react-redux";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom";
+import { Json } from "sequelize/types/lib/utils";
 
 export default function render({ url, context = {}, store }: { url: string; context: object; store: any }) {
   // location={url}作用应该是每次后台初次返回页面时决定,初次显示那个路径下的页面
@@ -24,7 +25,7 @@ export default function render({ url, context = {}, store }: { url: string; cont
       <div id="app">${content}</div>
       <script>
       window.context = {
-        state: ${store.getState()}
+        state: ${JSON.stringify(store.getState())}
       }
       </script>
       <script src="/index.js"></script>
