@@ -3,8 +3,10 @@ const Sequelize = require("sequelize");
 const DataTypes = Sequelize.DataTypes;
 const sequelize = require("../dbConn.js");
 
+//创建表
 const diffTable = sequelize.define(
   "difftable",
+  // 设置表字段, 并规范类型, 好像只有第一次有用,之后好像没啥用了
   {
     key: DataTypes.STRING(100),
     name: DataTypes.STRING(100),

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Table, Divider, Button } from "antd";
+import { Table, Divider } from "antd";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as diffActions from "./store/actions";

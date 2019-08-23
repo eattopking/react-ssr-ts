@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { Table, Divider, Button } from "antd";
+import { Table, Divider } from "antd";
 import * as simpleActions from "./store/actions";
 
 const simpleTable = ({ dispatch, rows }: { dispatch: any; rows: [] }) => {

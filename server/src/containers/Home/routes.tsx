@@ -9,6 +9,7 @@ export default [
     exact: true,
     component: simpleTable,
     key: "simple",
+    // 用于服务端渲染时提前获取数据填充返回的html字符串
     loadData: simpleLoadData
   },
   {
@@ -16,6 +17,7 @@ export default [
     exact: true,
     component: diffTable,
     key: "diff",
+    // 用于服务端渲染时提前获取数据填充返回的html字符串
     loadData: diffLoadData
   }
 ];
