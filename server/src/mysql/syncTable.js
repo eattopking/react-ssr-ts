@@ -6,7 +6,7 @@ sequelize
   // 同步表结构
   .sync({
     // 强制同步，先删除表，然后新建
-    // force: true
+    force: true
   })
   .then(() => {
     // 设置表的初始值
