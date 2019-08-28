@@ -5,10 +5,10 @@ const config = {
   // 用户
   USERNAME: "root",
   //密码
-  PASSWORD: "5211314ystbb",
+  PASSWORD: "b7JeoH9fo4LU",
   // 端口
   PORT: 3306,
   // 服务ip地址
-  HOST: "localhost"
+  HOST: "47.94.87.98"
 };
 module.exports = config;
