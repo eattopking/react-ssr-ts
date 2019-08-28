@@ -9,6 +9,6 @@ const config = {
   // 端口
   PORT: 3306,
   // 服务ip地址
-  HOST: "47.94.87.98"
+  HOST: "localhost"
 };
 module.exports = config;
