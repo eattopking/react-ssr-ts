@@ -1,7 +1,7 @@
 // sequelize创建数据库连接对象配置
 const config = {
   // 数据库名
-  DATABASE: "difftable",
+  DATABASE: "mysql",
   // 用户
   USERNAME: "root",
   //密码
