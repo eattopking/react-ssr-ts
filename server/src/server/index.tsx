@@ -53,18 +53,25 @@ router.get("/login/diff", async (ctx: { body: string; request: { url: string } }
 });
 
 // 增行接口
-router.get("/addrow", async (ctx: { body: object }) => {
-  await Apis.findAll.then((result: object) => {
-    /*
-      使用sequelize findall 从mysql查回来的数据是不能直接使用的,
-      需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
-      在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
-    */
-    ctx.body = {
-      status: true,
-      rows: JSON.parse(JSON.stringify(result))
-    };
-  });
+// router.get("/addrow", async (ctx: { body: object }) => {
+//   await Apis.findAll.then((result: object) => {
+//     /*
+//       使用sequelize findall 从mysql查回来的数据是不能直接使用的,
+//       需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
+//       在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
+//     */
+//     ctx.body = {
+//       status: true,
+//       rows: JSON.parse(JSON.stringify(result))
+//     };
+//   });
+// });
+// 不连接数据库的
+router.get("/addrow", (ctx: { body: object }) => {
+  ctx.body = {
+        status: true,
+        rows: [{"id":1,"key":"1","name":"zh","age":"27","address":"33333"}]
+  };
 });
 
 // 删行接口
@@ -80,4 +87,4 @@ router.get("/delete", (ctx: { body: object }) => {
  * app.use(router.routes()) 这是一次性注册使用react-router接口中间件
  */
 app.use(router.routes()).use(router.allowedMethods());
-app.listen(80);
+app.listen(8000);
