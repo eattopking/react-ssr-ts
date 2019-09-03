@@ -6,8 +6,11 @@ const sequelize = new Sequelize(config.DATABASE, config.USERNAME, config.PASSWOR
   host: config.HOST,
   dialect: "mysql",
   dialectOptions: {
-    // 指定套接字文件路径
-    socketPath: "/tmp/mysql.sock"
+    /**
+     * 指定套接字文件路径 本地连接数据就能连接到它,
+     * 阿里云服务器上就连接不到,之后在仔细研究sequelize的配置
+    */
+    // socketPath: "/tmp/mysql.sock"
   },
   pool: {
     max: 10,
