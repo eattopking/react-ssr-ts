@@ -7,7 +7,7 @@ const sequelize = new Sequelize(config.DATABASE, config.USERNAME, config.PASSWOR
   dialect: "mysql",
   dialectOptions: {
     // 指定套接字文件路径
-    // socketPath: "/tmp/mysql.sock"
+    socketPath: "/tmp/mysql.sock"
   },
   pool: {
     max: 10,
