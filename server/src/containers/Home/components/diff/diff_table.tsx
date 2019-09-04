@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Table, Divider } from "antd";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import * as diffActions from "./store/actions";
+import * as diffActions from "./store/widgets";
 
 const DiffTable = ({ dispatch, rows }: { dispatch: any; rows: [] }) => {
   // action集合
