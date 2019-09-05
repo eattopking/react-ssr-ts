@@ -1,7 +1,10 @@
-/*
-  这就是一套基本完善可以正常工作的tsconfig.json了 
-  lib jsx moduleResolution allowSyntheticDefaultImports 这几个是很重要的
-*/
+/**
+ * ts的配置文件
+ * 这就是一套基本完善可以正常工作的tsconfig.json了 
+ * lib jsx moduleResolution allowSyntheticDefaultImports 这几个是很重要的
+ */
+
+
 {
   "compilerOptions": {
     // 出口文件夹

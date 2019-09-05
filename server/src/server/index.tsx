@@ -9,7 +9,7 @@ import render from "../utils";
 /**
  * matchRoutes用来匹配对path路由的配置项,这个api比较牛逼,可以匹配到完整的包括子路由的配置数据
  * import { matchPath } from 'react-router-dom'只能匹配到第一层父路由的配置数据
- *  */
+ */
 import { matchRoutes } from "react-router-config";
 import routes from "../containers/Home/routes";
 import { getStore } from "../rootStore";
@@ -19,11 +19,10 @@ const Apis = require("../mysql/apis");
 const app = new Koa();
 // 创建koa路由实例
 const router = new Router();
-
-/*
-  设置静态资源路径, 当客户端请求静态资源是,就到对应目录下寻找返回,
-  这里直接设置项目目录下的目录名就行,直接koa就能找到,不用整那些乱七八糟的
-*/
+/**
+ * 设置静态资源路径, 当客户端请求静态资源是,就到对应目录下寻找返回,
+ * 这里直接设置项目目录下的目录名就行,直接koa就能找到,不用整那些乱七八糟的
+ */
 app.use(koaStatic("public"));
 // 给koa-router设置响应头的很多信息
 app.use(KoaBody());
@@ -56,9 +55,9 @@ router.get("/login/diff", async (ctx: { body: string; request: { url: string } }
 router.get("/addrow", async (ctx: { body: object }) => {
   await Apis.findAll.then((result: object) => {
     /*
-      使用sequelize findall 从mysql查回来的数据是不能直接使用的,
-      需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
-      在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
+     * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
+     * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
+     * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
     */
     ctx.body = {
       status: true,

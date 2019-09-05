@@ -1,5 +1,6 @@
 /**
-   区别node 和 client 的情况,使用server判断, 服务端渲染不能用同一个.babelrc文件,当存在antd按需加载的时候
+ * babel配置文件
+ * 区别node 和 client 的情况,使用server判断, 服务端渲染不能用同一个.babelrc文件,当存在antd按需加载的时候
    antd 在服务端编译的时候不能设置按需加载  "import",
    {
      libraryName: "antd",
@@ -13,7 +14,7 @@
    SyntaxError: Unexpected string
    被这个问题折磨了好几天终于解决了
    报错原因感觉是node 不识别less 和css 文件,具体还没有弄明白
-*/
+ */
 
 module.exports = ({ server }) => {
   return {
