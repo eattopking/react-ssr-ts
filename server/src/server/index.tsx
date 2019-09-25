@@ -33,14 +33,15 @@ router.get("/login", async (ctx: { body: string; request: { url: string } }) => 
   const promises = matchedRoutes.map(route => {
     return route.route.loadData(store);
   });
-  await Apis.findAll.then((result: object) => {
-    /*
-     * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
-     * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
-     * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
-    */
+  
     
-    Promise.all(promises).then(() => {
+  await Promise.all(promises).then(() => {
+       Apis.findAll.then((result: object) => {
+        /*
+         * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
+         * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
+         * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
+        */
       // 当ctx.body在promise中使用时,外部回调函数一定要使用async, 一定要让对应的Promise等待
       ctx.body = render({ url: ctx.request.url, context: {}, store, diffData: JSON.parse(JSON.stringify({simple: result})) });
     });
@@ -57,17 +58,18 @@ router.get("/login/diff", async (ctx: { body: string; request: { url: string } }
   const promises = matchedRoutes.map(route => {
     return route.route.loadData(store);
   });
-  await Apis.findAll.then((result: object) => {
-    /*
-     * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
-     * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
-     * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
-    */
+  
     // ctx.body = {
     //   status: true,
     //   rows: JSON.parse(JSON.stringify(result))
     // };
-    Promise.all(promises).then(() => {
+    await Promise.all(promises).then(() => {
+      Apis.findAll.then((result: object) => {
+        /*
+         * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
+         * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
+         * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
+        */
       // 当ctx.body在promise中使用时,外部回调函数一定要使用async, 一定要让对应的Promise等待
       ctx.body = render({ url: ctx.request.url, context: {}, store, diffData: JSON.parse(JSON.stringify({diff: result})) });
     });
