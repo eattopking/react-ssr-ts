@@ -3,7 +3,7 @@ import thunk from "redux-thunk";
 import rootReducer from "./rootReducer";
 
 // 服务器端获取store的方法
-export const getStore = () => createStore(rootReducer, applyMiddleware(thunk));
+export const getStore = (defaultState: object) => createStore(rootReducer, defaultState, applyMiddleware(thunk));
 
 // 浏览器端获取store的方法
 export const getClientStore = () => {
