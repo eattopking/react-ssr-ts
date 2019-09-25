@@ -35,8 +35,8 @@ router.get("/login", async (ctx: { body: string; request: { url: string } }) => 
   });
   
     
-  await Promise.all(promises).then(() => {
-       Apis.findAll.then((result: object) => {
+  await Promise.all(promises).then(async () => {
+       await Apis.findAll.then((result: object) => {
         /*
          * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
          * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
@@ -63,8 +63,8 @@ router.get("/login/diff", async (ctx: { body: string; request: { url: string } }
     //   status: true,
     //   rows: JSON.parse(JSON.stringify(result))
     // };
-    await Promise.all(promises).then(() => {
-      Apis.findAll.then((result: object) => {
+    await Promise.all(promises).then(async () => {
+      await Apis.findAll.then((result: object) => {
         /*
          * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
          * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
