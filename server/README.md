@@ -1,6 +1,16 @@
 # 结合 typescript react antd koa 的服务端渲染项目, 计划做一个复杂表格,没有涉及太多的业务
 
-使用技术: koa2 react typescript webpack antd 数据库 mysql
+### 技术栈
+
+koa2 react typescript webpack antd 数据库 mysql
+
+
+### 服务端渲染(ssr)
+
+#### 主要原理:
+
+1、同构(服务端和客户端两套代码各执行一遍,由客户端代码接手表格的事件),
+2、数据的脱水和注水, 将服务端代码渲染表格时的数据, 缓存到window中(注水),用于客户端代码接手界面时,初始化请求数据的同时, 用缓存的数据直接渲染界面防止抖动(脱水)
 
 使用 nodemon 监测项目目录下 dist 文件内容的变化,实现服务自动更新,
 使用 pm2 替换 nodemon 和用 node 指令起 node 服务,pm2 很强大,可以监控进程还可以进行负载均衡
