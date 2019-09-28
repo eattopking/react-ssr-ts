@@ -33,7 +33,7 @@ export default (state = defaultState, action: { type: string; data: [] }) => {
 const axios = require("axios");
 export const addrow = () => {
   return (dispatch: any) => {
-    return axios.get("http://localhost:8000/addrow").then((response: { data: { rows: [] } }) => {
+    return axios.get("/addrow").then((response: { data: { rows: [] } }) => {
       dispatch({
         type: DIFF_ADD_ROW,
         data: response.data.rows
