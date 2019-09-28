@@ -5,7 +5,7 @@ import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom";
 
 // 用于产生服务端渲染字符串的方法
-export default function render({ url, context = {}, store, diffData }: { url: string; context: object; store: any, diffData: object }) {
+export default function render({ url, context = {}, store }: { url: string; context: object; store: any }) {
   /**
    * location={url}作用应该是每次后台初次返回页面时决定,初次显示那个路径下的页面
    * 使用window.context将数据缓存起来,实现数据注水,供同构的client的js代码引用
@@ -27,7 +27,7 @@ export default function render({ url, context = {}, store, diffData }: { url: st
       <div id="app">${content}</div>
       <script>
       window.context = {
-        state: ${JSON.stringify(diffData)}
+        state: ${JSON.stringify(store.getState())}
       }
       </script>
       <script src="/index.js"></script>

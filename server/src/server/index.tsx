@@ -28,58 +28,48 @@ app.use(koaStatic("public"));
 app.use(KoaBody());
 // 返回简单表格首页
 router.get("/login", async (ctx: { body: string; request: { url: string } }) => {
-  // const store = getStore();
-  const matchedRoutes = matchRoutes(routes, ctx.request.url);
-  // const promises = matchedRoutes.map(route => {
-  //   return route.route.loadData(store);
-  // });
-  
-    
-  // await Promise.all(promises).then(async () => {
-       await Apis.findAll.then((result: object) => {
-        /*
-         * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
-         * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
-         * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
-        */
-       const store = getStore({simple: { rows: JSON.parse(JSON.stringify(result))}});
+  // 匹配和url匹配的路由配置项对象
+  // const matchedRoutes = matchRoutes(routes, ctx.request.url);
 
-      // 当ctx.body在promise中使用时,外部回调函数一定要使用async, 一定要让对应的Promise等待
-      ctx.body = render({ url: ctx.request.url, context: {}, store, diffData: {simple: {rows: JSON.parse(JSON.stringify(result))}}});
+  await Apis.findAll.then((result: object) => {
+    /*
+     * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
+     * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
+     * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
+     * 并且给请求回来的数据设置成redux的默认数据,最后经这些数据存到window上, 用于注水
+     */
+    const store = getStore({ simple: { rows: JSON.parse(JSON.stringify(result)) } });
+
+    // 当ctx.body在promise中使用时,外部回调函数一定要使用async, 一定要让对应的Promise等待
+    ctx.body = render({
+      url: ctx.request.url,
+      context: {},
+      store
     });
-  // });
-  // await Promise.all(promises).then(() => {
-  //   // 当ctx.body在promise中使用时,外部回调函数一定要使用async, 一定要让对应的Promise等待
-  //   ctx.body = render({ url: ctx.request.url, context: {}, store });
-  // });
+  });
 });
 // 返回复杂表格首页
 router.get("/login/diff", async (ctx: { body: string; request: { url: string } }) => {
-  const store = getStore({});
-  const matchedRoutes = matchRoutes(routes, ctx.request.url);
-  const promises = matchedRoutes.map(route => {
-    return route.route.loadData(store);
-  });
-  
-    // ctx.body = {
-    //   status: true,
-    //   rows: JSON.parse(JSON.stringify(result))
-    // };
-    await Promise.all(promises).then(async () => {
-      await Apis.findAll.then((result: object) => {
-        /*
-         * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
-         * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
-         * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
-        */
-      // 当ctx.body在promise中使用时,外部回调函数一定要使用async, 一定要让对应的Promise等待
-      ctx.body = render({ url: ctx.request.url, context: {}, store, diffData: JSON.parse(JSON.stringify({diff: result})) });
+  // 匹配和url匹配的路由配置项对象
+  // const matchedRoutes = matchRoutes(routes, ctx.request.url);
+
+  await Apis.findAll.then((result: object) => {
+    /*
+     * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
+     * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
+     * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
+     * 并且给请求回来的数据设置成redux的默认数据,最后经这些数据存到window上, 用于注水
+     */
+
+    const store = getStore({ diff: { rows: JSON.parse(JSON.stringify(result)) } });
+
+    // 当ctx.body在promise中使用时,外部回调函数一定要使用async, 一定要让对应的Promise等待
+    ctx.body = render({
+      url: ctx.request.url,
+      context: {},
+      store
     });
   });
-  // await Promise.all(promises).then(() => {
-  //   // 当ctx.body在promise中使用时,外部回调函数一定要使用async, 一定要让对应的Promise等待
-  //   ctx.body = render({ url: ctx.request.url, context: {}, store });
-  // });
 });
 
 // 增行接口
@@ -89,7 +79,7 @@ router.get("/addrow", async (ctx: { body: object }) => {
      * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
      * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
      * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
-    */
+     */
     ctx.body = {
       status: true,
       rows: JSON.parse(JSON.stringify(result))

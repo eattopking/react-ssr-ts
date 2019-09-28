@@ -63,8 +63,8 @@ const mapStateToProps = (state: { diff: { rows: [] } }) => {
 };
 
 // 这是在服务端渲染的时候获取数据填充到组件内的,并将数据注水的作用
-export const diffLoadData = (store: { dispatch: Function }) => {
-  return store.dispatch(diffActions.addrow());
-};
+// export const diffLoadData = (store: { dispatch: Function }) => {
+//   return store.dispatch(diffActions.addrow());
+// };
 
 export default connect(mapStateToProps)(DiffTable);
