@@ -51,7 +51,7 @@ export function loginRender() {
   <html lang="zh-CN">
     <head>
       <title>登录界面</title>
-      <link rel="stylesheet">
+      <link rel="stylesheet" href="/login.css">
     </head>
     <body>
       <div id="app">${content}</div>
