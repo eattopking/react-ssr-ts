@@ -1,6 +1,4 @@
 // node 环境 客户端代码 webpack打包配置 生产配置
-
-const webpack = require("webpack");
 const path = require("path");
 const baseConfig = require("./base");
 const merge = require("webpack-merge");
@@ -11,7 +9,10 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = function() {
   const clientConfig = {
     // 入口 这里路径就是固定以项目根路径开始
-    entry: { index: "./src/client/index.tsx" },
+    entry: { 
+      index: "./src/client/index.tsx",
+      login: "./src/client/login.tsx"
+   },
     // 出口
     output: {
       // 所要打包到的目标目录

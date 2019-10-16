@@ -50,12 +50,12 @@ export function loginRender() {
   return `<!DOCTYPE html>
   <html lang="zh-CN">
     <head>
-      <title>ssrTable</title>
-      <link rel="stylesheet" href="/index.css">
+      <title>登录界面</title>
+      <link rel="stylesheet">
     </head>
     <body>
       <div id="app">${content}</div>
-      <script src="/index.js"></script>
+      <script src="/login.js"></script>
     </body>
   </html>`;
 }
