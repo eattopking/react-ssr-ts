@@ -1,6 +1,5 @@
 // node 环境 服务端代码webpack打包配置 生产配置
 
-const webpack = require("webpack");
 const path = require("path");
 const baseConfig = require("./base");
 const merge = require("webpack-merge");

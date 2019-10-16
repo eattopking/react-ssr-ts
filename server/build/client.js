@@ -11,7 +11,8 @@ module.exports = function() {
     // 入口 这里路径就是固定以项目根路径开始
     entry: { 
       index: "./src/client/index.tsx",
-      login: "./src/client/login.tsx"
+      login: "./src/client/login.tsx",
+      register: "./src/client/register.tsx"
    },
     // 出口
     output: {
