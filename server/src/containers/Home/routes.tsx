@@ -5,7 +5,7 @@ import diffTable from "./components/diff/diff_table";
 
 export default [
   {
-    path: "/login",
+    path: "/page",
     exact: true,
     component: simpleTable,
     key: "simple",

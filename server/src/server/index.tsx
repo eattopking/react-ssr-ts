@@ -5,7 +5,7 @@ import Router from "koa-router";
 import KoaBody from "koa-body";
 // 静态资源服务管理中间件
 import koaStatic from "koa-static";
-import render from "../utils";
+import { render, loginRender } from "../utils";
 /**
  * matchRoutes用来匹配对path路由的配置项,这个api比较牛逼,可以匹配到完整的包括子路由的配置数据
  * import { matchPath } from 'react-router-dom'只能匹配到第一层父路由的配置数据
@@ -26,8 +26,15 @@ const router = new Router();
 app.use(koaStatic("public"));
 // 给koa-router设置响应头的很多信息
 app.use(KoaBody());
-// 返回简单表格首页
+
+/**
+ * 返回登录页
+ */
 router.get("/login", async (ctx: { body: string; request: { url: string } }) => {
+    ctx.body = loginRender();
+});
+// 返回主页
+router.get("/page", async (ctx: { body: string; request: { url: string } }) => {
   // 匹配和url匹配的路由配置项对象
   // const matchedRoutes = matchRoutes(routes, ctx.request.url);
 
