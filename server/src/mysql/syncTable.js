@@ -1,6 +1,7 @@
 // 同步当前最新表结构到数据库, 并且给表添加初始值
 const sequelize = require("./dbConn.js");
-const diffTable = require("./models/difftable");
+const pageTable = require("./models/page_table");
+const userTable = require("./models/user_table");
 
 sequelize
   // 同步表结构
@@ -9,13 +10,28 @@ sequelize
     force: true
   })
   .then(() => {
-    // 设置表的初始值
-    return diffTable
+    // 设置主页表的初始值
+    return pageTable
       .create({
         key: "1",
-        name: "zh",
-        age: "27",
-        address: "33333"
+        name: "夫夫公司",
+        address: "保密",
+        information: "暂无"
+      })
+      .then(function(p) {
+        console.log("created. " + JSON.stringify(p));
+      })
+      .catch(function(err) {
+        console.log("failed: " + err);
+      });
+  })
+  .then(() => {
+    // 设置用户表的初始值
+    return userTable
+      .create({
+        key: "1",
+        mail: "eattopking",
+        password: "1234567"
       })
       .then(function(p) {
         console.log("created. " + JSON.stringify(p));
