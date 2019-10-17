@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, InputNumber, Input, Button } from "antd";
+import { Layout, Input, Button } from "antd";
 
 const { Content, Footer } = Layout;
 
@@ -11,7 +11,7 @@ export default function Login() {
           <Content style={{ padding: "0 24px", minHeight: 280 }}>
             <div>
               邮箱: <Input />
-              密码: <InputNumber />
+              密码: <Input />
               <Button>登录</Button>
             </div>
           </Content>

@@ -38,7 +38,7 @@ router.get("/register", async (ctx: { body: string; request: { url: string } }) 
  * 返回登录页
  */
 router.get("/login", async (ctx: { body: string; request: { url: string } }) => {
-    ctx.body = loginRender();
+  ctx.body = loginRender();
 });
 
 // 返回主页
@@ -103,6 +103,28 @@ router.get("/addrow", async (ctx: { body: object }) => {
       status: true,
       rows: JSON.parse(JSON.stringify(result))
     };
+  });
+});
+
+/**
+ * 登录接口, 用于用户登录
+ */
+router.get("/signin", async ctx => {
+  /*
+   * 使用sequelize findUserInfo 从mysql查回来的用户信息做比对实现登录,
+   */
+  await Apis.findUserInfo(ctx.request.query.mail).then((result: string) => {
+    /**
+     * 密码比对成功,重定向到首页
+     */
+    if (ctx.request.query.password === JSON.parse(JSON.stringify(result))[0].password) {
+      ctx.status = 301;
+      ctx.redirect("/page");
+    } else {
+      ctx.body = {
+        status: false
+      };
+    }
   });
 });
 
