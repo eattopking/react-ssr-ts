@@ -46,7 +46,7 @@ router.get("/page", async (ctx: { body: string; request: { url: string } }) => {
   // 匹配和url匹配的路由配置项对象
   // const matchedRoutes = matchRoutes(routes, ctx.request.url);
 
-  await Apis.findAll.then((result: object) => {
+  await Apis.findPageAll.then((result: object) => {
     /*
      * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
      * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
@@ -68,7 +68,7 @@ router.get("/login/diff", async (ctx: { body: string; request: { url: string } }
   // 匹配和url匹配的路由配置项对象
   // const matchedRoutes = matchRoutes(routes, ctx.request.url);
 
-  await Apis.findAll.then((result: object) => {
+  await Apis.findPageAll.then((result: object) => {
     /*
      * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
      * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
