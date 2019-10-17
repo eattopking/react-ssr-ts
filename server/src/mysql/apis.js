@@ -1,12 +1,16 @@
 // 操作数据库api
-const diffTable = require("./models/difftable");
+const pageTable = require("./models/page_table");
+const userTable = require("./models/user_table");
 
 module.exports = {
-  // 查寻数据api
-  findAll: diffTable.findAll({
-    // where是设置查询条件的
-    // where: {
-    //   name: "zh"
-    // }
-  })
+  // 获取主页数据
+  findPageAll: pageTable.findAll(),
+  // 获取制定用户信息
+  findUserInfo: userName =>
+    userTable.findAll({
+      // where是设置查询条件的
+      where: {
+        mail: userName
+      }
+    })
 };
