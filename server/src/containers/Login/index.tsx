@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Input, Button, Form } from "antd";
+import { Layout, Input, Button, Form, message } from "antd";
 
 const { Content, Footer } = Layout;
 
@@ -12,9 +12,12 @@ function Login({ form }: { form: { getFieldDecorator: Function; validateFields: 
     validateFields((err: any, values: any) => {
       if (!err) {
         axios.get("/signin", { params: values }).then((res: any) => {
-          console.log("ok", res);
+          if (res.data.status) {
+            window.location.href = "http://eattopking.top:8000/page";
+          } else {
+            message.info("用户名或密码不正确,请重新输入");
+          }
         });
-        console.log("Received values of form: ", values);
       }
     });
   };

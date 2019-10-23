@@ -113,13 +113,14 @@ router.get("/signin", async ctx => {
   /*
    * 使用sequelize findUserInfo 从mysql查回来的用户信息做比对实现登录,
    */
-  await Apis.findUserInfo(ctx.request.query.mail).then((result: string) => {
+  await Apis.findUserInfo(ctx.request.query.mail).then(async (result: string) => {
     /**
      * 密码比对成功,重定向到首页
      */
     if (ctx.request.query.password === JSON.parse(JSON.stringify(result))[0].password) {
-      ctx.status = 301;
-      ctx.redirect("/page");
+      ctx.body = {
+        status: true
+      };
     } else {
       ctx.body = {
         status: false
