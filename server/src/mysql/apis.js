@@ -12,5 +12,12 @@ module.exports = {
       where: {
         mail: userName
       }
+    }),
+  // 存储用户信息
+  saveUserInfo: (userName, password) =>
+    userTable.create({
+      key: Math.random(),
+      mail: userName,
+      password
     })
 };

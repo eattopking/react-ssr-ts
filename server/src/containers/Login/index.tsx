@@ -21,6 +21,9 @@ function Login({ form }: { form: { getFieldDecorator: Function; validateFields: 
       }
     });
   };
+  const handleRegister = () => {
+    window.location.href = "http://eattopking.top:8000/register";
+  }
   return (
     <Layout>
       <Content style={{ padding: "0 50px" }}>
@@ -46,6 +49,7 @@ function Login({ form }: { form: { getFieldDecorator: Function; validateFields: 
           </Content>
         </Layout>
       </Content>
+      <div onClick={handleRegister}>注册</div>
       <Footer style={{ textAlign: "center" }}>登录界面</Footer>
     </Layout>
   );

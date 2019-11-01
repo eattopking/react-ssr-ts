@@ -128,6 +128,22 @@ router.get("/signin", async ctx => {
     }
   });
 });
+/**
+ * 注册接口, 用于用户注册
+ */
+router.get("/registerin", async ctx => {
+  /*
+   * 使用sequelize findUserInfo 从mysql查回来的用户信息做比对实现登录,
+   */
+  await Apis.saveUserInfo(ctx.request.query.mail, ctx.request.query.password).then(async (result: string) => {
+    /**
+     * 注册成功返回true
+     */
+    ctx.body = {
+      status: true
+    };
+  });
+});
 
 // 删行接口
 router.get("/delete", (ctx: { body: object }) => {
