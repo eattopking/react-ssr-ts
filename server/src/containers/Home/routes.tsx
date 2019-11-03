@@ -8,16 +8,16 @@ export default [
     path: "/page",
     exact: true,
     component: simpleTable,
-    key: "simple",
+    key: "simple"
     // 用于服务端渲染时提前获取数据填充返回的html字符串
     // loadData: simpleLoadData
-  },
-  {
-    path: "/login/diff",
-    exact: true,
-    component: diffTable,
-    key: "diff",
-    // 用于服务端渲染时提前获取数据填充返回的html字符串
-    // loadData: diffLoadData
   }
+  // {
+  //   // path: "/login/diff",
+  //   // exact: true,
+  //   // component: diffTable,
+  //   // key: "diff",
+  //   // 用于服务端渲染时提前获取数据填充返回的html字符串
+  //   // loadData: diffLoadData
+  // }
 ];

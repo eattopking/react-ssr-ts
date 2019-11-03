@@ -3,7 +3,9 @@ const pageTable = require("./models/page_table");
 const userTable = require("./models/user_table");
 
 module.exports = {
-  // 获取主页数据
+  /**
+   * 获取主页数据
+   */
   findPageAll: pageTable.findAll(),
   // 获取制定用户信息
   findUserInfo: userName =>
@@ -13,7 +15,16 @@ module.exports = {
         mail: userName
       }
     }),
-  // 存储用户信息
+  /**
+   *查找所有用户邮箱
+   */
+  findUserMail: () =>
+    userTable.findAll({
+      attributes: ["mail"]
+    }),
+  /**
+   * 存储用户信息
+   */
   saveUserInfo: (userName, password) =>
     userTable.create({
       key: Math.random(),

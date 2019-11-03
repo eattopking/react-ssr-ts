@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { Table, Divider } from "antd";
+import { Table, Divider, Button } from "antd";
 import * as simpleActions from "./store/widgets";
 
 const simpleTable = ({ dispatch, rows }: { dispatch: any; rows: [] }) => {
@@ -50,6 +50,7 @@ const simpleTable = ({ dispatch, rows }: { dispatch: any; rows: [] }) => {
 
   return (
     <>
+      <Button>添加</Button>
       <Table columns={columns} dataSource={rows} pagination={false} />
     </>
   );

@@ -12,10 +12,7 @@ export default function PageLayout() {
           <Sider width={200} style={{ background: "#fff" }}>
             <Menu mode="inline" defaultSelectedKeys={["1"]} style={{ height: "100%" }}>
               <Menu.Item key="1">
-                <Link to="/login">simpletable</Link>
-              </Menu.Item>
-              <Menu.Item key="2">
-                <Link to="/login/diff">difftable</Link>
+                <Link to="/login">客户信息</Link>
               </Menu.Item>
             </Menu>
           </Sider>
@@ -26,7 +23,7 @@ export default function PageLayout() {
           </Content>
         </Layout>
       </Content>
-      <Footer style={{ textAlign: "center" }}>张横服务端渲染表格</Footer>
+      <Footer style={{ textAlign: "center" }}>服务端渲染</Footer>
     </Layout>
   );
 }

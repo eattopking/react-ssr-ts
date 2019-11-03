@@ -15,9 +15,15 @@ import routes from "../containers/Home/routes";
 import { getStore } from "../rootStore";
 
 const Apis = require("../mysql/apis");
-// 创建koa实例
+
+/**
+ * 创建koa实例
+ */
 const app = new Koa();
-// 创建koa路由实例
+
+/**
+ * 创建koa路由实例
+ */
 const router = new Router();
 /**
  * 设置静态资源路径, 当客户端请求静态资源是,就到对应目录下寻找返回,
@@ -41,7 +47,9 @@ router.get("/login", async (ctx: { body: string; request: { url: string } }) => 
   ctx.body = loginRender();
 });
 
-// 返回主页
+/**
+ * 返回主页
+ */
 router.get("/page", async (ctx: { body: string; request: { url: string } }) => {
   // 匹配和url匹配的路由配置项对象
   // const matchedRoutes = matchRoutes(routes, ctx.request.url);
@@ -64,34 +72,32 @@ router.get("/page", async (ctx: { body: string; request: { url: string } }) => {
   });
 });
 // 返回复杂表格首页
-router.get("/login/diff", async (ctx: { body: string; request: { url: string } }) => {
-  // 匹配和url匹配的路由配置项对象
-  // const matchedRoutes = matchRoutes(routes, ctx.request.url);
+// router.get("/login/diff", async (ctx: { body: string; request: { url: string } }) => {
+//   // 匹配和url匹配的路由配置项对象
+//   // const matchedRoutes = matchRoutes(routes, ctx.request.url);
 
-  await Apis.findPageAll.then((result: object) => {
-    /*
-     * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
-     * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
-     * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
-     * 并且给请求回来的数据设置成redux的默认数据,最后经这些数据存到window上, 用于注水
-     */
+//   await Apis.findPageAll.then((result: object) => {
+//     /*
+//      * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
+//      * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
+//      * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
+//      * 并且给请求回来的数据设置成redux的默认数据,最后经这些数据存到window上, 用于注水
+//      */
 
-    const store = getStore({ diff: { rows: JSON.parse(JSON.stringify(result)) } });
+//     const store = getStore({ diff: { rows: JSON.parse(JSON.stringify(result)) } });
 
-    // 当ctx.body在promise中使用时,外部回调函数一定要使用async, 一定要让对应的Promise等待
-    ctx.body = render({
-      url: ctx.request.url,
-      context: {},
-      store
-    });
-  });
-});
+//     // 当ctx.body在promise中使用时,外部回调函数一定要使用async, 一定要让对应的Promise等待
+//     ctx.body = render({
+//       url: ctx.request.url,
+//       context: {},
+//       store
+//     });
+//   });
+// });
 
 /**
- * 接口区域
+ * 增行接口
  */
-
-// 增行接口
 router.get("/addrow", async (ctx: { body: object }) => {
   await Apis.findAll.then((result: object) => {
     /*
@@ -110,14 +116,19 @@ router.get("/addrow", async (ctx: { body: object }) => {
  * 登录接口, 用于用户登录
  */
 router.get("/signin", async ctx => {
+  const {
+    request: {
+      query: { mail, password }
+    }
+  } = ctx;
   /*
    * 使用sequelize findUserInfo 从mysql查回来的用户信息做比对实现登录,
    */
-  await Apis.findUserInfo(ctx.request.query.mail).then(async (result: string) => {
+  await Apis.findUserInfo(mail).then(async (result: string) => {
     /**
      * 密码比对成功,重定向到首页
      */
-    if (ctx.request.query.password === JSON.parse(JSON.stringify(result))[0].password) {
+    if (password === JSON.parse(JSON.stringify(result))[0].password) {
       ctx.body = {
         status: true
       };
@@ -128,20 +139,44 @@ router.get("/signin", async ctx => {
     }
   });
 });
+
 /**
  * 注册接口, 用于用户注册
  */
 router.get("/registerin", async ctx => {
-  /*
-   * 使用sequelize findUserInfo 从mysql查回来的用户信息做比对实现登录,
-   */
-  await Apis.saveUserInfo(ctx.request.query.mail, ctx.request.query.password).then(async (result: string) => {
-    /**
-     * 注册成功返回true
-     */
-    ctx.body = {
-      status: true
-    };
+  const {
+    request: {
+      query: { mail, password }
+    }
+  } = ctx;
+  await Apis.findUserMail().then(async (result: string) => {
+    const mailList = JSON.parse(JSON.stringify(result)).reduce((currentVlaue: any, value: { mail: string }) => {
+      currentVlaue.push(value.mail);
+      return currentVlaue;
+    }, []);
+    if (mailList.includes(mail)) {
+      ctx.body = {
+        status: false,
+        data: "1"
+      };
+    } else if (password.length < 7) {
+      ctx.body = {
+        status: false,
+        data: "2"
+      };
+    } else {
+      /*
+       * 使用sequelize saveUserInfo 将用户信息存到数据库,
+       */
+      await Apis.saveUserInfo(mail, password).then(async () => {
+        /**
+         * 注册成功返回true
+         */
+        ctx.body = {
+          status: true
+        };
+      });
+    }
   });
 });
 

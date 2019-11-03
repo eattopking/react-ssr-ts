@@ -12,8 +12,15 @@ function Register({ form }: { form: { getFieldDecorator: Function; validateField
     validateFields((err: any, values: any) => {
       if (!err) {
         axios.get("/registerin", { params: values }).then((res: any) => {
-          if (res.data.status) {
+          const {
+            data: { status, data }
+          } = res;
+          if (status) {
             message.info("注册成功");
+          } else if (data === 1) {
+            message.info("该用户已经注册请直接登录");
+          } else {
+            message.info("密码长度不能小于七位");
           }
         });
       }
@@ -37,7 +44,7 @@ function Register({ form }: { form: { getFieldDecorator: Function; validateField
               </Form.Item>
               <Form.Item>
                 <Button type="primary" htmlType="submit" className="login-form-button">
-                Register
+                  Register
                 </Button>
               </Form.Item>
             </Form>

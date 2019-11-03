@@ -12,7 +12,10 @@ function Login({ form }: { form: { getFieldDecorator: Function; validateFields: 
     validateFields((err: any, values: any) => {
       if (!err) {
         axios.get("/signin", { params: values }).then((res: any) => {
-          if (res.data.status) {
+          const {
+            data: { status }
+          } = res;
+          if (status) {
             window.location.href = "http://eattopking.top:8000/page";
           } else {
             message.info("用户名或密码不正确,请重新输入");
@@ -23,7 +26,7 @@ function Login({ form }: { form: { getFieldDecorator: Function; validateFields: 
   };
   const handleRegister = () => {
     window.location.href = "http://eattopking.top:8000/register";
-  }
+  };
   return (
     <Layout>
       <Content style={{ padding: "0 50px" }}>
