@@ -7,7 +7,7 @@
  * 常量
  * 增行
  */
-const SIMPLE_ADD_ROW = "SIMPLE/SIMPLE_ADD_ROW";
+const ALL_DATA = "ALL_DATA";
 
 /**
  * reducer
@@ -19,7 +19,7 @@ const defaultState: { rows: [] } = {
 
 export default (state = defaultState, action: { type: string; data: [] }) => {
   switch (action.type) {
-    case SIMPLE_ADD_ROW:
+    case ALL_DATA:
       return { ...state, rows: action.data };
     default:
       return state;
@@ -33,11 +33,11 @@ export default (state = defaultState, action: { type: string; data: [] }) => {
  */
 const axios = require("axios");
 
-export const addrow = () => {
+export const setAllData = () => {
   return (dispatch: any) => {
-    return axios.get("/addrow").then((response: { data: { rows: [] } }) => {
+    return axios.get("/pagedata").then((response: { data: { rows: [] } }) => {
       dispatch({
-        type: SIMPLE_ADD_ROW,
+        type: ALL_DATA,
         data: response.data.rows
       });
     });

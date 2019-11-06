@@ -2,7 +2,6 @@ import React from "react";
 import { Layout, Input, Button, Form, message } from "antd";
 
 const { Content, Footer } = Layout;
-
 const axios = require("axios");
 
 function Login({ form }: { form: { getFieldDecorator: Function; validateFields: Function } }) {

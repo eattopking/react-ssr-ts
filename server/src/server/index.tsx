@@ -75,7 +75,7 @@ router.get("/page", async (ctx: { body: string; request: { url: string } }) => {
 /**
  * 增行接口
  */
-router.get("/addrow", async (ctx: { body: object }) => {
+router.get("/pagedata", async (ctx: { body: object }) => {
   await Apis.findAll.then((result: object) => {
     /*
      * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
