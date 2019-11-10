@@ -74,14 +74,19 @@ const Page = ({
       <Modal title="Basic Modal" visible={visible} onOk={handleOk} onCancel={handleCancel}>
         <Form className="login-form">
           <Form.Item>
-            {getFieldDecorator("mail", {
-              rules: [{ required: true, message: "Please input your username!" }]
-            })(<Input placeholder="用户" />)}
+            {getFieldDecorator("name", {
+              rules: [{ required: true, message: "Please input your name!" }]
+            })(<Input placeholder="名字" />)}
           </Form.Item>
           <Form.Item>
-            {getFieldDecorator("password", {
-              rules: [{ required: true, message: "Please input your Password!" }]
-            })(<Input type="password" placeholder="密码" />)}
+            {getFieldDecorator("address", {
+              rules: [{ required: true, message: "Please input your address!" }]
+            })(<Input placeholder="地址" />)}
+          </Form.Item>
+          <Form.Item>
+            {getFieldDecorator("infomation", {
+              rules: [{ required: true, message: "Please input your infomation!" }]
+            })(<Input placeholder="额外信息" />)}
           </Form.Item>
         </Form>
       </Modal>
