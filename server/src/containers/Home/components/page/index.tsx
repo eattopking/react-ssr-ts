@@ -1,10 +1,21 @@
 import React, { useState } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { Table, Button, Modal } from "antd";
+import { Table, Button, Modal, Form, message, Input } from "antd";
 import * as pageActions from "./store/widgets";
 
-const Page = ({ dispatch, rows }: { dispatch: any; rows: [] }) => {
+const axios = require("axios");
+
+const Page = ({
+  dispatch,
+  rows,
+  form
+}: {
+  dispatch: any;
+  rows: [];
+  form: { getFieldDecorator: Function; validateFields: Function };
+}) => {
+  const { getFieldDecorator, validateFields } = form;
   // action集合
   const actions = bindActionCreators(pageActions, dispatch);
   const [visible, setVisible] = useState(false);
@@ -30,19 +41,49 @@ const Page = ({ dispatch, rows }: { dispatch: any; rows: [] }) => {
     }
   ]);
 
-  const handleOk = () => {};
-  const handleCancel = () => {};
+  const handleCancel = () => {
+    setVisible(false);
+  };
+
   const handleAdd = () => {
     setVisible(true);
+  };
+
+  const handleOk = (e: { preventDefault: Function }) => {
+    e.preventDefault();
+    validateFields((err: any, values: any) => {
+      if (!err) {
+        alert(333344444)
+        axios.get("/signin", { params: values }).then((res: any) => {
+          const {
+            data: { status }
+          } = res;
+          if (status) {
+            window.location.href = "http://eattopking.top:8000/page";
+          } else {
+            message.info("用户名或密码不正确,请重新输入");
+          }
+        });
+      }
+    });
   };
 
   return (
     <>
       <Button onClick={handleAdd}>添加</Button>
       <Modal title="Basic Modal" visible={visible} onOk={handleOk} onCancel={handleCancel}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        <Form className="login-form">
+          <Form.Item>
+            {getFieldDecorator("mail", {
+              rules: [{ required: true, message: "Please input your username!" }]
+            })(<Input placeholder="用户" />)}
+          </Form.Item>
+          <Form.Item>
+            {getFieldDecorator("password", {
+              rules: [{ required: true, message: "Please input your Password!" }]
+            })(<Input type="password" placeholder="密码" />)}
+          </Form.Item>
+        </Form>
       </Modal>
       <Table columns={columns} dataSource={rows} pagination={false} />
     </>
@@ -61,4 +102,4 @@ const mapStateToProps = (state: { page: { rows: [] } }) => {
 //   return store.dispatch(simpleActions.addrow());
 // };
 
-export default connect(mapStateToProps)(Page);
+export default connect(mapStateToProps)(Form.create({})(Page));
