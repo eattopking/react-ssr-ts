@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { Table, Button } from "antd";
+import { Table, Button, Modal } from "antd";
 import * as pageActions from "./store/widgets";
 
 const Page = ({ dispatch, rows }: { dispatch: any; rows: [] }) => {
   // action集合
   const actions = bindActionCreators(pageActions, dispatch);
-
+  const [visible, setVisible] = useState(false);
   // 表格列选项
   const [columns] = useState([
     {
@@ -30,9 +30,20 @@ const Page = ({ dispatch, rows }: { dispatch: any; rows: [] }) => {
     }
   ]);
 
+  const handleOk = () => {};
+  const handleCancel = () => {};
+  const handleAdd = () => {
+    setVisible(true);
+  };
+
   return (
     <>
-      <Button>添加</Button>
+      <Button onClick={handleAdd}>添加</Button>
+      <Modal title="Basic Modal" visible={visible} onOk={handleOk} onCancel={handleCancel}>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal>
       <Table columns={columns} dataSource={rows} pagination={false} />
     </>
   );
