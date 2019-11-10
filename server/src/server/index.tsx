@@ -61,7 +61,7 @@ router.get("/page", async (ctx: { body: string; request: { url: string } }) => {
      * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
      * 并且给请求回来的数据设置成redux的默认数据,最后经这些数据存到window上, 用于注水
      */
-    const store = getStore({ simple: { rows: JSON.parse(JSON.stringify(result)) } });
+    const store = getStore({ page: { rows: JSON.parse(JSON.stringify(result)) } });
 
     // 当ctx.body在promise中使用时,外部回调函数一定要使用async, 一定要让对应的Promise等待
     ctx.body = render({
