@@ -99,6 +99,9 @@ router.get("/adddata", async ctx => {
     }
   } = ctx;
   await Apis.savePageData(name, address, infomation).then(async () => {
+    ctx.body = {
+      status: true
+    };
     // await Apis.findAll.then((result: object) => {
     //   /*
     //    * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
