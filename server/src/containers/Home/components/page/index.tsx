@@ -60,7 +60,7 @@ const Page = ({
           if (status) {
             message.info("添加成功");
             handleCancel();
-            actions.setAllData(rows);
+            actions.setAllData();
           } else {
             message.info("添加失败");
           }

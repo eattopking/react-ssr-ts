@@ -30,16 +30,23 @@ export default (state = defaultState, action: { type: string; data: [] }) => {
  * actions
  * 这个模式下actions 使用export 暴露多个action
  */
-
+const axios = require("axios");
 /**
  * 给表格设置数据
  * @param rows 表格数据
  */
-export const setAllData = (rows: []) => {
+export const setAllData = () => {
   return (dispatch: Function) => {
-    dispatch({
-      type: ALL_DATA,
-      data: rows
+    axios.get("/pagedata").then((res: any) => {
+      const {
+        data: { status, rows }
+      } = res;
+      if (status) {
+        dispatch({
+          type: ALL_DATA,
+          data: rows
+        });
+      }
     });
   };
 };
