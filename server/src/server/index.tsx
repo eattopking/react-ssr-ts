@@ -75,23 +75,6 @@ router.get("/page", async (ctx: { body: string; request: { url: string } }) => {
 /**
  * 拉取全部数据接口
  */
-router.get("/pagedata", async (ctx: { body: object }) => {
-  await Apis.findAll.then((result: object) => {
-    /*
-     * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
-     * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
-     * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
-     */
-    ctx.body = {
-      status: true,
-      rows: JSON.parse(JSON.stringify(result))
-    };
-  });
-});
-
-/**
- * 拉取全部数据接口
- */
 router.get("/adddata", async ctx => {
   const {
     request: {
@@ -99,20 +82,17 @@ router.get("/adddata", async ctx => {
     }
   } = ctx;
   await Apis.savePageData(name, address, infomation).then(async () => {
-    ctx.body = {
-      status: true
-    };
-    // await Apis.findAll.then((result: object) => {
-    //   /*
-    //    * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
-    //    * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
-    //    * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
-    //    */
-    //   ctx.body = {
-    //     status: true,
-    //     rows: JSON.parse(JSON.stringify(result))
-    //   };
-    // });
+    await Apis.findPageAll.then((result: object) => {
+      /*
+       * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
+       * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
+       * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
+       */
+      ctx.body = {
+        status: true,
+        rows: JSON.parse(JSON.stringify(result))
+      };
+    });
   });
 });
 
