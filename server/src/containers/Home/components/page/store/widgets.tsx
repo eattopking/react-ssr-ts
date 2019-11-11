@@ -26,21 +26,20 @@ export default (state = defaultState, action: { type: string; data: [] }) => {
   }
 };
 
-
 /**
  * actions
  * 这个模式下actions 使用export 暴露多个action
  */
-const axios = require("axios");
 
-export const setAllData = () => {
-  return (dispatch: any) => {
-    return axios.get("/pagedata").then((response: { data: { rows: [] } }) => {
-      dispatch({
-        type: ALL_DATA,
-        data: response.data.rows
-      });
+/**
+ * 给表格设置数据
+ * @param rows 表格数据
+ */
+export const setAllData = (rows: []) => {
+  return (dispatch: Function) => {
+    dispatch({
+      type: ALL_DATA,
+      data: rows
     });
   };
 };
-

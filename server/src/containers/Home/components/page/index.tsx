@@ -53,15 +53,15 @@ const Page = ({
     e.preventDefault();
     validateFields((err: any, values: any) => {
       if (!err) {
-        alert(333344444)
-        axios.get("/signin", { params: values }).then((res: any) => {
+        axios.get("/adddata", { params: values }).then((res: any) => {
           const {
-            data: { status }
+            data: { status, rows }
           } = res;
           if (status) {
-            window.location.href = "http://eattopking.top:8000/page";
+            message.info("添加成功");
+            actions.setAllData(rows);
           } else {
-            message.info("用户名或密码不正确,请重新输入");
+            message.info("添加失败");
           }
         });
       }

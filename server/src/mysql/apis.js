@@ -7,6 +7,16 @@ module.exports = {
    * 获取主页数据
    */
   findPageAll: pageTable.findAll(),
+  /**
+   * 增加主页信息
+   */
+  savePageData: (name, address, infomation) =>
+    pageTable.create({
+      key: Math.random(),
+      name,
+      address,
+      infomation
+    }),
   // 获取制定用户信息
   findUserInfo: userName =>
     userTable.findAll({
