@@ -35,9 +35,9 @@ const Page = ({
     },
     {
       title: "额外信息",
-      dataIndex: "infomation",
+      dataIndex: "information",
       width: 80,
-      key: "infomation"
+      key: "information"
     }
   ]);
 
@@ -85,8 +85,8 @@ const Page = ({
             })(<Input placeholder="地址" />)}
           </Form.Item>
           <Form.Item>
-            {getFieldDecorator("infomation", {
-              rules: [{ required: true, message: "Please input your infomation!" }]
+            {getFieldDecorator("information", {
+              rules: [{ required: true, message: "Please input your information!" }]
             })(<Input placeholder="额外信息" />)}
           </Form.Item>
         </Form>

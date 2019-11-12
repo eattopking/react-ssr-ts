@@ -10,12 +10,12 @@ module.exports = {
   /**
    * 增加主页信息
    */
-  savePageData: (name, address, infomation) =>
+  savePageData: (name, address, information) =>
     pageTable.create({
       key: Math.random(),
       name,
       address,
-      infomation
+      information
     }),
   // 获取制定用户信息
   findUserInfo: userName =>
