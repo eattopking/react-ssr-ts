@@ -98,7 +98,7 @@ router.get("/adddata", async ctx => {
       query: { name, address, information }
     }
   } = ctx;
-  await Apis.savePageData(name, address, information).then(async () => {
+  await Apis.savePageData(name, address, information).then(() => {
     /*
      * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
      * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
