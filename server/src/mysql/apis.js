@@ -6,7 +6,7 @@ module.exports = {
   /**
    * 获取主页数据
    */
-  findPageAll: pageTable.findAll(),
+  findPageAll: pageTable.findAll({ raw: true }),
   /**
    * 增加主页信息
    */
