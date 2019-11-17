@@ -35,18 +35,11 @@ const axios = require("axios");
  * 给表格设置数据
  * @param rows 表格数据
  */
-export const setAllData = () => {
+export const setAllData = (rows: []) => {
   return (dispatch: Function) => {
-    axios.get("/pagedata").then((res: any) => {
-      const {
-        data: { status, rows }
-      } = res;
-      if (status) {
-        dispatch({
-          type: ALL_DATA,
-          data: rows
-        });
-      }
+    dispatch({
+      type: ALL_DATA,
+      data: rows
     });
   };
 };

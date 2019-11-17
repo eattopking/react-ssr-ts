@@ -36,16 +36,22 @@ app.use(KoaBody());
 /**
  * 返回注册页
  */
-router.get("/register", async (ctx: { body: string; request: { url: string } }) => {
-  ctx.body = registerRender();
-});
+router.get(
+  "/register",
+  async (ctx: { body: string; request: { url: string } }) => {
+    ctx.body = registerRender();
+  }
+);
 
 /**
  * 返回登录页
  */
-router.get("/login", async (ctx: { body: string; request: { url: string } }) => {
-  ctx.body = loginRender();
-});
+router.get(
+  "/login",
+  async (ctx: { body: string; request: { url: string } }) => {
+    ctx.body = loginRender();
+  }
+);
 
 /**
  * 返回主页
@@ -61,7 +67,9 @@ router.get("/page", async (ctx: { body: string; request: { url: string } }) => {
      * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
      * 并且给请求回来的数据设置成redux的默认数据,最后经这些数据存到window上, 用于注水
      */
-    const store = getStore({ page: { rows: JSON.parse(JSON.stringify(result)) } });
+    const store = getStore({
+      page: { rows: JSON.parse(JSON.stringify(result)) }
+    });
 
     // 当ctx.body在promise中使用时,外部回调函数一定要使用async, 一定要让对应的Promise等待
     ctx.body = render({
@@ -69,23 +77,6 @@ router.get("/page", async (ctx: { body: string; request: { url: string } }) => {
       context: {},
       store
     });
-  });
-});
-
-/**
- * 返回主页数据
- */
-router.get("/pagedata", async (ctx: { body: object }) => {
-  await Apis.findPageAll.then((result: object) => {
-    /*
-     * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
-     * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
-     * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
-     */
-    ctx.body = {
-      status: true,
-      rows: JSON.parse(JSON.stringify(result))
-    };
   });
 });
 
@@ -98,16 +89,27 @@ router.get("/adddata", async ctx => {
       query: { name, address, information }
     }
   } = ctx;
-  await Apis.savePageData(name, address, information).then(() => {
-    /*
-     * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
-     * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
-     * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
-     */
-    ctx.body = {
-      status: true
-    };
-  });
+  await Apis.savePageData(name, address, information).then(
+    async (row: object) => {
+      /**
+       * 数据库中新增的行
+       */
+      const addRow = JSON.parse(JSON.stringify(row));
+      await Apis.findPageAll.then((result: object) => {
+        const allRows = JSON.parse(JSON.stringify(result));
+        allRows.push(addRow);
+        /*
+         * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
+         * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
+         * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
+         */
+        ctx.body = {
+          status: true,
+          rows: allRows
+        };
+      });
+    }
+  );
 });
 
 /**
@@ -148,10 +150,13 @@ router.get("/registerin", async ctx => {
     }
   } = ctx;
   await Apis.findUserMail().then(async (result: string) => {
-    const mailList = JSON.parse(JSON.stringify(result)).reduce((currentVlaue: any, value: { mail: string }) => {
-      currentVlaue.push(value.mail);
-      return currentVlaue;
-    }, []);
+    const mailList = JSON.parse(JSON.stringify(result)).reduce(
+      (currentVlaue: any, value: { mail: string }) => {
+        currentVlaue.push(value.mail);
+        return currentVlaue;
+      },
+      []
+    );
     if (mailList.includes(mail)) {
       ctx.body = {
         status: false,
