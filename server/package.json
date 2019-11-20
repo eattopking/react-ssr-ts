@@ -15,7 +15,6 @@
     "sync": "pm2 start -f ./src/mysql/syncTable.js",
     "start": "nodemon --watch dist --exec npx \"./dist/index.js\"",
     "npx_sync": "npx ./src/mysql/syncTable.js"
-    
   },
   "author": "",
   "license": "ISC",
@@ -61,6 +60,7 @@
     "koa": "^2.7.0",
     "koa-body": "^4.1.0",
     "koa-router": "^7.4.0",
+    "koa-session": "^5.12.3",
     "koa-static": "^5.0.0",
     "mysql": "^2.17.1",
     "mysql2": "^1.6.5",
