@@ -5,7 +5,7 @@ module.exports = function() {
   const devConfig = {
     // 设置成生产模式，代码压缩
     mode: "production",
-    devtool: "source-map",
+    // devtool: "source-map",
     resolve: {
       extensions: [".jsx", ".less", ".js", ".json", ".ts", ".tsx"],
       alias: {
