@@ -23,7 +23,7 @@ function Login({
             data: { status }
           } = res;
           if (status) {
-            window.location.href = "http://localhost:8000/page";
+            window.location.href = "http://eattopking.top:8000/page";
           } else {
             message.info("用户名或密码不正确,请重新输入");
           }
