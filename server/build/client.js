@@ -5,15 +5,16 @@ const merge = require("webpack-merge");
 const babelrc = require("../babelrc");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = function() {
   const clientConfig = {
     // 入口 这里路径就是固定以项目根路径开始
-    entry: { 
+    entry: {
       index: "./src/client/index.tsx",
       login: "./src/client/login.tsx",
       register: "./src/client/register.tsx"
-   },
+    },
     // 出口
     output: {
       // 所要打包到的目标目录
@@ -31,6 +32,7 @@ module.exports = function() {
           test: /\.tsx?$/,
           // 使用cache提升编译速度
           use: [
+            "cache-loader",
             {
               loader: "babel-loader?cacheDirectory=true",
               options: babelrc({ server: false })
@@ -80,7 +82,17 @@ module.exports = function() {
         filename: "[name].css",
         chunkFilename: "[id].css"
       })
-    ]
+    ],
+    optimization: {
+      // 使用自定义TerserPlugin插件对原有TerserPlugin插件进行替换
+      minimizer: [new TerserPlugin({
+        // 缓存文件
+        cache: true,
+        // 使用多线程构建
+        parallel: true,
+        sourceMap: true
+      })]
+    }
   };
   return merge(baseConfig(), clientConfig);
 };
