@@ -20,6 +20,7 @@ function Register({
           } = res;
           if (status) {
             message.info("注册成功");
+            window.location.href = "http://eattopking.top:8000/login";
           } else if (data === 1) {
             message.info("该用户已经注册请直接登录");
           } else {
