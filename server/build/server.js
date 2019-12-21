@@ -46,7 +46,16 @@ module.exports = function() {
             options: babelrc({ server: true })
           },
           exclude: /node_modules/
-        }
+        },
+        // {
+        //   test: /\.less$/,
+        //   use: [
+        //     "isomorphic-style-loader",
+        //     "css-loader",
+        //     "postcss-loader",
+        //     "less-loader"
+        //   ]
+        // }
       ]
     },
     // 进一步设置编译后的代码在node环境中运行,从而不把node脚本引用的库编译压缩进文件
