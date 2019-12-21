@@ -18,16 +18,22 @@ const router = new Router();
 /**
  * 返回注册页
  */
-router.get('/register', (ctx: { body: string; request: { url: string } }) => {
-  ctx.body = registerRender();
-});
+router.get(
+  '/register',
+  async (ctx: { body: string; request: { url: string } }) => {
+    ctx.body = registerRender();
+  }
+);
 
 /**
  * 返回登录页
  */
-router.get('/login', (ctx: { body: string; request: { url: string } }) => {
-  ctx.body = loginRender();
-});
+router.get(
+  '/login',
+  async (ctx: { body: string; request: { url: string } }) => {
+    ctx.body = loginRender();
+  }
+);
 
 /**
  * 返回主页
