@@ -14,16 +14,16 @@ import sessionStore from './sessionStore';
 const app = new Koa();
 
 /**
- * allowedMethods给相应报文自动增加上状态码和allow 字段
- * app.use(router.routes()) 这是一次性注册使用react-router接口中间件
- */
-app.use(router.routes()).use(router.allowedMethods());
-
-/**
  * 初始化session, 设置storage对象为外部存储
  */
 app.keys = ['ffyyddyy@@521'];
 app.use(session({ store: sessionStore }, app));
+
+/**
+ * allowedMethods给相应报文自动增加上状态码和allow 字段
+ * app.use(router.routes()) 这是一次性注册使用react-router接口中间件
+ */
+app.use(router.routes()).use(router.allowedMethods());
 
 /**
  * 设置静态资源路径, 当客户端请求静态资源是,就到对应目录下寻找返回,
