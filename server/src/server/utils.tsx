@@ -1,7 +1,7 @@
 import React from "react";
-import PageLayout from "./containers/Home/index";
-import Login from "./containers/Login/index";
-import Register from "./containers/Register/index";
+import PageLayout from "../containers/Home/index";
+import Login from "../containers/Login/index";
+import Register from "../containers/Register/index";
 import { Provider } from "react-redux";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom";

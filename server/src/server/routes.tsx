@@ -7,7 +7,7 @@ import routes from '../containers/Home/routes';
 
 import Router from 'koa-router';
 import { getStore } from '../rootStore';
-import { render, loginRender, registerRender } from '../utils';
+import { render, loginRender, registerRender } from './utils';
 const Apis = require('../mysql/apis');
 
 /**
