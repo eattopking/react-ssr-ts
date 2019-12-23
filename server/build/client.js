@@ -1,30 +1,32 @@
 // node 环境 客户端代码 webpack打包配置 生产配置
-const path = require("path");
-const baseConfig = require("./base");
-const merge = require("webpack-merge");
-const babelrc = require("../babelrc");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
+const path = require('path');
+const baseConfig = require('./base');
+const merge = require('webpack-merge');
+const babelrc = require('../babelrc');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = function() {
   const clientConfig = {
+    // 上下文, 只作为entry和loader里面文件路径的参照
+    context: path.resolve(process.cwd(), './src/client'),
     // 入口 这里路径就是固定以项目根路径开始
     entry: {
-      index: "./src/client/index.tsx",
-      login: "./src/client/login.tsx",
-      register: "./src/client/register.tsx"
+      index: './index.tsx',
+      login: './login.tsx',
+      register: './register.tsx'
     },
     // 出口
     output: {
       // 所要打包到的目标目录
-      path: path.resolve(__dirname, "../public"),
+      path: path.resolve(__dirname, '../public'),
       // 打包后的文件名
-      filename: "[name].js",
+      filename: '[name].js',
       // 打包后，其他人引用这个包时的名称
-      library: "ts",
+      library: 'ts',
       // 对包对外输出方式
-      libraryTarget: "umd"
+      libraryTarget: 'umd'
     },
     module: {
       rules: [
@@ -32,12 +34,12 @@ module.exports = function() {
           test: /\.tsx?$/,
           // 使用cache提升编译速度
           use: [
-            "cache-loader",
+            'cache-loader',
             {
-              loader: "babel-loader?cacheDirectory=true",
+              loader: 'babel-loader?cacheDirectory=true',
               options: babelrc({ server: false })
             },
-            "awesome-typescript-loader"
+            'awesome-typescript-loader'
           ],
           exclude: /node_modules/
         },
@@ -45,7 +47,7 @@ module.exports = function() {
           test: /\.js?$/,
           // 使用cache提升编译速度
           use: {
-            loader: "babel-loader?cacheDirectory=true",
+            loader: 'babel-loader?cacheDirectory=true',
             options: babelrc({ server: false })
           },
           exclude: /node_modules/
@@ -54,10 +56,10 @@ module.exports = function() {
           test: /\.less$/,
           use: [
             MiniCssExtractPlugin.loader,
-            "css-loader",
-            "postcss-loader",
+            'css-loader',
+            'postcss-loader',
             {
-              loader: "less-loader",
+              loader: 'less-loader',
               options: {
                 // 解决这个报错 Inline JavaScript is not enabled
                 javascriptEnabled: true
@@ -71,7 +73,7 @@ module.exports = function() {
             {
               loader: MiniCssExtractPlugin.loader
             },
-            "css-loader"
+            'css-loader'
           ]
         }
       ]
@@ -79,19 +81,21 @@ module.exports = function() {
     plugins: [
       new CleanWebpackPlugin(),
       new MiniCssExtractPlugin({
-        filename: "[name].css",
-        chunkFilename: "[id].css"
+        filename: '[name].css',
+        chunkFilename: '[id].css'
       })
     ],
     optimization: {
       // 使用自定义TerserPlugin插件对原有TerserPlugin插件进行替换
-      minimizer: [new TerserPlugin({
-        // 缓存文件
-        cache: true,
-        // 使用多线程构建
-        parallel: true,
-        sourceMap: true
-      })]
+      minimizer: [
+        new TerserPlugin({
+          // 缓存文件
+          cache: true,
+          // 使用多线程构建
+          parallel: true,
+          sourceMap: true
+        })
+      ]
     }
   };
   return merge(baseConfig(), clientConfig);
