@@ -21,25 +21,39 @@ module.exports = ({ server }) => {
     // 这里都是对babel babel7.x的最新配置
     presets: [
       [
-        "@babel/preset-env",
+        '@babel/preset-env',
         {
-          useBuiltIns: "usage",
+          /**
+           * useBuiltIns 设置 babel-polyfill插件的参数,
+           * babel-polyfill就是对babel无法转换的部分的补充(代码填充)
+           * babel-polyfill适合用在业务性前端项目中, babel-polyfill转换后生成全局变量
+           *  参数值 为usage 表示按需加载, 根据真实使用和浏览器兼容配置决定转换代码量
+           */
+
+          useBuiltIns: 'usage',
           modules: false
         }
       ],
-      "@babel/preset-react"
+      '@babel/preset-react'
     ],
     plugins: [
       !server && [
-        "import",
+        'import',
         {
-          libraryName: "antd",
-          libraryDirectory: "es",
+          libraryName: 'antd',
+          libraryDirectory: 'es',
           style: true // `style: true` 会加载 less 文件
         }
       ],
-      // 解决es6编译 异步函数报错问题
-      "@babel/plugin-transform-runtime"
+      /*
+       *plugin-transform-runtime就是对babel无法转换的部分的补充(代码填充)
+       *这里插件不会造成全局变量污染, 并且可以提取公共代码,
+       *放到babel-runtime的helpers文件中,让使用者用垫片(shiming)的形式引入,
+       *plugin-transform-runtime也是按需加载的, 根据是实际使用和浏览器兼容配置, 决定生成的代码量,
+       *但是无法转换一些原生实例api, 比如string.includes, Object.assign,
+       *所以在业务项目中不使用它, 只有在第三方库中使用, 不支持的api依赖于引用者的全局polyfill,
+       */
+      // '@babel/plugin-transform-runtime'
     ].filter(Boolean)
   };
 };
