@@ -7,7 +7,7 @@ module.exports = function() {
     mode: "production",
     devtool: "source-map",
     resolve: {
-      extensions: [".jsx", ".less", ".js", ".json", ".ts", ".tsx"],
+      extensions: [".tsx", ".less", ".js"],
       alias: {
         src: path.resolve(__dirname, "../src")
       }
@@ -21,8 +21,10 @@ module.exports = function() {
             {
               loader: "url-loader",
               options: {
+                // 超过8192b, 就替换为file-loader处理
                 limit: 8192,
-                publicPath: "./"
+                // 名称+hash命名
+                name: '[name][hash].[ext]'
               }
             }
           ]
