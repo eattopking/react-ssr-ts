@@ -2,6 +2,7 @@
  * ts的配置文件
  * 这就是一套基本完善可以正常工作的tsconfig.json了 
  * lib jsx moduleResolution allowSyntheticDefaultImports 这几个是很重要的
+ * tsconfig.json 只需要在项目根目录声明, webpack就会自己去读, 默认的情况
  */
 
 
