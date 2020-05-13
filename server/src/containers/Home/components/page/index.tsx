@@ -1,15 +1,16 @@
-import React, { useState } from "react";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import { Table, Button, Modal, Form, message, Input } from "antd";
-import * as pageActions from "./store/widgets";
+import React, { useState } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { Table, Button, Modal, Form, message, Input } from 'antd';
+import * as pageActions from './store/widgets';
+import "../../main.less";
 
-const axios = require("axios");
+const axios = require('axios');
 
 const Page = ({
   dispatch,
   rows,
-  form
+  form,
 }: {
   dispatch: any;
   rows: [];
@@ -22,23 +23,23 @@ const Page = ({
   // 表格列选项
   const [columns] = useState([
     {
-      title: "名字",
-      dataIndex: "name",
-      key: "name",
-      width: 80
+      title: '名字',
+      dataIndex: 'name',
+      key: 'name',
+      width: 80,
     },
     {
-      title: "地址",
-      dataIndex: "address",
+      title: '地址',
+      dataIndex: 'address',
       width: 80,
-      key: "address"
+      key: 'address',
     },
     {
-      title: "额外信息",
-      dataIndex: "information",
+      title: '额外信息',
+      dataIndex: 'information',
       width: 80,
-      key: "information"
-    }
+      key: 'information',
+    },
   ]);
 
   const handleCancel = () => {
@@ -53,16 +54,16 @@ const Page = ({
     e.preventDefault();
     validateFields((err: any, values: any) => {
       if (!err) {
-        axios.get("/adddata", { params: values }).then((res: any) => {
+        axios.get('/adddata', { params: values }).then((res: any) => {
           const {
-            data: { status, rows }
+            data: { status, rows },
           } = res;
           if (status) {
-            message.info("添加成功");
+            message.info('添加成功');
             handleCancel();
             actions.setAllData(rows);
           } else {
-            message.info("添加失败");
+            message.info('添加失败');
           }
         });
       }
@@ -72,21 +73,31 @@ const Page = ({
   return (
     <>
       <Button onClick={handleAdd}>添加</Button>
-      <Modal title="Basic Modal" visible={visible} onOk={handleOk} onCancel={handleCancel}>
+      <div className="red">1111</div>
+      <Modal
+        title="Basic Modal"
+        visible={visible}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      >
         <Form className="login-form">
           <Form.Item>
-            {getFieldDecorator("name", {
-              rules: [{ required: true, message: "Please input your name!" }]
+            {getFieldDecorator('name', {
+              rules: [{ required: true, message: 'Please input your name!' }],
             })(<Input placeholder="名字" />)}
           </Form.Item>
           <Form.Item>
-            {getFieldDecorator("address", {
-              rules: [{ required: true, message: "Please input your address!" }]
+            {getFieldDecorator('address', {
+              rules: [
+                { required: true, message: 'Please input your address!' },
+              ],
             })(<Input placeholder="地址" />)}
           </Form.Item>
           <Form.Item>
-            {getFieldDecorator("information", {
-              rules: [{ required: true, message: "Please input your information!" }]
+            {getFieldDecorator('information', {
+              rules: [
+                { required: true, message: 'Please input your information!' },
+              ],
             })(<Input placeholder="额外信息" />)}
           </Form.Item>
         </Form>
@@ -99,7 +110,7 @@ const Page = ({
 // 将store上的state同步到props上
 const mapStateToProps = (state: { page: { rows: [] } }) => {
   return {
-    rows: state.page.rows
+    rows: state.page.rows,
   };
 };
 
