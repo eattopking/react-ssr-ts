@@ -3,6 +3,7 @@ const path = require('path');
 const baseConfig = require('./base');
 const merge = require('webpack-merge');
 const babelrc = require('../babelrc');
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -23,8 +24,9 @@ module.exports = function () {
     output: {
       // 所要打包到的目标目录
       path: path.resolve(__dirname, '../public'),
-      // 打包后的文件名
       filename: '[name].js',
+      // 打包后的文件名 chunkhash减少文件名变化, 提升前端性能, 减少请求
+      // filename: '[name].[chunkhash:8].js',
       // 打包后，其他人引用这个包时的名称
       library: 'ts',
       // 对包对外输出方式
@@ -51,6 +53,9 @@ module.exports = function () {
     plugins: [
       new CleanWebpackPlugin(),
       new MiniCssExtractPlugin({
+        // 减少文件名变化, 使强缓存协商缓存还有效, chunkhash 提升前端性能, 减少请求
+        // filename: '[name].[contenthash:8].css',
+        // chunkFilename: '[id].[contenthash].css'
         filename: '[name].css',
         chunkFilename: '[id].css',
       }),
@@ -65,6 +70,8 @@ module.exports = function () {
           },
         },
       }),
+      // 使用模块相对路径的hash前四位作为moduleid, 避免多语的moduleid改变, 使文件内容不变时, chunkhash不变
+      new webpack.HashedModuleIdsPlugin(),
       // 多线程构建js
       new HappyPack({
         // 用唯一的标识符 id 来代表当前的 HappyPack 是用来处理一类特定的文件
@@ -105,25 +112,28 @@ module.exports = function () {
         // 提取公共模块的最小大小
         minSize: 30000,
         maxSize: 0,
+        // 模块被import引用几次,才提取成公共模块
         minChunks: 1,
         maxAsyncRequests: 5,
         maxInitialRequests: 3,
         automaticNameDelimiter: '-',
         name: true,
-        // 分割代码
+        // 缓存组, 组名+共同引用的各个入口名组成, 分割成的代码块名
         cacheGroups: {
           // 分割代码生成包的名称
           vendors: {
             // 将哪些包分割成一个模块
             test: /[\\/]node_modules[\\/]/,
+            // 优先级
             priority: -10,
+            filename: '[name].js'
           },
           default: {
-            minChunks: 2,
+            minChunks: 1,
             priority: -20,
-            reuseExistingChunk: true,
-          }
-        }
+            reuseExistingChunk: false,
+          },
+        },
       },
       // 使用自定义TerserPlugin插件对原有TerserPlugin插件进行替换
       minimizer: [
