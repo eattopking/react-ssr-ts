@@ -8,7 +8,7 @@
     "build": "npm-run-all --parallel build_**",
     "build_server": "webpack --config ./build/server.js --progress=true --color=true --compress=true",
     "build_client": "webpack --config ./build/client.js --progress=true --color=true --compress=true",
-    "build_start": "pm2 start -f ./pm2.config.js",
+    "pm2_start": "pm2 start -f ./pm2.config.js",
     "dev_server": "webpack --config ./build/server.js --progress=true --color=true --compress=true --watch",
     "dev_client": "webpack --config ./build/client.js --progress=true --color=true --compress=true --watch",
     "dev_start": "pm2 start -f ./pm2.config.js",
