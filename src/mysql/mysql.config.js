@@ -5,7 +5,7 @@ const config = {
   // 用户
   USERNAME: "root",
   //密码
-  PASSWORD: "5211314ystbb",
+  PASSWORD: "5211314YSTBB!",
   // 端口
   PORT: 3306,
   // 服务ip地址
