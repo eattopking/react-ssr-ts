@@ -54,7 +54,7 @@ const Page = ({
     e.preventDefault();
     validateFields((err: any, values: any) => {
       if (!err) {
-        axios.get('/adddata', { params: values }).then((res: any) => {
+        axios.get('/api/adddata', { params: values }).then((res: any) => {
           const {
             data: { status, rows },
           } = res;

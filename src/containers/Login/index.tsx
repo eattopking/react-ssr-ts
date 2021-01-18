@@ -18,7 +18,7 @@ function Login({
     e.preventDefault();
     validateFields((err: any, values: any) => {
       if (!err) {
-        axios.get("/signin", { params: values }).then((res: any) => {
+        axios.get("/api/signin", { params: values }).then((res: any) => {
           const {
             data: { status }
           } = res;

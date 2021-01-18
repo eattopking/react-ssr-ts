@@ -77,7 +77,7 @@ router.get('/page', async ctx => {
 /**
  * 拉取全部数据接口
  */
-router.get('/adddata', async ctx => {
+router.get('/api/adddata', async ctx => {
   const {
     request: {
       query: { name, address, information }
@@ -103,7 +103,7 @@ router.get('/adddata', async ctx => {
 /**
  * 登录接口, 用于用户登录
  */
-router.get('/signin', async ctx => {
+router.get('/api/signin', async ctx => {
   const {
     request: {
       query: { mail, password }
@@ -145,7 +145,7 @@ router.get('/signin', async ctx => {
 /**
  * 注册接口, 用于用户注册
  */
-router.get('/registerin', async ctx => {
+router.get('/api/registerin', async ctx => {
   const {
     request: {
       query: { mail, password }

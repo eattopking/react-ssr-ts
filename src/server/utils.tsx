@@ -25,7 +25,7 @@ export function render({ url, context = {}, store }: { url: string; context: obj
   <html lang="zh-CN">
     <head>
       <title>ssrTable</title>
-      <link rel="stylesheet" href="/index.css">
+      <link rel="stylesheet" href="index.css">
     </head>
     <body>
       <div id="app">${content}</div>
@@ -34,7 +34,7 @@ export function render({ url, context = {}, store }: { url: string; context: obj
         state: ${JSON.stringify(store.getState())}
       }
       </script>
-      <script src="/index.js"></script>
+      <script src="index.js"></script>
     </body>
   </html>`;
 }
@@ -51,11 +51,11 @@ export function loginRender() {
   <html lang="zh-CN">
     <head>
       <title>登录界面</title>
-      <link rel="stylesheet" href="/login.css">
+      <link rel="stylesheet" href="login.css">
     </head>
     <body>
       <div id="app">${content}</div>
-      <script src="/login.js"></script>
+      <script src="login.js"></script>
     </body>
   </html>`;
 }
@@ -72,11 +72,11 @@ export function registerRender() {
   <html lang="zh-CN">
     <head>
       <title>注册界面</title>
-      <link rel="stylesheet" href="/register.css">
+      <link rel="stylesheet" href="register.css">
     </head>
     <body>
       <div id="app">${content}</div>
-      <script src="/register.js"></script>
+      <script src="register.js"></script>
     </body>
   </html>`;
 }
