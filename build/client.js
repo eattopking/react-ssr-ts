@@ -57,7 +57,7 @@ module.exports = function () {
         // filename: '[name].[contenthash:8].css',
         // chunkFilename: '[id].[contenthash].css'
         filename: '[name].css',
-        chunkFilename: '[id].css',
+        chunkFilename: '[name].css',
       }),
       new OptimizeCssAssetsPlugin({
         cssProcessorOptions: {
@@ -106,35 +106,35 @@ module.exports = function () {
     ],
     // webpack自带优化配置
     optimization: {
-      splitChunks: {
-        // 不管同步还是异步都提取公共模块
-        chunks: 'all',
-        // 提取公共模块的最小大小
-        minSize: 30000,
-        maxSize: 0,
-        // 模块被import引用几次,才提取成公共模块
-        minChunks: 1,
-        maxAsyncRequests: 5,
-        maxInitialRequests: 3,
-        automaticNameDelimiter: '-',
-        name: true,
-        // 缓存组, 组名+共同引用的各个入口名组成, 分割成的代码块名
-        cacheGroups: {
-          // 分割代码生成包的名称
-          vendors: {
-            // 将哪些包分割成一个模块
-            test: /[\\/]node_modules[\\/]/,
-            // 优先级
-            priority: -10,
-            filename: '[name].js'
-          },
-          default: {
-            minChunks: 1,
-            priority: -20,
-            reuseExistingChunk: false,
-          },
-        },
-      },
+      // splitChunks: {
+      //   // 不管同步还是异步都提取公共模块
+      //   chunks: 'all',
+      //   // 提取公共模块的最小大小
+      //   minSize: 30000,
+      //   maxSize: 0,
+      //   // 模块被import引用几次,才提取成公共模块
+      //   minChunks: 1,
+      //   maxAsyncRequests: 5,
+      //   maxInitialRequests: 3,
+      //   automaticNameDelimiter: '-',
+      //   name: true,
+      //   // 缓存组, 组名+共同引用的各个入口名组成, 分割成的代码块名
+      //   cacheGroups: {
+      //     // 分割代码生成包的名称
+      //     vendors: {
+      //       // 将哪些包分割成一个模块
+      //       test: /[\\/]node_modules[\\/]/,
+      //       // 优先级
+      //       priority: -10,
+      //       filename: '[name].js'
+      //     },
+      //     default: {
+      //       minChunks: 1,
+      //       priority: -20,
+      //       reuseExistingChunk: false,
+      //     },
+      //   },
+      // },
       // 使用自定义TerserPlugin插件对原有TerserPlugin插件进行替换
       minimizer: [
         new TerserPlugin({
