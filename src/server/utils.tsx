@@ -51,7 +51,7 @@ export function loginRender() {
   <html lang="zh-CN">
     <head>
       <title>登录界面</title>
-      <link rel="stylesheet" href="login.css">
+      <link rel="stylesheet" href="/public/login.css">
     </head>
     <body>
       <div id="app">${content}</div>
@@ -72,7 +72,7 @@ export function registerRender() {
   <html lang="zh-CN">
     <head>
       <title>注册界面</title>
-      <link rel="stylesheet" href="register.css">
+      <link rel="stylesheet" href="/public/register.css">
     </head>
     <body>
       <div id="app">${content}</div>
