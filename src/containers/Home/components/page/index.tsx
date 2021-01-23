@@ -73,7 +73,6 @@ const Page = ({
   return (
     <>
       <Button onClick={handleAdd}>添加</Button>
-      <div className="red">1111</div>
       <Modal
         title="Basic Modal"
         visible={visible}

@@ -21,7 +21,7 @@ function Register({
           if (status) {
             message.info("注册成功");
             setTimeout(() => {
-              window.location.href = "http://eattopking.top:8000/login";
+              window.location.href = "http://eattopking.top/login";
             }, 1000);
           } else if (data === 1) {
             message.info("该用户已经注册请直接登录");

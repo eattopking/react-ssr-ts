@@ -23,7 +23,7 @@ function Login({
             data: { status }
           } = res;
           if (status) {
-            window.location.href = "http://eattopking.top:8000/page";
+            window.location.href = "http://eattopking.top/page";
           } else {
             message.info("用户名或密码不正确,请重新输入");
           }
@@ -32,7 +32,7 @@ function Login({
     });
   };
   const handleRegister = () => {
-    window.location.href = "http://eattopking.top:8000/register";
+    window.location.href = "http://eattopking.top/register";
   };
   return (
     <Layout>
