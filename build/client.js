@@ -24,9 +24,9 @@ module.exports = function () {
     output: {
       // 所要打包到的目标目录
       path: path.resolve(__dirname, '../public'),
-      filename: '[name].js',
+      // filename: '[name].js',
       // 打包后的文件名 chunkhash减少文件名变化, 提升前端性能, 减少请求
-      // filename: '[name].[chunkhash:8].js',
+      filename: '[name].[chunkhash:8].js',
       // 打包后，其他人引用这个包时的名称
       library: 'ts',
       // 对包对外输出方式
@@ -54,10 +54,9 @@ module.exports = function () {
       new CleanWebpackPlugin(),
       new MiniCssExtractPlugin({
         // 减少文件名变化, 使强缓存协商缓存还有效, chunkhash 提升前端性能, 减少请求
-        // filename: '[name].[contenthash:8].css',
-        // chunkFilename: '[id].[contenthash].css'
-        filename: '[name].css',
-        chunkFilename: '[name].css',
+        filename: '[name].[contenthash:8].css',
+        // 决定了非入口中引用的css文件的名称
+        // chunkFilename: '[name].[contenthash].css'
       }),
       new OptimizeCssAssetsPlugin({
         cssProcessorOptions: {
@@ -106,35 +105,34 @@ module.exports = function () {
     ],
     // webpack自带优化配置
     optimization: {
-      // splitChunks: {
-      //   // 不管同步还是异步都提取公共模块
-      //   chunks: 'all',
-      //   // 提取公共模块的最小大小
-      //   minSize: 30000,
-      //   maxSize: 0,
-      //   // 模块被import引用几次,才提取成公共模块
-      //   minChunks: 1,
-      //   maxAsyncRequests: 5,
-      //   maxInitialRequests: 3,
-      //   automaticNameDelimiter: '-',
-      //   name: true,
-      //   // 缓存组, 组名+共同引用的各个入口名组成, 分割成的代码块名
-      //   cacheGroups: {
-      //     // 分割代码生成包的名称
-      //     vendors: {
-      //       // 将哪些包分割成一个模块
-      //       test: /[\\/]node_modules[\\/]/,
-      //       // 优先级
-      //       priority: -10,
-      //       filename: '[name].js'
-      //     },
-      //     default: {
-      //       minChunks: 1,
-      //       priority: -20,
-      //       reuseExistingChunk: false,
-      //     },
-      //   },
-      // },
+      splitChunks: {
+        // 不管同步还是异步都提取公共模块
+        chunks: 'all',
+        // 提取公共模块的最小大小
+        minSize: 30000,
+        maxSize: 0,
+        // 模块被import引用几次,才提取成公共模块
+        minChunks: 1,
+        maxAsyncRequests: 5,
+        maxInitialRequests: 3,
+        automaticNameDelimiter: '-',
+        // name: true,
+        // 缓存组, 组名+共同引用的各个入口名组成, 分割成的代码块名
+        cacheGroups: {
+          // 缓存组名称
+          common: {
+            // 提取公共代码的文件范围
+            test: /[\\/]node_modules[\\/]/,
+            minChunks: 3,
+            // 优先级
+            priority: -10,
+            name: 'commonchunk',
+            filename: '[name].[chunkhash:8].js'
+          },
+          vendors: false,
+          default: false,
+        },
+      },
       // 使用自定义TerserPlugin插件对原有TerserPlugin插件进行替换
       minimizer: [
         new TerserPlugin({
