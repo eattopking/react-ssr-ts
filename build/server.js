@@ -60,6 +60,7 @@ module.exports = function() {
         //     "less-loader"
         //   ]
         // }
+
       ]
     },
     // 进一步设置编译后的代码在node环境中运行,从而不把node脚本引用的库编译压缩进文件
