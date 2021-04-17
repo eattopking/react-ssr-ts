@@ -31,6 +31,8 @@ module.exports = ({ server }) => {
            */
 
           useBuiltIns: 'usage',
+          // 转换后的的代码模块化的类型，设置为false，是不会对babel转换后的代码处理成某种模块化，
+          // 让webpack将代码处理成自己的webpack_require形式， 有利于webpack的tree shaking （现在webpack4不设置应该也是不影响tree shaking了）
           modules: false
         }
       ],

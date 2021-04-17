@@ -70,7 +70,7 @@ module.exports = function () {
         },
       }),
       // 使用模块相对路径的hash前四位作为moduleid, 避免多语的moduleid改变, 使文件内容不变时, chunkhash不变
-      new webpack.HashedModuleIdsPlugin(),
+      // new webpack.HashedModuleIdsPlugin(),
       // 多线程构建js
       new HappyPack({
         // 用唯一的标识符 id 来代表当前的 HappyPack 是用来处理一类特定的文件
@@ -120,6 +120,7 @@ module.exports = function () {
         // 缓存组, 组名+共同引用的各个入口名组成, 分割成的代码块名
         cacheGroups: {
           // 缓存组名称
+          // 这里配置提取公共代码，默认css公共代码也会被提出来， 命名也是commonchunk， 当时文件名是按照MiniCssExtractPlugin 的filename命名规则来的
           common: {
             // 提取公共代码的文件范围
             test: /[\\/]node_modules[\\/]/,
@@ -143,6 +144,8 @@ module.exports = function () {
           sourceMap: true,
         }),
       ],
+      // 解决模块增减 module id无法固定的问题
+      moduleIds: 'hashed'
     },
   };
   return merge(baseConfig(), clientConfig);
