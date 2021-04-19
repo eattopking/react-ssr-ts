@@ -87,7 +87,7 @@ module.exports = function () {
             // 所要打包到的目标目录
             path: path.resolve(__dirname, '../dist'),
             // 打包后的文件名
-            filename: '[name].[chunkhash:8].js',
+            filename: '[name].js',
             // 打包后，其他人引用这个包时的名称
             library: 'ts',
             // 对包对外输出方式
