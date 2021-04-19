@@ -26,7 +26,7 @@ module.exports = function () {
       path: path.resolve(__dirname, '../public'),
       // filename: '[name].js',
       // 打包后的文件名 chunkhash减少文件名变化, 提升前端性能, 减少请求
-      filename: '[name].[chunkhash:8].js',
+      filename: '[name].js',
       // 打包后，其他人引用这个包时的名称
       library: 'ts',
       // 对包对外输出方式
