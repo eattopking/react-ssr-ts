@@ -66,12 +66,12 @@ const getFileList = () => {
 };
 
 const {
-  index,
-  commonChunk,
-  commonCss,
-  login,
-  indexCss,
-  register
+    index,
+    commonChunk,
+    commonCss,
+    login,
+    indexCss,
+    register
 } = getFileList();
 
 module.exports = function () {
@@ -87,7 +87,7 @@ module.exports = function () {
             // 所要打包到的目标目录
             path: path.resolve(__dirname, '../dist'),
             // 打包后的文件名
-            filename: '[name].js',
+            filename: '[name].[chunkhash:8].js',
             // 打包后，其他人引用这个包时的名称
             library: 'ts',
             // 对包对外输出方式
@@ -143,6 +143,11 @@ module.exports = function () {
         // 进一步设置编译后的代码在node环境中运行,从而不把node脚本引用的库编译压缩进文件
         externals: [nodeExternals()],
         plugins: [new CleanWebpackPlugin()],
+        // webpack自带优化配置
+        optimization: {
+            // 解决模块增减 module id无法固定的问题
+            moduleIds: 'hashed'
+        },
     };
     return merge(baseConfig(), serverConfig);
 };
