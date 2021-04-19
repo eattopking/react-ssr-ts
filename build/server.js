@@ -74,11 +74,18 @@ const {
     register
 } = getFileList();
 
+// 在node环境中运行的JavaScript代码需要注意：
+// 1. 不能包含浏览器环境提供的API
+// 2. 不能包含css代码，因为服务端渲染的目的是渲染html内容， 渲染出css代码会增加额外的计算量，影响服务端渲染
+// 3. 不能像用于浏览器环境的输出代码那样把node_modules里的第三方模块和nodejs原生模块打包进去，而是需要通过commonjs规范去引入这些模块
+// 4. 需要通过commonjs规范导出一个渲染函数，以用于在HTTP服务器中执行这个渲染函数，渲染出HTML内容返回
+
+
 module.exports = function () {
     const serverConfig = {
         // 上下文, 只作为entry和loader里面文件路径的参照
         context: path.resolve(process.cwd(), './src/server'),
-        // 设置编译后的代码在node环境中运行,从而不把node引用的原生模块打包进入最后的chunk， 因为没有必要
+        // 设置编译后的代码在node环境中运行, 从而不把node引用的原生模块打包进入最后的chunk， 因为没有必要， 也会让打包后的模块化都是commonjs 模块化， node原始支持的
         target: 'node',
         // 入口 这里路径就是固定以项目根路径开始
         entry: { index: './index.tsx' },
@@ -102,7 +109,7 @@ module.exports = function () {
                         {
                             loader: path.resolve(__dirname, './loader.js'),
                             options: {
-                                '%index': index,
+                                '%indexJs': index,
                                 '%commonChunk': commonChunk,
                                 '%commonCss': commonCss,
                                 '%login': login,
@@ -140,7 +147,11 @@ module.exports = function () {
                 // }
             ],
         },
-        // 进一步设置编译后的代码在node环境中运行,从而不把node脚本引用的库编译压缩进文件
+        /**
+         * 不把node代码中引用node_modules中的模块打包进最后的模块中，因为node环境默认值支持commonjs模块化了
+         * 构建后的代码都是符合commonjs规范模块化的，所有在node执行时， 直接引用node_modules中的
+         * 模块就可以直接使用， 所以不需要将引用的node_modules包中模块打包进输出文件
+         */
         externals: [nodeExternals()],
         plugins: [new CleanWebpackPlugin()],
         // webpack自带优化配置
