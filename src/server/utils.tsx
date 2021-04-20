@@ -19,6 +19,10 @@ export function render({ url, context = {}, store }: { url: string; context: obj
    * 不构建进去就不能使用这个包了
    * 2. location={url}作用应该是每次后台初次返回页面时决定,初次显示那个路径下的页面
    * 3. 使用window.context将数据缓存起来,实现数据注水,供同构的client的js代码引用
+   *
+   * 在服务端用于服务端渲染，变成字符串的react组件也是可以使用redux的，和前端使用redux一样，就是服务端redux数据
+   * 直接就解析到renderToString返回的标签字符串中去了
+   *
    */
   const content = renderToString(
     <Provider store={store}>
