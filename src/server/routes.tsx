@@ -61,8 +61,8 @@ router.get('/page', async ctx => {
      * 用于同构的前端代码redux中的默认初始数据， 使前端代码数据和初始化服务端返回页面数据同步
      * 存到window中叫做数据注水， 在前端取window中数据，初始化到redux中叫做数据脱水
      *
-     *
-     * 并且给请求回来的数据设置成redux的默认数据,最后经这些数据存到window上, 用于注水
+     * 在服务端将请求回来的数据也处理成redux store的初始数据， 然后传给组件， 在服务端将组件渲染成
+     * 标签字符串时直接将数据都渲染进字符串里了， 达到服务端返回的字符串是包含完整数据的标签字符串
      */
     const store = getStore({
       page: { rows: JSON.parse(JSON.stringify(result)) }
