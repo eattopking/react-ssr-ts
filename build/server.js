@@ -7,6 +7,7 @@ const merge = require('webpack-merge');
 const babelrc = require('../babelrc');
 const nodeExternals = require('webpack-node-externals');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Plugin = require('./plugin.js');
 
 const getFileList = () => {
     const fileList = fs.readdirSync(path.resolve(__dirname, '../public'));
@@ -171,7 +172,10 @@ module.exports = function () {
          * 模块就可以直接使用， 所以不需要将引用的node_modules包中模块打包进输出文件
          */
         externals: [nodeExternals()],
-        plugins: [new CleanWebpackPlugin()],
+        plugins: [
+            new CleanWebpackPlugin(),
+            // new Plugin()
+        ],
         // webpack自带优化配置
         optimization: {
             // 解决模块增减 module id无法固定的问题
