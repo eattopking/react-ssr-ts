@@ -54,6 +54,11 @@ router.get('/page', async ctx => {
      * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
      * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
      * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
+     * 将从数据库请求回来的展示数据，先转成字符串存在服务端返回的html的字符串的window的属性上，
+     * 用于同构的前端代码redux中的默认初始数据， 使前端代码数据和初始化服务端返回页面数据同步
+     * 存到window中叫做数据注水， 在前端取window中数据，初始化到redux中叫做数据脱水
+     *
+     *
      * 并且给请求回来的数据设置成redux的默认数据,最后经这些数据存到window上, 用于注水
      */
     const store = getStore({
