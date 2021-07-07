@@ -1,0 +1,401 @@
+1. jest 执行的时候会默认查找项目根目录下的test.js结尾的文件执行
+
+2. jest --init 初始化jest配置文件
+
+3. jest --coverage 执行测试用例并且生成代码测试覆盖率报告
+
+4. jest 如何执行执行es6 模块化或者其他es6语法的测试测试用例文件
+
+我们在本地安装babel/core  babel/present-env 然后配置.babelrc, 这这样在我们通过jest 命令执行 测试用例文件的时候， jest利用babel-jest这个插件和webpack执行时一样去查本地是否安装了babel/core等，如果安装了就去取.babelrc的配置，然后利用babel-jest这个插件结合babel将代码转化成node环境可以识别的代码， 然后在执行转化后的代码
+
+
+这个配置表示根据当前node环境， 将代码转换成node环境支持的代码
+
+{
+    "presets": [["@babel/preset-env", {
+        "targets": {
+            "node": "current"
+        }
+    }]]
+}
+
+.babelrc 是为了jest配置的babel 配置
+
+
+5. jest --watchAll 和 a模式一样，监听所有测试文件变化， 自动重新执行所有测试文件的所有测试用例
+
+6. jest 的测试模式
+
+点击w进入选择模式
+
+Watch Usage
+ 点击f是将所有测试文件中错误的用例在跑一遍， 在点击一下f退出f模式
+ › Press f to run only failed tests.
+ 点击o和设置--watch一样， 就是只执行在git监测发生变化的测试文件里的所有测试用例
+ › Press o to only run tests related to changed files.
+ 在--watchall 模式下筛选， 执行哪个测试文件的所有测试用例， 可以输入字符串或者正则表达式
+ › Press p to filter by a filename regex pattern.
+ 是选要执行的测试用例的名称，可以输入字符串或者正则表达式
+ › Press t to filter by a test name regex pattern.
+ q退出用例执行
+ › Press q to quit watch mode.
+ 回车就是在跑一遍用例， 根据当前的模式规则
+ › Press Enter to trigger a test run.
+
+
+ 7. jest常用匹配器
+
+ // 比较内容相等的匹配器
+test('10与10是否相等', () => {
+    // 期待 10  toBe是匹配器，和10匹配
+    expect({}).toEqual({});
+})
+
+// 和object.is原理相同的匹配器
+test('10与10是否相等', () => {
+    // 期待 10  toBe是匹配器，和10匹配
+    expect(10).toBe(10);
+});
+
+
+// 比较和固定值相等匹配器
+
+test('是不是等于undefined', () => {
+    expect(undefined).toBeUndefined();
+});
+
+test('是不是等于null', () => {
+    expect(null).toBeNull();
+})
+
+// 取反匹配器
+test('取反匹配器', () => {
+    expect(20).not.toBe(10)
+});
+
+
+// 数字相关匹配器
+
+test('0.1加0.2等于0.3', () => {
+    // toBeCloseTo是专门测试js 小数相加的
+    expect(0.1+0.2).toBeCloseTo(0.3)
+})
+
+test('0.1小于0.2', () => {
+    // toBeLessThan 期待0.1小于0.2
+    expect(0.1).toBeLessThan(0.2)
+});
+
+test('小于或者等于0.2', () => {
+    // 0.2期待小于等于0.2
+    expect(0.2).toBeLessThanOrEqual(0.2)
+})
+
+test('大于或者等于0.2', () => {
+    // 0.2期待大于等于0.2
+    expect(0.2).toBeGreaterThanOrEqual(0.2)
+})
+
+// 匹配字符串是否包含
+test('test是不是包含在在这字符串里', () => {
+    const item = 'testtest';
+    expect(item).toMatch(/test/)
+})
+
+// 匹配数组和set中的内容
+
+test('期望数组中存在1111', () => {
+    const arr = [111, 1111, 22];
+    expect(arr).toContain(1111);
+});
+
+// 匹配set中的内容
+
+test('期望set中存在1111', () => {
+    const arr = [111, 1111, 22];
+    const set = new Set(arr);
+    expect(set).toContain(1111);
+});
+
+// 匹配抛出异常的函数
+// test('匹配函数中的异常', () => {
+//     const callback = () => {
+//         throw new Error('1');
+//     }
+//     // 期望函数返回异常， 并且异常的值是1
+//     expect(callback).toThrow('1');
+// });
+
+8. 测试异步
+
+// 异步测试，测试回调函数异步的方式
+// 这里一定要调用done，否则request执行完毕，jest级判断用例执行完毕了， 调用了done，jest会判定调用完毕done才是执行完测试用例
+test('测试回调函数异步, 返回值是不是{success: true}', (done) => {
+    request((data) => {
+        expect(data).toEqual({success: true});
+        done();
+    });
+})
+
+
+// 测试异步promise，期待正确返回结果的测试用例, 如果没有正确返回，就报错不通过
+test('测试异步promise是不是正确返回{success: true}', async () => {
+    // expect(request()).resolves 正确返回，并且期望匹配到返回的数据data:{success: true}，
+    // 返回的数据就会在expect(request()).resolves中
+    await expect(request()).resolves.toMathObject({
+        data: {success: true}
+    });
+})
+
+// 第二种先获取值在校验 测试异步promise，期待正确返回结果的测试用例, 如果没有正确返回，就报错不通过
+
+test('测试异步promise是不是正确返回{success: true}', async () => {
+    // 如果这里request()请求报错，那就直接测试用例不通过了
+    const res = await request();
+    expect(res.data).toEqual({success: true});
+})
+
+//  测试异步promise请求访问不到，期待服务端返回404， 如果是正确的就测试用例不通过
+test('测试异步promise请求访问不到，服务端返回404', async () => {
+    // expect(request()).rejects 错误返回，并且期望匹配请求的返回的，
+    // 返回的数据就会在expect(request()).rejects返回报错信息中捕获错误
+    await expect(request()).rejects.toThrow();
+})
+
+// 第二种先获取值在，对值进行校验 测试异步promise请求访问不到，期待服务端返回404， 如果是正确的就测试用例不通过
+test('测试异步promise请求访问不到，服务端返回404', async () => {
+    expect.assertions(1);
+    await request().catch((e) => {
+        expect(e.toString()).toEqual('Error 404');
+    });
+})
+
+// 只有执行一次expect，测试用例才可能是通过， 否则测试用例都是不通过
+expect.assertions(1);
+
+// 如果测试用例里面代码没有执行expect， 而执行的都正常执行完毕了，那jest就默认认为测试用例通过了
+
+9. jest 生命周期和分组
+
+
+// jest 的生命周期和分组
+
+
+// describe 是进行测试用例的分组的， 在进行分组的同时还会形成一个作用域
+
+// 在外层如果包裹在describe 中就相当于外层包裹了一个describe， 所有最外层中的beforeAll还是第一个执行输出111111
+
+// 在describe中直接些代码执行或者打印， 那么这些代码会在所有声命周期和所有测试用例之前被执行
+
+
+// beforeAll 是这个分组中所有测试用例执行之前执行
+beforeAll(() => {
+    console.log(111111)
+});
+
+// 这个分组每个测试用例执行之前都会执行
+beforeEach(() => {
+    console.log('beforeEach111111')
+});
+
+// 这个分组中所有测试用例执行之后执行
+afterAll(() => {
+    console.log('after111111')
+});
+
+// 这个分组中每个测试用例执行之后执行
+afterEach(() => {
+    console.log('afterEach111111')
+})
+
+test('测试0', () => {
+    console.log('测试000')
+});
+
+describe('我是最外层的测试用例分组', () => {
+
+    // beforeAll 是这个分组中所有测试用例执行之前执行
+    beforeAll(() => {
+        console.log(222222)
+    });
+
+   // 这个分组每个测试用例执行之前都会执行
+    beforeEach(() => {
+        console.log('beforeEach222222')
+    });
+
+   // 这个分组中所有测试用例执行之后执行
+    afterAll(() => {
+        console.log('after222222')
+    });
+
+    // 这个分组中每个测试用例执行之后执行
+    afterEach(() => {
+        console.log('afterEach222222')
+    })
+
+    test('测试1', () => {
+        console.log('测试1222222')
+    });
+
+    describe('第二层测试用例', () => {
+
+        beforeAll(() => {
+            console.log(44444)
+        });
+
+        beforeEach(() => {
+            console.log('beforeEach44444')
+        });
+
+        afterAll(() => {
+            console.log('after44444')
+        });
+
+        afterEach(() => {
+            console.log('afterEach44444')
+        })
+
+        test('测试2', () => {
+            console.log('测试24444')
+        });
+    })
+});
+
+describe('第二层外', () => {
+
+    beforeAll(() => {
+        console.log(555)
+    });
+
+    beforeEach(() => {
+        console.log('beforeEach555')
+    });
+
+    afterAll(() => {
+        console.log('after555')
+    });
+
+    afterEach(() => {
+        console.log('afterEach555')
+    })
+
+    test('测试3', () => {
+        console.log('测试3555')
+    });
+})
+
+// before相关的声明周期是从外往里执行的，after相关的的生命周期是从里往外执行的
+
+// jest 每次只会执行一个分组中的一层测试用例，如果最外层没有describe包裹， 但是写了生命周期，也有定义test测试用例，
+// 那么最外层的生命周期和它下一层的describe中的生命周期都会被调用， 并且会执行它下一层的describe中的哪一层测试用例
+
+// 并且会把最外层的分组的第一个子分组中的所有分组都执行完毕之后才会， 才会执行最外层的分组的第二个子分组
+
+### 例子对应的结果
+
+✓ 测试0 (1ms)
+  我是最外层的测试用例分组
+    ✓ 测试1 (2ms)
+    第二层测试用例
+      ✓ 测试2 (14ms)
+  第二层外
+    ✓ 测试3 (2ms)
+
+  console.log test/main.test.js:13
+    111111
+
+  console.log test/main.test.js:18
+    beforeEach111111
+
+  console.log test/main.test.js:32
+    测试000
+
+  console.log test/main.test.js:28
+    afterEach111111
+
+  console.log test/main.test.js:39
+    222222
+
+  console.log test/main.test.js:18
+    beforeEach111111
+
+  console.log test/main.test.js:44
+    beforeEach222222
+
+  console.log test/main.test.js:58
+    测试1222222
+
+  console.log test/main.test.js:54
+    afterEach222222
+
+  console.log test/main.test.js:28
+    afterEach111111
+
+  console.log test/main.test.js:64
+    44444
+
+  console.log test/main.test.js:18
+    beforeEach111111
+
+  console.log test/main.test.js:44
+    beforeEach222222
+
+  console.log test/main.test.js:68
+    beforeEach44444
+
+  console.log test/main.test.js:80
+    测试24444
+
+  console.log test/main.test.js:76
+    afterEach44444
+
+  console.log test/main.test.js:54
+    afterEach222222
+
+  console.log test/main.test.js:28
+    afterEach111111
+
+  console.log test/main.test.js:72
+    after44444
+
+  console.log test/main.test.js:49
+    after222222
+
+  console.log test/main.test.js:88
+    555
+
+  console.log test/main.test.js:18
+    beforeEach111111
+
+  console.log test/main.test.js:92
+    beforeEach555
+
+  console.log test/main.test.js:104
+    测试3555
+
+  console.log test/main.test.js:100
+    afterEach555
+
+  console.log test/main.test.js:28
+    afterEach111111
+
+  console.log test/main.test.js:96
+    after555
+
+  console.log test/main.test.js:23
+    after111111
+
+
+10.
+
+
+
+
+
+
+
+
+
+
+
