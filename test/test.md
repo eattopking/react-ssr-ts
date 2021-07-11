@@ -386,8 +386,86 @@ describe('第二层外', () => {
   console.log test/main.test.js:23
     after111111
 
+10. test.only('only表示所有的测试用例中，只执行这个测试用例', () => {
 
-10.
+})
+
+
+
+11. jest Mock函数和 Mock改变npm包或者函数
+
+
+import axios from 'axios';
+
+// 劫持了axios， 可以控制axios
+jest.mock('axios');
+
+// 测试请求
+const requestBaidu = () => {
+    return axios.get('https://www.baidu.com/');
+}
+
+//测试函数
+const testfn = (fn) => {
+    fn('1111');
+}
+
+describe('mock测试组', () => {
+    // jest 测试请求，请求发出去了就说明测试通过了，因为返回结果归后端测试，只要请求能发出发前端就没问题
+    // 测试异步promise 必须return 这个promise，或者 在这个promise前面加上await， 要不不能正常的执行测试用例
+    test('mock测试用例', async () => {
+        // 劫持axios， 模拟axios get请求的返回值
+        axios.get.mockResolvedValue({data: 1111});
+        // 模拟一次get请求返回结果
+        // axios.get.mockResolvedValueOnce({data: 1111})
+        const data = await requestBaidu();
+        // 写一个断言， 将模拟的返回值和我们期望的返回值做比对
+        expect(data).toEqual({data: 1111})
+    });
+
+    test('mock test, 自己mock的函数测试用例', () => {
+        // 自己写一个函数当做mock函数
+        const fn1 = jest.fn(() => {
+            return 1111;
+        });
+
+        // mockImplementation对已有的调用的mock函数进行在次定义
+        // fn1.mockImplementation(() => 88888888)
+         // mockImplementation对已有的调用的mock函数进行一次重新定义
+        fn1.mockImplementationOnce(() => 88888888)
+
+
+        // 时候默认创建出来的mock函数， 指定调用后的返回值
+        const fn2 = jest.fn();
+        fn2.mockReturnValue(99999);
+        // 模拟fn2一次调用的返回结果
+        // fn2.mockReturnValueOnce(99999)
+        testfn(fn1)
+        testfn(fn1)
+        testfn(fn1)
+        testfn(fn2)
+        testfn(fn2)
+        testfn(fn2)
+
+        // 断言当前这个fn1 mock函数在testfn函数中被调用
+        expect(fn1).toBeCalled();
+        // 断言当前这个fn1 mock函数被调用时实参是1111
+        expect(fn1.mock.calls[0]).toEqual(['1111'])
+
+        console.log('fn1', fn1.mock);
+        console.log('fn2', fn2.mock);
+    });
+});
+
+// 相同mock函数调用多次，calls中多个数组是同一个mock函数多次调用的实参
+// instances 中是同一个mock函数多次调用时， 函数内部的this指向
+// invocationCallOrder 是同一个函数多次调用时，每次调用时的顺序
+// results是同一个函数多次调用时， 每次调用模拟的返回结果
+// fn1.mock 返回的值
+// fn1 { calls: [ [ '1111' ], [ '1111' ], [ '1111' ] ], mock被调用的时候传给实参
+// instances: [ undefined ], 函数内部的this指向值
+// invocationCallOrder: [ 2, 3, 4 ], 表示这个mock函数被调用时候的顺序， 这个顺序是和所有的测试用例在一起比的不是只和mock函数比
+// results: [ { type: 'return', value: 1111 }, { type: 'return', value: 1111 }, { type: 'return', value: 1111 } ] } // 表示mock函数被调用的时候，自己模拟的返回值
 
 
 
