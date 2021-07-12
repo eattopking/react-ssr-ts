@@ -587,7 +587,11 @@ test('mock 类', () => {
 
 15. jest 测试dom， jest中可以直接使用jquery， 操作dom获取dom结果，然后在对结果进行校验，jest中直接可以使用jquery是因为jest内部实现了dom api
 
-16.
+16. TDD
+
+TDD 测试驱动开发，就是先写测试用例在根据测试用例编写代码
+
+
 
 
 
