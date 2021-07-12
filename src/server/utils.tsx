@@ -30,7 +30,7 @@ export function render({ url, context = {}, store }: { url: string; context: obj
   return `<!DOCTYPE html>
   <html lang="zh-CN">
     <head>
-      <title>ssrTable</title>
+      <title>回忆墙</title>
       <link rel="stylesheet" href="/public/%commonCss">
       <link rel="stylesheet" href="/public/%indexCss">
     </head>
@@ -58,7 +58,7 @@ export function loginRender() {
   return `<!DOCTYPE html>
   <html lang="zh-CN">
     <head>
-      <title>登录界面</title>
+      <title>回忆墙登录</title>
       <link rel="stylesheet" href="/public/%commonCss">
     </head>
     <body>
@@ -80,7 +80,7 @@ export function registerRender() {
   return `<!DOCTYPE html>
   <html lang="zh-CN">
     <head>
-      <title>注册界面</title>
+      <title>回忆墙注册</title>
       <link rel="stylesheet" href="/public/%commonCss">
     </head>
     <body>
