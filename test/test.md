@@ -468,6 +468,126 @@ describe('mock测试组', () => {
 // results: [ { type: 'return', value: 1111 }, { type: 'return', value: 1111 }, { type: 'return', value: 1111 } ] } // 表示mock函数被调用的时候，自己模拟的返回值
 
 
+测试请求第二种方式，在项目根目录下创建一个__mocks__目录， 创建一个和我们将要测试的文件名称相同的文件，在里边写上相同名称的测试方法， 在测试用例文件中使用jest.mock 引用就可以直接验证 我们写的测试方法了
+
+
+// jest.mock 是设置在我们import { bbb } from '../demo.js';的时候是从__mocks__目录下的demo.js文件中获取API
+jest.mock('../demo.js');
+
+// jest.unmock是在import { bbb } from '../demo.js'的时候，取消从__mocks__目录下的demo.js文件中获取API
+// jest.unmock('../demo.js');
+import { bbb } from '../demo.js';
+
+// jest.requireActual从我们业务的使用里真实的demo.js文件中获取api
+const { aaa } = jest.requireActual('../demo.js');
+
+test('mock 请求测试用例bbb', async () => {
+    await bbb().then((data) => {
+        expect(data).toEqual(111111);
+    });
+})
+
+test('mock 请求测试用例aaa', async () => {
+    await aaa().then((data) => {
+        expect(data).toEqual(111111);
+    });
+});
+
+// 目前只能获取到在项目根目录设置的原始文件，然后在项目根目录中创建__mocks__目录，在__mocks__目录中创建相同名称的文件用于测试用例获取进行测试，
+// 其他情况现在还没有跑通，之后再看
+
+12. jest 中快照使用
+
+jest中的快照就是第一次匹配的时候默认通过存为快照，之后比对的时候会根据快照作为标准比对
+
+如果快照校验不通过 通过u更新快照，下次就以新的快照作为比对的标准了
+
+如果多个快照校验都不通过, 先进入i模式 询问校验，让后每个校验单独执行u模式更新快照， 下次校验的时候以新的快照作为比对的标准
+
+import { Config, Config1 } from "../demo.js";
+
+// test('快照测试用例', () => {
+//     expect(Config).toMatchSnapshot({
+//         time: expect.any(Date)
+//     });
+// });
+
+// test('快照测试用例1', () => {
+//     // 使用toMatchSnapshot 会产生一个存储快照的文件__snapshots__，在和测试用例文件相同的目录中
+//     expect(Config1).toMatchSnapshot({
+            // 可以设置我们检验的属性的类型， 只要满足这个类型就可以通过， 不需要值必须一样
+//         time: expect.any(Date)
+//     });
+// });
+
+test("快照测试用例不是产生快照文件，快照文件产生在测试用例文件内部", () => {
+  // 快照文件产生在测试用例文件内部(如： `
+    // Object {
+    //     "ENV": "dev1",
+    //     "time": Any<Date>,
+    //   }
+    // `), 不在和测试用例文件相同的目录中产生一个存储快照的文件__snapshots__
+  // 这个行内模式需要安装npm包 prettier
+  expect(Config1).toMatchInlineSnapshot(
+    {
+      time: expect.any(Date),
+    },
+    `
+    Object {
+      "ENV": "dev1",
+      "time": Any<Date>,
+    }
+  `
+  );
+});
+
+13. jest 模拟 计时器
+
+import { timer } from '../demo.js';
+
+beforeEach(() => {
+    // 模拟计时器， 模拟定时器已经过去的时间, 和模拟立即执行计时器回调
+    jest.useFakeTimers();
+})
+
+test('jest 模拟计时器测试', () => {
+    const fn = jest.fn();
+    timer(fn);
+
+    // 立即执行所有计时器回调
+    // jest.runAllTimers();
+    // 只执行正处在队列中的计时器（正常代码中的， 正在倒计时， 或者倒计时完毕，已经进入异步队列的情况）
+    // jest.runOnlyPendingTimers();
+    // 设置过去多久了， 然后后面在对函数进行断言， 多次调用，时间是累加的
+    jest.advanceTimersByTime(3000)
+    // 调用两次， 表示时间过去了六秒，然后在继续校验，计算时间是以jest.useFakeTimers();宿主的，每重新jest.useFakeTimers();一次，这个时间都是从头开始的
+    jest.advanceTimersByTime(3000)
+    // 断言fn函数已经在计时器中被执行了一次
+    expect(fn).toHaveBeenCalledTimes(1);
+});
+
+14. mock 类
+单元测试：就是对单独的一个模块或者方法本事的逻辑进行测试， 而不对它引用依赖的逻辑进行
+
+集成测试：是对单个模块获取方法测试， 并且对其中引用的依赖也进行测试
+
+// jest.mock 导入的如果是一个类， 那就会将这个类自动转化为jest.fn()的实例，用这个实例充当构造函数，将类中的方法也都转化成jest.fn的实例
+jest.mock('../demo.js');
+
+// 也可以在__mocks__中直接定义一个demo.js文件， 在里边直接通过jest.fn() 定义Util和Util中的a， b方法，可以覆盖jest.mock默认的转换
+// 在测试demoUtil的时候， 内部有类可以直接mock引入这个类, 就可以在调用这类的时候，跟踪这个的类的相关进程了
+import Util from '../demo.js';
+import demoUtil from '../demo1.js';
+
+test('mock 类', () => {
+    demoUtil();
+    // Util类被调用了，在demoUtil执行完毕的时候， 这里弱化了对Util验证， 所以这就是demoUtil的单元测试
+    expect(Util).toHaveBeenCalled();
+});
+
+15. jest 测试dom， jest中可以直接使用jquery， 操作dom获取dom结果，然后在对结果进行校验，jest中直接可以使用jquery是因为jest内部实现了dom api
+
+16.
 
 
 
