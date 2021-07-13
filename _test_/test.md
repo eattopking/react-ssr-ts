@@ -591,7 +591,9 @@ test('mock 类', () => {
 
 TDD 测试驱动开发，就是先写测试用例在根据测试用例编写代码
 
+17. 在package.json 配置jest字段也是可以配置jest的配置，和配置jest.config.js效果相同, 具体可以参考create-react-app 创建处理的项目
 
+18.
 
 
 
