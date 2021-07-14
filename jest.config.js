@@ -6,7 +6,7 @@ module.exports = {
   "roots": [
     "<rootDir>/src"
   ],
-  //
+
   "collectCoverageFrom": [
     // 测试的时候需要测试src目录下的js,jsx,ts,tsx文件
     "src/**/*.{js,jsx,ts,tsx}",
@@ -15,23 +15,21 @@ module.exports = {
   ],
   // 使用polyfill对jsdom进行补偿， 解决兼容问题
   "setupFiles": [
-    "react-app-polyfill/jsdom"
   ],
   // 我们执行测试的时候需要额外准备的东西
   "setupFilesAfterEnv": [
-
+    "./src/setupTests.ts"
   ],
   // 在src下__tests__下，js,jsx,ts,tsx会被认为是测试文件会被执行
   // 在src 下 以.spec.(js,jsx,ts,tsx)或者.test.{js,jsx,ts,tsx}结尾的文件会被认为是测试文件会被执行
   "testMatch": [
     "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
-    "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
+    "<rootDir>/**/*.{spec,test}.{js,jsx,ts,tsx}"
   ],
   "testEnvironment": "jsdom",
-  "testRunner": "/Users/bjhl/练习/react-ssr-ts/node_modules/jest-circus/runner.js",
   "transform": {
     // 当测试文件引入js|jsx|mjs|cjs|ts|tsx文件时先用babel-jest转化然后在使用
-    "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
+    "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "babel-jest",
     // 当测试文件引入css文件的时候，将css文件用cssTransform.js转化返回一个{}
     "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
     // 当测试文件中引入的不是js|jsx|mjs|cjs|ts|tsx|css|json文件的时候， 用fileTransform.js文件将这个文件转换后在使用
@@ -58,8 +56,6 @@ module.exports = {
   ],
   // 添加自定义jest执行时候的模式， 和 u ，w模式是一样的那种模式
   "watchPlugins": [
-    "jest-watch-typeahead/filename",
-    "jest-watch-typeahead/testname"
   ],
   "resetMocks": true
 };
