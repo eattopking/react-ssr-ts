@@ -2,10 +2,10 @@
 // https://jestjs.io/docs/en/configuration.html
 // jest 基础配置
 module.exports = {
-  // 测试项目根目录src目录是测试的入口文件
-  "roots": [
-    "<rootDir>/src"
-  ],
+  // 以哪个目录为起点向下搜索测试文件执行
+  // "roots": [
+  //   "<rootDir>"
+  // ],
 
   "collectCoverageFrom": [
     // 测试的时候需要测试src目录下的js,jsx,ts,tsx文件
@@ -16,14 +16,14 @@ module.exports = {
   // 使用polyfill对jsdom进行补偿， 解决兼容问题
   "setupFiles": [
   ],
-  // 我们执行测试的时候需要额外准备的东西
+  // 我们执行测试文件之前， 提前帮我们执行的代码
   "setupFilesAfterEnv": [
-    "./src/setupTests.ts"
+    "./src/utils/setupTests.ts"
   ],
-  // 在src下__tests__下，js,jsx,ts,tsx会被认为是测试文件会被执行
-  // 在src 下 以.spec.(js,jsx,ts,tsx)或者.test.{js,jsx,ts,tsx}结尾的文件会被认为是测试文件会被执行
   "testMatch": [
-    "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+    // jest执行任意目录下的__tests__目录下任意子目录或者后代目录下的以.test.js结尾的文件
+    '**/__tests__/**/*.(test).js',
+
     "<rootDir>/**/*.{spec,test}.{js,jsx,ts,tsx}"
   ],
   "testEnvironment": "jsdom",

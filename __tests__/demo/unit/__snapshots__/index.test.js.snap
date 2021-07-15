@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`单元测试header 组件 内容没有变化测试 1`] = `
+<div
+  className="test"
+  data-test="div"
+  onClick={[Function]}
+>
+  <div
+    data-test="div1"
+    key="1"
+  >
+    0
+  </div>
+  <div
+    key="2"
+  >
+    2
+  </div>
+  <div
+    key="3"
+  >
+    3
+  </div>
+</div>
+`;

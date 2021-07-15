@@ -15,7 +15,8 @@
     "sync": "pm2 start -f ./src/mysql/syncTable.js",
     "start": "nodemon --watch dist --exec npx \"./dist/index.js\"",
     "npx_sync": "npx ./src/mysql/syncTable.js",
-    "test": "jest"
+    "test": "jest --watch",
+    "collectCoverage": "jest --notify --collectCoverage"
   },
   "author": "",
   "license": "ISC",
