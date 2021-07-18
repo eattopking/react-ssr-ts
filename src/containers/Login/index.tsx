@@ -36,19 +36,18 @@ function Login({
   };
   return (
     <Layout>
-      <Content style={{ padding: "0 50px" }}>
-        <Layout style={{ padding: "24px 0", background: "#fff" }}>
-          <Content style={{ padding: "0 24px", minHeight: 280 }}>
+      <Content>
+        <Layout>
+          <Content>
             <Form onSubmit={handleSubmit}>
               <Item
-                style={{ display: "flex", justifyContent: "center" }}
                 label="邮箱"
               >
                 {getFieldDecorator("mail", {
                   rules: [
                     { required: true, message: "Please input your username!" }
                   ]
-                })(<Input style={{ width: 200 }} placeholder="用户" />)}
+                })(<Input placeholder="用户" />)}
               </Item>
               <Item
                 style={{ display: "flex", justifyContent: "center" }}
@@ -60,13 +59,12 @@ function Login({
                   ]
                 })(
                   <Input
-                    style={{ width: 200 }}
                     type="password"
                     placeholder="密码"
                   />
                 )}
               </Item>
-              <Item style={{ display: "flex", justifyContent: "center" }}>
+              <Item>
                 <Button
                   type="primary"
                   htmlType="submit"
@@ -75,7 +73,6 @@ function Login({
                   登录
                 </Button>
                 <div
-                  style={{ color: "red", textAlign: "center" }}
                   onClick={handleRegister}
                 >
                   去注册
@@ -85,8 +82,6 @@ function Login({
           </Content>
         </Layout>
       </Content>
-
-      <Footer style={{ textAlign: "center" }}>登录界面</Footer>
     </Layout>
   );
 }

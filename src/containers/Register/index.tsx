@@ -34,9 +34,9 @@ function Register({
   };
   return (
     <Layout>
-      <Content style={{ padding: "0 50px" }}>
-        <Layout style={{ padding: "24px 0", background: "#fff" }}>
-          <Content style={{ padding: "0 24px", minHeight: 280 }}>
+      <Content>
+        <Layout>
+          <Content>
             <Form onSubmit={handleSubmit} className="login-form">
               <Item
                 label="邮箱"
@@ -58,7 +58,7 @@ function Register({
                   ]
                 })(<Input type="password" placeholder="密码" />)}
               </Item>
-              <Item style={{ display: "flex", justifyContent: "center" }}>
+              <Item>
                 <Button
                   type="primary"
                   htmlType="submit"
@@ -71,7 +71,6 @@ function Register({
           </Content>
         </Layout>
       </Content>
-      <Footer style={{ textAlign: "center" }}>注册界面</Footer>
     </Layout>
   );
 }

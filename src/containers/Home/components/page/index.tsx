@@ -3,7 +3,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Table, Button, Modal, Form, message, Input } from 'antd';
 import * as pageActions from './store/widgets';
-import "../../main.less";
 
 const axios = require('axios');
 
