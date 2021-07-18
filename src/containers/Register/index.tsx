@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout, Input, Button, Form, message } from "antd";
 const { Item } = Form;
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 const axios = require("axios");
 
 function Register({
@@ -14,7 +14,7 @@ function Register({
     e.preventDefault();
     validateFields((err: any, values: any) => {
       if (!err) {
-        axios.get("/api/registerin", { params: values }).then((res: any) => {
+        axios.get("/api/registerIn", { params: values }).then((res: any) => {
           const {
             data: { status, data }
           } = res;
@@ -44,9 +44,19 @@ function Register({
               >
                 {getFieldDecorator("mail", {
                   rules: [
+                    { required: true, message: "Please input your mail!" }
+                  ]
+                })(<Input placeholder="邮箱" />)}
+              </Item>
+              <Item
+                label="用户名"
+                style={{ display: "flex", justifyContent: "center" }}
+              >
+                {getFieldDecorator("name", {
+                  rules: [
                     { required: true, message: "Please input your username!" }
                   ]
-                })(<Input placeholder="用户" />)}
+                })(<Input placeholder="用户名" />)}
               </Item>
               <Item
                 label="密码"

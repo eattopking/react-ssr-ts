@@ -22,23 +22,17 @@ const Page = ({
   // 表格列选项
   const [columns] = useState([
     {
+      title: '信息',
+      dataIndex: 'info',
+      key: 'info',
+      width: 80,
+    },
+    {
       title: '名字',
       dataIndex: 'name',
       key: 'name',
       width: 80,
-    },
-    {
-      title: '地址',
-      dataIndex: 'address',
-      width: 80,
-      key: 'address',
-    },
-    {
-      title: '额外信息',
-      dataIndex: 'information',
-      width: 80,
-      key: 'information',
-    },
+    }
   ]);
 
   const handleCancel = () => {
@@ -51,20 +45,25 @@ const Page = ({
 
   const handleOk = (e: { preventDefault: Function }) => {
     e.preventDefault();
-    validateFields((err: any, values: any) => {
+    validateFields(async (err: any, values: any) => {
       if (!err) {
-        axios.get('/api/adddata', { params: values }).then((res: any) => {
-          const {
-            data: { status, rows },
-          } = res;
-          if (status) {
-            message.info('添加成功');
-            handleCancel();
-            actions.setAllData(rows);
-          } else {
-            message.info('添加失败');
-          }
-        });
+        const addRes = await axios.get('/api/addData', { params: values });
+        const {
+          data: { status },
+        } = addRes;
+
+        if (!status) {
+          message.info('添加失败');
+        }
+
+        message.info('添加成功');
+        const res = await axios.get('/api/pageData');
+        const {
+          data: { rows },
+        } = res;
+        handleCancel();
+        actions.setAllData(rows);
+        return;
       }
     });
   };
@@ -80,23 +79,9 @@ const Page = ({
       >
         <Form className="login-form">
           <Form.Item>
-            {getFieldDecorator('name', {
-              rules: [{ required: true, message: 'Please input your name!' }],
-            })(<Input placeholder="名字" />)}
-          </Form.Item>
-          <Form.Item>
-            {getFieldDecorator('address', {
-              rules: [
-                { required: true, message: 'Please input your address!' },
-              ],
-            })(<Input placeholder="地址" />)}
-          </Form.Item>
-          <Form.Item>
-            {getFieldDecorator('information', {
-              rules: [
-                { required: true, message: 'Please input your information!' },
-              ],
-            })(<Input placeholder="额外信息" />)}
+            {getFieldDecorator('info', {
+              rules: [{ required: true, message: 'Please input your info!' }],
+            })(<Input placeholder="信息" />)}
           </Form.Item>
         </Form>
       </Modal>

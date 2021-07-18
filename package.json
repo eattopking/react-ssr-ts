@@ -12,9 +12,9 @@
     "dev_server": "webpack --config ./build/server.js --progress=true --color=true --compress=true --watch",
     "dev_client": "webpack --config ./build/client.js --progress=true --color=true --compress=true --watch",
     "dev_start": "pm2 start -f ./pm2.config.js",
-    "sync": "pm2 start -f ./src/mysql/syncTable.js",
     "start": "nodemon --watch dist --exec npx \"./dist/index.js\"",
-    "npx_sync": "npx ./src/mysql/syncTable.js",
+    "sync_mysql": "npx ./src/mysql/syncTable.js",
+    "init_mysql": "npx ./src/mysql/initialSyncTable.js",
     "test": "jest --watch",
     "collectCoverage": "jest --notify --collectCoverage"
   },

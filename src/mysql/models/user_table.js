@@ -10,7 +10,8 @@ const userTable = sequelize.define(
   {
     key: DataTypes.STRING(100),
     mail: DataTypes.STRING(100),
-    password: DataTypes.STRING(100)
+    password: DataTypes.STRING(100),
+    name: DataTypes.STRING(100),
   },
   {
     // 不要默认时间戳

@@ -10,8 +10,7 @@ const pageTable = sequelize.define(
   {
     key: DataTypes.STRING(100),
     name: DataTypes.STRING(100),
-    address: DataTypes.STRING,
-    information: DataTypes.STRING
+    info: DataTypes.STRING,
   },
   {
     // 不要默认时间戳
