@@ -18,7 +18,7 @@ module.exports = {
   ],
   // 我们执行测试文件之前， 提前帮我们执行的代码
   "setupFilesAfterEnv": [
-    "./src/utils/setupTests.ts"
+    "./__tests__/utils/setupTests.js"
   ],
   "testMatch": [
     // jest执行任意目录下的__tests__目录下任意子目录或者后代目录下的以.test.js结尾的文件

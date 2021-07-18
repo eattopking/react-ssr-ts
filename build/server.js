@@ -121,7 +121,6 @@ module.exports = function () {
                             loader: 'babel-loader',
                             options: babelrc({ server: true }),
                         },
-                        'awesome-typescript-loader',
                     ],
                     exclude: /node_modules/,
                 },
