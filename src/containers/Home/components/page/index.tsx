@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Table, Button, Modal, Form, message, Input } from 'antd';
+import { Button, Modal, Form, message, Input, List } from 'antd';
 import * as pageActions from './store/widgets';
+import './index.less';
 
 const axios = require('axios');
 
@@ -19,21 +20,6 @@ const Page = ({
   // action集合
   const actions = bindActionCreators(pageActions, dispatch);
   const [visible, setVisible] = useState(false);
-  // 表格列选项
-  const [columns] = useState([
-    {
-      title: '信息',
-      dataIndex: 'info',
-      key: 'info',
-      width: 80,
-    },
-    {
-      title: '名字',
-      dataIndex: 'name',
-      key: 'name',
-      width: 80,
-    }
-  ]);
 
   const handleCancel = () => {
     setVisible(false);
@@ -69,10 +55,41 @@ const Page = ({
   };
 
   return (
-    <>
-      <Button onClick={handleAdd}>添加</Button>
+    <div className="page">
+      <div className="header">
+        <div className="title">
+          回忆墙
+        </div>
+        <Button
+          className="btn"
+          onClick={handleAdd}
+        >
+          发表留言
+        </Button>
+      </div>
+      <div className="container">
+
+        <div className="list">
+          <List
+            dataSource={rows}
+            renderItem={item => {
+              const { info, name } = item;
+              return (
+                <List.Item>
+                  <List.Item.Meta
+                    title={<div>{name}</div>}
+                    description={info}
+                  />
+                </List.Item>
+              );
+            }}
+          />
+        </div>
+      </div>
+
+      {/* 输入留言 */}
       <Modal
-        title="Basic Modal"
+        title="输入留言"
         visible={visible}
         onOk={handleOk}
         onCancel={handleCancel}
@@ -80,13 +97,18 @@ const Page = ({
         <Form className="login-form">
           <Form.Item>
             {getFieldDecorator('info', {
-              rules: [{ required: true, message: 'Please input your info!' }],
-            })(<Input placeholder="信息" />)}
+              rules: [{ required: true, message: '请输入留言!' }],
+            })(<Input.TextArea
+              style={{
+                resize: 'none',
+                height: '100px'
+              }}
+              placeholder="留言"
+            />)}
           </Form.Item>
         </Form>
       </Modal>
-      <Table columns={columns} dataSource={rows} pagination={false} />
-    </>
+    </div>
   );
 };
 
