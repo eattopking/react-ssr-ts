@@ -60,6 +60,7 @@ export function loginRender() {
     <head>
       <title>回忆墙登录</title>
       <link rel="stylesheet" href="/public/%commonCss">
+      <link rel="stylesheet" href="/public/%cssLogin">
     </head>
     <body>
       <div id="app">${content}</div>
@@ -82,6 +83,7 @@ export function registerRender() {
     <head>
       <title>回忆墙注册</title>
       <link rel="stylesheet" href="/public/%commonCss">
+      <link rel="stylesheet" href="/public/%cssRegister">
     </head>
     <body>
       <div id="app">${content}</div>

@@ -15,6 +15,8 @@ const getFileList = () => {
         const commonJsReg = /^commonchunk(\S+).js$/;
         const commonCssReg = /^commonchunk(\S+).css$/;
         const indexCssReg = /^index(\S+).css$/;
+        const loginCssReg = /^login(\S+).css$/;
+        const registerCssReg = /^register(\S+).css$/;
         const indexJsReg = /^index(\S+).js$/;
         const loginJsReg = /^login(\S+).js$/;
         const registerJsReg = /^register(\S+).js$/;
@@ -61,6 +63,20 @@ const getFileList = () => {
             };
         }
 
+        if (loginCssReg.test(item)) {
+            return {
+                ...result,
+                loginCss: item,
+            };
+        }
+
+        if (registerCssReg.test(item)) {
+            return {
+                ...result,
+                registerCss: item,
+            };
+        }
+
         return result;
     }, {});
 };
@@ -71,7 +87,9 @@ const {
     commonCss,
     login,
     indexCss,
-    register
+    register,
+    loginCss,
+    registerCss
 } = getFileList();
 
 // 在node环境中运行的JavaScript代码需要注意：
@@ -115,6 +133,8 @@ module.exports = function () {
                                 '%login': login,
                                 '%indexCss': indexCss,
                                 '%register': register,
+                                '%cssLogin': loginCss,
+                                '%cssRegister': registerCss,
                             },
                         },
                         {
@@ -133,17 +153,16 @@ module.exports = function () {
                     },
                     exclude: /node_modules/,
                 },
-                // 服务端要解决， 第一次加载时候没有样式的问题，这里在我收藏里记得有解决方案，下面就是， 但是
-                // 有点问题， 有时间解决， 完善一下， 在视频课里面就有这个结局方法， 不行就去看看视频
-                // {
-                //   test: /\.less$/,
-                //   use: [
-                //     "isomorphic-style-loader",
-                //     "css-loader",
-                //     "postcss-loader",
-                //     "less-loader"
-                //   ]
-                // }
+                // 这样只会给元素加上类名， 在node构建的时候可以解析less文件，不会打包出css文件
+                {
+                    test: /\.less$/,
+                    use: [
+                        "isomorphic-style-loader",
+                        "css-loader",
+                        "postcss-loader",
+                        "less-loader"
+                    ]
+                }
             ],
         },
         /**

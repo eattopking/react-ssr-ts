@@ -1,8 +1,9 @@
 import React from "react";
-import { Layout, Input, Button, Form, message } from "antd";
+import { Input, Button, Form, message } from "antd";
 const { Item } = Form;
-const { Content, Footer } = Layout;
 const axios = require("axios");
+
+import './index.less';
 
 /**
  * 登录页组件
@@ -31,58 +32,64 @@ function Login({
       }
     });
   };
+
+  //跳转到注册页面
   const handleRegister = () => {
     window.location.pathname = "/register";
   };
+
   return (
-    <Layout>
-      <Content>
-        <Layout>
-          <Content>
-            <Form onSubmit={handleSubmit}>
-              <Item
-                label="邮箱"
-              >
-                {getFieldDecorator("mail", {
-                  rules: [
-                    { required: true, message: "Please input your username!" }
-                  ]
-                })(<Input placeholder="用户" />)}
-              </Item>
-              <Item
-                style={{ display: "flex", justifyContent: "center" }}
-                label="密码"
-              >
-                {getFieldDecorator("password", {
-                  rules: [
-                    { required: true, message: "Please input your Password!" }
-                  ]
-                })(
-                  <Input
-                    type="password"
-                    placeholder="密码"
-                  />
-                )}
-              </Item>
-              <Item>
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  className="login-form-button"
-                >
-                  登录
-                </Button>
-                <div
-                  onClick={handleRegister}
-                >
-                  去注册
-                </div>
-              </Item>
-            </Form>
-          </Content>
-        </Layout>
-      </Content>
-    </Layout>
+    <div>
+        <div className="header">
+          欢迎登录回忆墙
+        </div>
+        <Form
+          onSubmit={handleSubmit}
+        >
+          <Item
+            className="form-item"
+            label="邮箱"
+          >
+            {getFieldDecorator("mail", {
+              rules: [
+                { required: true, message: "请输入邮箱" }
+              ]
+            })(<Input placeholder="邮箱" />)}
+          </Item>
+          <Item
+            label="密码"
+            className="form-item"
+          >
+            {getFieldDecorator("password", {
+              rules: [
+                { required: true, message: "Please input your Password!" }
+              ]
+            })(
+              <Input
+                type="password"
+                placeholder="密码"
+              />
+            )}
+          </Item>
+          <Item
+            className="form-item"
+          >
+            <Button
+              type="primary"
+              htmlType="submit"
+              className="login-form-button"
+            >
+              登录
+            </Button>
+            <div
+              className="to-register"
+              onClick={handleRegister}
+            >
+              现在注册
+            </div>
+          </Item>
+        </Form>
+    </div>
   );
 }
 
