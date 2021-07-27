@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Table, Button, Modal, Form, message, Input } from 'antd';
+import { Button, Modal, Form, message, Input, List } from 'antd';
 import * as pageActions from './store/widgets';
-import "../../main.less";
+import './index.less';
 
 const axios = require('axios');
 
@@ -20,27 +20,6 @@ const Page = ({
   // action集合
   const actions = bindActionCreators(pageActions, dispatch);
   const [visible, setVisible] = useState(false);
-  // 表格列选项
-  const [columns] = useState([
-    {
-      title: '名字',
-      dataIndex: 'name',
-      key: 'name',
-      width: 80,
-    },
-    {
-      title: '地址',
-      dataIndex: 'address',
-      width: 80,
-      key: 'address',
-    },
-    {
-      title: '额外信息',
-      dataIndex: 'information',
-      width: 80,
-      key: 'information',
-    },
-  ]);
 
   const handleCancel = () => {
     setVisible(false);
@@ -52,57 +31,84 @@ const Page = ({
 
   const handleOk = (e: { preventDefault: Function }) => {
     e.preventDefault();
-    validateFields((err: any, values: any) => {
+    validateFields(async (err: any, values: any) => {
       if (!err) {
-        axios.get('/api/adddata', { params: values }).then((res: any) => {
-          const {
-            data: { status, rows },
-          } = res;
-          if (status) {
-            message.info('添加成功');
-            handleCancel();
-            actions.setAllData(rows);
-          } else {
-            message.info('添加失败');
-          }
-        });
+        const addRes = await axios.get('/api/addData', { params: values });
+        const {
+          data: { status },
+        } = addRes;
+
+        if (!status) {
+          message.info('添加失败');
+        }
+
+        message.info('添加成功');
+        const res = await axios.get('/api/pageData');
+        const {
+          data: { rows },
+        } = res;
+        handleCancel();
+        actions.setAllData(rows);
+        return;
       }
     });
   };
 
   return (
-    <>
-      <Button onClick={handleAdd}>添加</Button>
+    <div className="page">
+      <div className="header">
+        <div className="title">
+          回忆墙
+        </div>
+        <Button
+          className="btn"
+          onClick={handleAdd}
+        >
+          发表留言
+        </Button>
+      </div>
+      <div className="container">
+
+        <div className="list">
+          <List
+            dataSource={rows}
+            renderItem={item => {
+              const { info, name } = item;
+              return (
+                <List.Item>
+                  <List.Item.Meta
+                    title={<div>{name}</div>}
+                    description={info}
+                  />
+                </List.Item>
+              );
+            }}
+          />
+        </div>
+      </div>
+
+      {/* 输入留言 */}
       <Modal
-        title="Basic Modal"
+        title="输入留言"
         visible={visible}
         onOk={handleOk}
         onCancel={handleCancel}
       >
         <Form className="login-form">
           <Form.Item>
-            {getFieldDecorator('name', {
-              rules: [{ required: true, message: 'Please input your name!' }],
-            })(<Input placeholder="名字" />)}
-          </Form.Item>
-          <Form.Item>
-            {getFieldDecorator('address', {
-              rules: [
-                { required: true, message: 'Please input your address!' },
-              ],
-            })(<Input placeholder="地址" />)}
-          </Form.Item>
-          <Form.Item>
-            {getFieldDecorator('information', {
-              rules: [
-                { required: true, message: 'Please input your information!' },
-              ],
-            })(<Input placeholder="额外信息" />)}
+            {getFieldDecorator('info', {
+              rules: [{ required: true, message: '请输入留言!' }],
+            })(<Input.TextArea
+              style={{
+                resize: 'none',
+                height: '100px'
+              }}
+              placeholder="留言"
+            />)}
           </Form.Item>
         </Form>
       </Modal>
-      <Table columns={columns} dataSource={rows} pagination={false} />
-    </>
+    </div>
   );
 };
 

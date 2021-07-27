@@ -1,28 +1,37 @@
 import React from "react";
-import { Layout, Input, Button, Form, message } from "antd";
+import { Input, Button, Form, message } from "antd";
 const { Item } = Form;
-const { Content, Footer } = Layout;
 const axios = require("axios");
+
+import './index.less';
 
 function Register({
   form
 }: {
   form: { getFieldDecorator: Function; validateFields: Function };
 }) {
-  const { getFieldDecorator, validateFields } = form;
+  const {
+    getFieldDecorator,
+    validateFields
+  } = form;
   const handleSubmit = (e: { preventDefault: Function }) => {
     e.preventDefault();
     validateFields((err: any, values: any) => {
       if (!err) {
-        axios.get("/api/registerin", { params: values }).then((res: any) => {
+        axios.get("/api/registerIn", { params: values }).then((res: any) => {
           const {
-            data: { status, data }
+            data: {
+              status,
+              data
+            }
           } = res;
           if (status) {
             message.info("注册成功");
+
             setTimeout(() => {
-              window.location.href = "http://eattopking.top/login";
+              window.location.pathname = "/login";
             }, 1000);
+
           } else if (data === 1) {
             message.info("该用户已经注册请直接登录");
           } else {
@@ -33,46 +42,54 @@ function Register({
     });
   };
   return (
-    <Layout>
-      <Content style={{ padding: "0 50px" }}>
-        <Layout style={{ padding: "24px 0", background: "#fff" }}>
-          <Content style={{ padding: "0 24px", minHeight: 280 }}>
-            <Form onSubmit={handleSubmit} className="login-form">
-              <Item
-                label="邮箱"
-                style={{ display: "flex", justifyContent: "center" }}
-              >
-                {getFieldDecorator("mail", {
-                  rules: [
-                    { required: true, message: "Please input your username!" }
-                  ]
-                })(<Input placeholder="用户" />)}
-              </Item>
-              <Item
-                label="密码"
-                style={{ display: "flex", justifyContent: "center" }}
-              >
-                {getFieldDecorator("password", {
-                  rules: [
-                    { required: true, message: "Please input your Password!" }
-                  ]
-                })(<Input type="password" placeholder="密码" />)}
-              </Item>
-              <Item style={{ display: "flex", justifyContent: "center" }}>
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  className="login-form-button"
-                >
-                  注册
-                </Button>
-              </Item>
-            </Form>
-          </Content>
-        </Layout>
-      </Content>
-      <Footer style={{ textAlign: "center" }}>注册界面</Footer>
-    </Layout>
+    <div>
+      <div className="header">
+        欢迎注册回忆墙
+      </div>
+      <Form onSubmit={handleSubmit}>
+        <Item
+          label="邮箱"
+          className="form-item"
+        >
+          {getFieldDecorator("mail", {
+            rules: [
+              { required: true, message: "请输入邮箱!" }
+            ]
+          })(<Input placeholder="邮箱" />)}
+        </Item>
+        <Item
+          label="用户名"
+          className="form-item"
+        >
+          {getFieldDecorator("name", {
+            rules: [
+              { required: true, message: "请输入用户名!" }
+            ]
+          })(<Input placeholder="用户名" />)}
+        </Item>
+        <Item
+          label="密码"
+          className="form-item"
+        >
+          {getFieldDecorator("password", {
+            rules: [
+              { required: true, message: "请输入密码!" }
+            ]
+          })(<Input type="password" placeholder="密码" />)}
+        </Item>
+        <Item
+          className="form-item"
+        >
+          <Button
+            type="primary"
+            htmlType="submit"
+            className="login-form-button"
+          >
+            注册
+          </Button>
+        </Item>
+      </Form>
+    </div>
   );
 }
 

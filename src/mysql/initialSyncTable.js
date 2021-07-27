@@ -5,7 +5,6 @@ const userTable = require("./models/user_table");
 
 // 初始同步数据库表结构, 强制同步，先删除表，然后新建, 并给表设置初始值
 sequelize
-
   .sync({
     // 强制同步，先删除表，然后新建
     force: true
@@ -14,10 +13,9 @@ sequelize
     // 设置主页表的初始值
     return pageTable
       .create({
-        key: "1",
+        key: `${Math.random()}`,
         name: "夫夫公司",
-        address: "保密",
-        information: "暂无"
+        info: "保密",
       })
       .then(function(p) {
         console.log("created. " + JSON.stringify(p));
@@ -30,9 +28,10 @@ sequelize
     // 设置用户表的初始值
     return userTable
       .create({
-        key: "1",
+        key: `${Math.random()}`,
         mail: "eattopking",
-        password: "1234567"
+        password: "1234567",
+        name: 'eattopking'
       })
       .then(function(p) {
         console.log("created. " + JSON.stringify(p));

@@ -5,7 +5,7 @@ import PageLayout from "../containers/Home/index";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { getClientStore } from "../rootStore";
-import "../containers/Home/main";
+import "../containers/Home";
 
 // 针对client特殊设置获取store的方法,在这个方法里进行了数据脱水
 const store = getClientStore();

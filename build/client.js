@@ -39,8 +39,7 @@ module.exports = function () {
           use: [
             // 使用cache提升编译速度
             'cache-loader',
-            'happypack/loader?id=babel',
-            'awesome-typescript-loader',
+            'happypack/loader?id=babel'
           ],
           exclude: /node_modules/,
         },

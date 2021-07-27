@@ -1,6 +1,6 @@
 /**
  * ts的配置文件
- * 这就是一套基本完善可以正常工作的tsconfig.json了 
+ * 这就是一套基本完善可以正常工作的tsconfig.json了
  * lib jsx moduleResolution allowSyntheticDefaultImports 这几个是很重要的
  * tsconfig.json 只需要在项目根目录声明, webpack就会自己去读, 默认的情况
  */
@@ -25,9 +25,9 @@
     "allowSyntheticDefaultImports": true,
     // `preserve`的配置让处理`ts的loader`不会去处理它，而是使用后续的`babel-loader`进行处理， 也可以配置成react，
     "jsx": "preserve",
-    /* 这个是可以使用node，模块化，不设置会导致webpack编译，报错 
-     Specify module resolution strategy: 'node' (Node.js) or 'classic' 
-     (TypeScript pre-1.6). Base directory to resolve non-absolute module names. 
+    /* 这个是可以使用node，模块化，不设置会导致webpack编译，报错
+     Specify module resolution strategy: 'node' (Node.js) or 'classic'
+     (TypeScript pre-1.6). Base directory to resolve non-absolute module names.
      */
     "moduleResolution": "node",
     // Allow javascript files to be compiled.
@@ -40,5 +40,5 @@
       "*": ["types/*"]
     }
   },
-  "exclude": ["node_modules", "build", "demo", "server"]
+  "exclude": ["build", "demo", "server"]
 }

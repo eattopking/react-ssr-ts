@@ -2,8 +2,8 @@
  * matchRoutes用来匹配对path路由的配置项,这个api比较牛逼,可以匹配到完整的包括子路由的配置数据
  * import { matchPath } from 'react-router-dom'只能匹配到第一层父路由的配置数据
  */
-import { matchRoutes } from 'react-router-config';
-import routes from '../containers/Home/routes';
+// import { matchRoutes } from 'react-router-config';
+// import routes from '../containers/Home/routes';
 
 import Router from 'koa-router';
 import { getStore } from '../rootStore';
@@ -40,16 +40,19 @@ router.get(
  */
 router.get('/page', async ctx => {
   const {
-    request: { url },
+    request,
     response,
     session,
     cookies
   } = ctx;
+  const { url } = request;
   const mail = cookies.get('mail');
-  if (session[mail] === true) {
+
+  if (session[mail]) {
     // 匹配和url匹配的路由配置项对象
     // const matchedRoutes = matchRoutes(routes, ctx.request.url);
     const result = await Apis.findPageAll();
+
     /*
      * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
      * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
@@ -71,27 +74,21 @@ router.get('/page', async ctx => {
       context: {},
       store
     });
-  } else {
-    /**
-     * 后台重定向返回登录页
-     */
-    response.redirect('/login');
+
+    return;
   }
+  /**
+  * 后台重定向返回登录页
+  */
+  response.redirect('/login');
 });
 
-/**
- * 拉取全部数据接口
- */
-router.get('/api/adddata', async ctx => {
-  const {
-    request: {
-      query: { name, address, information }
-    }
-  } = ctx;
-  await Apis.savePageData(name, address, information);
-  /**
-   * 数据库中新增的行
-   */
+
+//======================数据接口========================
+
+// 获取页面全部数据
+router.get('/api/pageData', async ctx => {
+
   const result = await Apis.findPageAll();
   const allRows = JSON.parse(JSON.stringify(result));
   /*
@@ -106,16 +103,47 @@ router.get('/api/adddata', async ctx => {
 });
 
 /**
- * 登录接口, 用于用户登录
+ * 添加数据接口
  */
-router.get('/api/signin', async ctx => {
+router.get('/api/addData', async ctx => {
   const {
     request: {
-      query: { mail, password }
+      query
+    },
+    cookies
+  } = ctx;
+
+  // 获取用户名称
+  const { info } = query;
+  const mail = cookies.get('mail');
+  const userInfo = await Apis.findUserInfo(mail);
+  const name = JSON.parse(JSON.stringify(userInfo))[0].name;
+
+  await Apis.savePageData(name, info);
+
+  /*
+   * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
+   * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
+   * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
+   */
+  ctx.body = {
+    status: true
+  };
+});
+
+/**
+ * 登录接口, 用于用户登录
+ */
+router.get('/api/signIn', async ctx => {
+  const {
+    request: {
+      query
     },
     session,
     cookies
   } = ctx;
+
+  const { mail, password } = query;
   // cookie的配置
   const cookieConfig = {
     maxAge: 86400000,
@@ -126,6 +154,7 @@ router.get('/api/signin', async ctx => {
     rolling: false /** (boolean) Force a session identifier cookie to be set on every response. The expiration is reset to the original maxAge, resetting the expiration countdown. (default is false) */,
     renew: false
   };
+
   /*
    * 使用sequelize findUserInfo 从mysql查回来的用户信息做比对实现登录,
    */
@@ -135,35 +164,39 @@ router.get('/api/signin', async ctx => {
    */
   if (password === JSON.parse(JSON.stringify(result))[0].password) {
     // 存储cookie和session用于用户鉴权
-    session[mail] = true;
+    session[mail] = 1;
     cookies.set('mail', mail, cookieConfig);
+
     ctx.body = {
       status: true
     };
-  } else {
-    ctx.body = {
-      status: false
-    };
+    return;
   }
+  ctx.body = {
+    status: false
+  };
 });
 
 /**
  * 注册接口, 用于用户注册
  */
-router.get('/api/registerin', async ctx => {
+router.get('/api/registerIn', async ctx => {
   const {
     request: {
-      query: { mail, password }
+      query
     }
   } = ctx;
+  const { mail, password, name } = query;
   const result = await Apis.findUserMail();
+
   const mailList = JSON.parse(JSON.stringify(result)).reduce(
-    (currentVlaue: any, value: { mail: string }) => {
-      currentVlaue.push(value.mail);
-      return currentVlaue;
+    (currentValue: any, value: { mail: string }) => {
+      currentValue.push(value.mail);
+      return currentValue;
     },
     []
   );
+
   if (mailList.includes(mail)) {
     ctx.body = {
       status: false,
@@ -178,7 +211,7 @@ router.get('/api/registerin', async ctx => {
     /*
      * 使用sequelize saveUserInfo 将用户信息存到数据库,
      */
-    await Apis.saveUserInfo(mail, password);
+    await Apis.saveUserInfo(mail, password, name);
     /**
      * 注册成功返回true
      */

@@ -36,7 +36,9 @@ module.exports = ({ server }) => {
           modules: false
         }
       ],
-      '@babel/preset-react'
+      '@babel/preset-react',
+      // 最新babel支持的ts转换
+      '@babel/preset-typescript'
     ],
     plugins: [
       !server && [

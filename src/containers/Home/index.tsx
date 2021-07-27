@@ -1,27 +1,21 @@
 import React from "react";
-import { Layout, Menu } from "antd";
+import { Layout } from "antd";
 import { Route } from "react-router-dom";
 import routes from "./routes";
-const { Content, Footer, Sider } = Layout;
+const { Content } = Layout;
 
 export default function PageLayout() {
   return (
     <Layout>
-      <Content style={{ padding: "0 50px" }}>
-        <Layout style={{ padding: "24px 0", background: "#fff" }}>
-          <Sider width={200} style={{ background: "#fff" }}>
-            <Menu mode="inline" defaultSelectedKeys={["1"]} style={{ height: "100%" }}>
-              <Menu.Item key="1">客户信息</Menu.Item>
-            </Menu>
-          </Sider>
-          <Content style={{ padding: "0 24px", minHeight: 280 }}>
+      <Content>
+        <Layout>
+          <Content>
             {routes.map(routeConfig => {
               return <Route {...routeConfig} />;
             })}
           </Content>
         </Layout>
       </Content>
-      <Footer style={{ textAlign: "center" }}>服务端渲染</Footer>
     </Layout>
   );
 }
