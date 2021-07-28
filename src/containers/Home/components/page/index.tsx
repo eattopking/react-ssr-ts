@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Button, Modal, Form, message, Input, List } from 'antd';
@@ -20,6 +20,20 @@ const Page = ({
   // action集合
   const actions = bindActionCreators(pageActions, dispatch);
   const [visible, setVisible] = useState(false);
+  const [userName, setUserName] = useState(null);
+
+  useEffect(() => {
+    getName();
+  }, []);
+
+  const getName = async () => {
+    const res = await axios.get('/api/getName');
+    const {
+      data: { name },
+    } = res;
+
+    setUserName(name);
+  }
 
   const handleCancel = () => {
     setVisible(false);
@@ -60,12 +74,17 @@ const Page = ({
         <div className="title">
           回忆墙
         </div>
-        <Button
-          className="btn"
-          onClick={handleAdd}
-        >
-          发表留言
-        </Button>
+        <div className="login">
+          <Button
+            className="btn"
+            onClick={handleAdd}
+          >
+            发表留言
+          </Button>
+          <div className="name">
+            {userName}
+          </div>
+        </div>
       </div>
       <div className="container">
 
