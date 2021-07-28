@@ -132,6 +132,29 @@ router.get('/api/addData', async ctx => {
 });
 
 /**
+ * 获取用户名
+ */
+router.get('/api/getName', async ctx => {
+  const {
+    cookies
+  } = ctx;
+
+  const mail = cookies.get('mail');
+  const userInfo = await Apis.findUserInfo(mail);
+  const name = JSON.parse(JSON.stringify(userInfo))[0].name;
+
+  /*
+   * 使用sequelize findall 从mysql查回来的数据是不能直接使用的,
+   * 需要用JSON.stringify转换成json字符串, JSON.stringify真牛逼,
+   * 在node中处理数据库数据,JSON.stringify 和 JSON.parse就可以搞定
+   */
+  ctx.body = {
+    status: true,
+    name
+  };
+});
+
+/**
  * 登录接口, 用于用户登录
  */
 router.get('/api/signIn', async ctx => {

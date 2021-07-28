@@ -8,13 +8,9 @@ export default function PageLayout() {
   return (
     <Layout>
       <Content>
-        <Layout>
-          <Content>
-            {routes.map(routeConfig => {
-              return <Route {...routeConfig} />;
-            })}
-          </Content>
-        </Layout>
+        {routes.map(routeConfig => {
+          return <Route {...routeConfig} />;
+        })}
       </Content>
     </Layout>
   );
