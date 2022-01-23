@@ -2,9 +2,10 @@
 const Sequelize = require("sequelize");
 const DataTypes = Sequelize.DataTypes;
 const sequelize = require("../dbConn.js");
+const { ContentDataBase } = require("../database.js");
 
 //创建表
-const sessionTable = sequelize.define(
+const sessionTable = ContentDataBase.getCurrentConnection().define(
   "sessionTable",
   // 设置表字段, 并规范类型, 好像只有第一次有用,之后好像没啥用了
   {

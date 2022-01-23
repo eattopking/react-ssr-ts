@@ -7,6 +7,7 @@ import KoaBody from 'koa-body';
 // 静态资源服务管理中间件
 // import koaStatic from 'koa-static';
 import sessionStore from './sessionStore';
+import { ContentDataBase } from '../mysql/database';
 
 /**
  * 创建koa实例
@@ -30,6 +31,8 @@ app.use(router.routes()).use(router.allowedMethods());
  * 这里直接设置项目目录下的目录名就行,直接koa就能找到,不用整那些乱七八糟的
  */
 // app.use(koaStatic('public'));
+// 获取数据库连接实例
+ContentDataBase.create();
 
 // 给koa-router设置响应头的很多信息
 app.use(KoaBody());
