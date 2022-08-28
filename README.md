@@ -4,6 +4,8 @@
 
 koa2、 react、redux、react-router、typescript、 webpack、 antd、 数据库 mysql
 
+使用阿里云本地nginx做前端服务器，负载均衡， koa2服务处理业务逻辑， 使用docker启动mysql数据服务， 存储数据， 并将docker服务映射到阿里云本地服务的对应端口
+
 
 ### 服务端渲染(ssr)
 
