@@ -3,7 +3,7 @@
 const path = require('path');
 const fs = require('fs');
 const baseConfig = require('./base');
-const merge = require('webpack-merge');
+const webpackMerge = require('webpack-merge');
 const babelrc = require('../babelrc');
 const nodeExternals = require('webpack-node-externals');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -175,12 +175,8 @@ module.exports = function () {
         plugins: [
             new CleanWebpackPlugin(),
             // new Plugin()
-        ],
-        // webpack自带优化配置
-        optimization: {
-            // 解决模块增减 module id无法固定的问题
-            moduleIds: 'hashed'
-        },
+        ]
     };
-    return merge(baseConfig(), serverConfig);
+    // webpack5 升级webpack-merge导出发生变化，不是直接导出，而是将原来的merge方法放到一个对象上
+    return webpackMerge.merge(baseConfig(), serverConfig);
 };

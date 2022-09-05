@@ -1,14 +1,12 @@
 // node 环境 客户端代码 webpack打包配置 生产配置
 const path = require('path');
 const baseConfig = require('./base');
-const merge = require('webpack-merge');
+const webpackMerge = require('webpack-merge');
 const babelrc = require('../babelrc');
-const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const HappyPack = require('happypack');
 
 module.exports = function () {
   const clientConfig = {
@@ -37,69 +35,40 @@ module.exports = function () {
         {
           test: /\.tsx?$/,
           use: [
-            // 使用cache提升编译速度
-            'cache-loader',
-            'happypack/loader?id=babel'
+            {
+              loader: 'babel-loader',
+              options: babelrc({ server: false }),
+            },
+            // 耗时的 loader （例如 babel-loader）,多线程构建， 最新的多进程处理loader工作的的loader
+            'thread-loader',
           ],
           exclude: /node_modules/,
         },
         {
           test: /\.less$/,
-          use: [MiniCssExtractPlugin.loader, 'happypack/loader?id=style'],
+          use: [
+            MiniCssExtractPlugin.loader,
+            'css-loader',
+            'postcss-loader',
+            {
+              loader: 'less-loader',
+              options: {
+                // 解决这个报错 Inline JavaScript is not enabled
+                javascriptEnabled: true,
+              },
+            },
+          ],
         },
       ],
     },
     plugins: [
       new CleanWebpackPlugin(),
+      // 最新的提取css文件的plugin
       new MiniCssExtractPlugin({
         // 减少文件名变化, 使强缓存协商缓存还有效, chunkhash 提升前端性能, 减少请求
         filename: '[name].[contenthash:8].css',
         // 决定了非入口中引用的css文件的名称
         // chunkFilename: '[name].[contenthash].css'
-      }),
-      new OptimizeCssAssetsPlugin({
-        cssProcessorOptions: {
-          map: {
-            // 不生成内联映射,这样配置就会生成一个source-map文件
-            inline: false,
-            // 向css文件添加source-map路径注释
-            // 如果没有此项压缩后的css会去除source-map路径注释
-            annotation: true,
-          },
-        },
-      }),
-      // 使用模块相对路径的hash前四位作为moduleid, 避免多语的moduleid改变, 使文件内容不变时, chunkhash不变
-      // new webpack.HashedModuleIdsPlugin(),
-      // 多线程构建js
-      new HappyPack({
-        // 用唯一的标识符 id 来代表当前的 HappyPack 是用来处理一类特定的文件
-        id: 'babel',
-        // 如何处理 .js 文件的loader配置，用法和 Loader 配置中一样
-        loaders: [
-          // 处理js的loader, 这里面只能放'babel-loader', 其他的还是在loader里面配置
-          {
-            loader: 'babel-loader',
-            options: babelrc({ server: false }),
-          },
-        ],
-      }),
-      // 多线程构建css
-      new HappyPack({
-        // 用唯一的标识符 id 来代表当前的 HappyPack 是用来处理一类特定的文件
-        id: 'style',
-        // 如何处理 .css 文件的loader配置，用法和 Loader 配置中一样
-        loaders: [
-          // 处理css的loader, MiniCssExtractPlugin.loader不能放在这里, 需要放在loader中
-          'css-loader',
-          'postcss-loader',
-          {
-            loader: 'less-loader',
-            options: {
-              // 解决这个报错 Inline JavaScript is not enabled
-              javascriptEnabled: true,
-            },
-          },
-        ],
       }),
     ],
     // webpack自带优化配置
@@ -127,7 +96,7 @@ module.exports = function () {
             // 优先级
             priority: -10,
             name: 'commonchunk',
-            filename: '[name].[chunkhash:8].js'
+            filename: '[name].[chunkhash:8].js',
           },
           vendors: false,
           default: false,
@@ -135,6 +104,7 @@ module.exports = function () {
       },
       // 使用自定义TerserPlugin插件对原有TerserPlugin插件进行替换
       minimizer: [
+        // 最新的压缩js的plugin，可以多进程压缩
         new TerserPlugin({
           // 缓存文件
           cache: true,
@@ -142,10 +112,10 @@ module.exports = function () {
           parallel: true,
           sourceMap: true,
         }),
+        // 最新压缩css和设置css source-map的plugin
+        new CssMinimizerPlugin(),
       ],
-      // 解决模块增减 module id无法固定的问题
-      moduleIds: 'hashed'
     },
   };
-  return merge(baseConfig(), clientConfig);
+  return webpackMerge.merge(baseConfig(), clientConfig);
 };
