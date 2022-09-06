@@ -36,6 +36,7 @@
     "experimentalDecorators": true,
     // 下面两个配置项是适配自定义.d.ts文件路径的
     "baseUrl": "./",
+    // 路径别名， vscode跳转路径别名需要用到这里的配置， vscode不能直接获取webpack的alias路径别名配置
     "paths": {
       "*": ["types/*"]
     }

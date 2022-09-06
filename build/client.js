@@ -76,14 +76,15 @@ module.exports = function () {
       splitChunks: {
         // 不管同步还是异步都提取公共模块
         chunks: 'all',
+        name: 'commonchunk',
         // 提取公共模块的最小大小
-        minSize: 30000,
-        maxSize: 0,
-        // 模块被import引用几次,才提取成公共模块
-        minChunks: 1,
-        maxAsyncRequests: 5,
-        maxInitialRequests: 3,
-        automaticNameDelimiter: '-',
+        // minSize: 30000,
+        // maxSize: 0,
+        // // 模块被import引用几次,才提取成公共模块
+        // minChunks: 1,
+        // maxAsyncRequests: 5,
+        // maxInitialRequests: 3,
+        // automaticNameDelimiter: '-',
         // name: true,
         // 缓存组, 组名+共同引用的各个入口名组成, 分割成的代码块名
         cacheGroups: {
