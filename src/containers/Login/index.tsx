@@ -26,7 +26,7 @@ function Login({
           if (status) {
             window.location.pathname = "/page";
           } else {
-            message.info("用户名或密码不正确,请重新输入");
+            message.info("用户名或密码不正确,请重新输入99999");
           }
         });
       }
