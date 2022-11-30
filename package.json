@@ -16,7 +16,9 @@
     "sync_mysql": "npx ./src/mysql/syncTable.js",
     "init_mysql": "npx ./src/mysql/initialSyncTable.js",
     "test": "jest --watch",
-    "collectCoverage": "jest --notify --collectCoverage"
+    "collectCoverage": "jest --notify --collectCoverage",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
